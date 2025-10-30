@@ -11,7 +11,7 @@ export default defineConfig({
     }),
   ],
 
-  base: '/vite-react-portfolio/',
+  base: '/react/',
 
   css: {
     devSourcemap: true, // ✅ 개발 환경에서 SCSS sourcemap 활성화
