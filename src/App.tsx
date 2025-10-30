@@ -10,7 +10,7 @@ function App() {
     element ?? (
       <div className="intro_wrap">
         <img
-          src="/src/assets/icons/react.svg"
+          src="/react/src/assets/icons/react.svg"
           alt="React Logo"
           className="logo"
         />
