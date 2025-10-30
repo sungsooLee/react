@@ -1,6 +1,7 @@
 import { useRoutes } from "react-router-dom";
 import routes from "virtual:generated-pages-react";
 import "./index.css";
+import ReactLogo from "./assets/icons/react.svg";
 
 function App() {
   const element = useRoutes(routes);
@@ -10,7 +11,7 @@ function App() {
     element ?? (
       <div className="intro_wrap">
         <img
-          src="/react/src/assets/icons/react.svg"
+          src={ReactLogo}
           alt="React Logo"
           className="logo"
         />
