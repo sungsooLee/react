@@ -5,10 +5,15 @@ import ReactLogo from "./assets/icons/react.svg";
 
 function AppRoutes() {
   const element = useRoutes(routes);
+
   return (
     element ?? (
       <div className="intro_wrap">
-        <img src={ReactLogo} alt="React Logo" className="logo" />
+        <img
+          src={ReactLogo}
+          alt="React Logo"
+          className="logo"
+        />
         <h1>Welcome to My React App</h1>
         <p>The current page is the index page</p>
       </div>
@@ -16,15 +21,11 @@ function AppRoutes() {
   );
 }
 
-function App() {
-  // 환경에 따라 basename 자동 전환
-  const basename = import.meta.env.MODE === "production" ? "/react" : "/";
-
+export default function App() {
+  // GitHub Pages용 basename 설정
   return (
-    <BrowserRouter basename={basename}>
+    <BrowserRouter basename="/react">
       <AppRoutes />
     </BrowserRouter>
   );
 }
-
-export default App;
