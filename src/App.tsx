@@ -1,11 +1,12 @@
-import { BrowserRouter, useRoutes } from "react-router-dom";
+import { useRoutes } from "react-router-dom";
 import routes from "virtual:generated-pages-react";
 import "./index.css";
 import ReactLogo from "./assets/icons/react.svg";
 
-function AppRoutes() {
+function App() {
   const element = useRoutes(routes);
 
+  // 라우트가 비어 있으면 기본 화면 보여주기
   return (
     element ?? (
       <div className="intro_wrap">
@@ -21,11 +22,4 @@ function AppRoutes() {
   );
 }
 
-export default function App() {
-  // GitHub Pages용 basename 설정
-  return (
-    <BrowserRouter basename="/react">
-      <AppRoutes />
-    </BrowserRouter>
-  );
-}
+export default App;
