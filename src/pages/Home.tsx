@@ -1,4 +1,5 @@
-import { useState } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useState, useEffect } from "react";
 import Layout from "../components/layout/Layout";
 import cn from "classnames";
 import styles from "./Home.module.scss";
@@ -14,6 +15,25 @@ const Home = () => {
     setVisible(state);
   };
 
+  const [active, setActive] = useState(0);
+  useEffect(() => {
+    const id = setInterval(
+      () => setActive((i) => (i + 1) % items.length),
+      2000
+    );
+    return () => clearInterval(id);
+  }, []);
+
+  const items = [
+    "React",
+    "Vue",
+    "Web Square",
+    "Typescript",
+    "Javascript",
+    "Scss",
+    "Tailwind",
+  ];
+
   return (
     <Layout headerType="type1" footerType="type1">
       <div className={cn(styles.home)}>
@@ -23,10 +43,19 @@ const Home = () => {
           <Link to={"/"}>Index</Link> <br />
           <button onClick={() => navigate("/")}>Index</button>
         </div>
-        <div>
+        <section>
           <ToggleButton initial={true} label={label} onToggle={handleClick} />
           {visible && <div>visible</div>}
-        </div>
+        </section>
+        <section>
+          <ul className={styles.set_interval}>
+            {items.map((item, i) => (
+              <li key={item} className={i === active ? styles.active : ""}>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </section>
       </div>
     </Layout>
   );

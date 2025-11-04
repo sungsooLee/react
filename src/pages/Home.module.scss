@@ -1,7 +1,16 @@
 .home {
-  position: relative;
+  @apply relative;
 
   .router_wrap {
-    position: relative;
+    @apply relative;
+  }
+
+  .set_interval {
+    @apply flex;
+    & > li {
+      &.active {
+        color: var(--color-primary-500);
+      }
+    }
   }
 }
