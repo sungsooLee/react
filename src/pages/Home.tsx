@@ -26,13 +26,38 @@ const Home = () => {
   }, []);
 
   const items = [
-    "React",
-    "Vue",
-    "Web Square",
-    "Typescript",
-    "Javascript",
-    "Scss",
-    "Tailwind",
+    {
+      iconName: "react",
+      label: "React",
+    },
+    {
+      iconName: "vue",
+      label: "Vue",
+    },
+    {
+      iconName: "js",
+      label: "Javascript",
+    },
+    {
+      iconName: "ts",
+      label: "Typescript",
+    },
+    {
+      iconName: "scss",
+      label: "Scss",
+    },
+    {
+      iconName: "tailwind",
+      label: "Tailwind",
+    },
+    {
+      iconName: "git",
+      label: "Git",
+    },
+    {
+      iconName: "figma",
+      label: "Figma",
+    },
   ];
 
   return (
@@ -55,13 +80,11 @@ const Home = () => {
                 key={`id-${index}`}
                 className={index === active ? styles.active : ""}
               >
-                {item}
+                <Icon name={item.iconName} size={"md"} />
+                {item.label}
               </li>
             ))}
           </ul>
-        </section>
-        <section>
-          <Icon name={"react"} size={"md"} />
         </section>
       </div>
     </Layout>
