@@ -25,7 +25,12 @@ const Home = () => {
     return () => clearInterval(id);
   }, []);
 
-  const items = [
+  interface Props {
+    iconName: string;
+    label: string;
+  }
+
+  const items: Props[] = [
     {
       iconName: "react",
       label: "React",
