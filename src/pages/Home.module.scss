@@ -6,7 +6,7 @@
   }
 
   .set_interval {
-    @apply flex;
+    @apply flex flex-col;
     & > li {
       &.active {
         color: var(--color-primary-500);

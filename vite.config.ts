@@ -1,17 +1,30 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import Pages from 'vite-plugin-pages'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import Pages from "vite-plugin-pages";
+import svgr from "@svgr/rollup";
+import path from "path";
 
 export default defineConfig({
   plugins: [
     react(),
     Pages({
-      dirs: 'src/pages',          // pages 폴더 위치
-      extensions: ['tsx', 'ts'],  // TSX 파일 자동 라우트
+      dirs: "src/pages", // pages 폴더 위치
+      extensions: ["tsx", "ts"], // TSX 파일 자동 라우트
+    }),
+    svgr({
+      svgrOptions: {
+        icon: true,
+      },
     }),
   ],
 
-  base: '/react/',
+  base: "/react/",
+
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "src"), // ✅ @ → src 폴더
+    },
+  },
 
   css: {
     devSourcemap: true, // ✅ 개발 환경에서 SCSS sourcemap 활성화
@@ -30,4 +43,4 @@ export default defineConfig({
   server: {
     port: 3000,
   },
-})
+});

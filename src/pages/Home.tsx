@@ -1,10 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
-import Layout from "../components/layout/Layout";
+import Layout from "@/components/layout/Layout";
 import cn from "classnames";
 import styles from "./Home.module.scss";
 import { Link, useNavigate } from "react-router-dom";
-import { ToggleButton } from "../components/common/ToggleButton";
+import { ToggleButton } from "@/components/common/ToggleButton";
+import { Icon } from "@/components/icons/Icon";
 
 const Home = () => {
   const navigate = useNavigate(); // 훅 호출
@@ -49,12 +50,18 @@ const Home = () => {
         </section>
         <section>
           <ul className={styles.set_interval}>
-            {items.map((item, i) => (
-              <li key={item} className={i === active ? styles.active : ""}>
+            {items.map((item, index) => (
+              <li
+                key={`id-${index}`}
+                className={index === active ? styles.active : ""}
+              >
                 {item}
               </li>
             ))}
           </ul>
+        </section>
+        <section>
+          <Icon name={"react"} size={"md"} />
         </section>
       </div>
     </Layout>

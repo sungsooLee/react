@@ -1,0 +1,11 @@
+.svg_icon {
+  &.sm {
+    @apply w-[18px] h-[18px];
+  }
+  &.md {
+    @apply w-[24px] h-[24px];
+  }
+  &.lg {
+    @apply w-[32px] h-[32px];
+  }
+}
