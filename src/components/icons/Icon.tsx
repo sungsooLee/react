@@ -4,7 +4,7 @@ import type { IconName } from "./index";
 import cn from "classnames";
 import styles from "./Icon.module.scss";
 
-type IconSize = "sm" | "md" | "lg";
+type IconSize = "xs" | "sm" | "md" | "lg" | "xl";
 
 interface IconProps {
   name: IconName;
@@ -14,9 +14,11 @@ interface IconProps {
 }
 
 const sizeMap = {
-  sm: 16,
+  xs: 16,
+  sm: 18,
   md: 24,
   lg: 32,
+  xl: 48,
 };
 
 export const Icon: React.FC<IconProps> = ({

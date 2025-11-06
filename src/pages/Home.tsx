@@ -43,8 +43,8 @@ const Home = () => {
       label: "Typescript",
     },
     {
-      iconName: "scss",
-      label: "Scss",
+      iconName: "sass",
+      label: "Sass",
     },
     {
       iconName: "tailwind",
@@ -80,7 +80,7 @@ const Home = () => {
                 key={`id-${index}`}
                 className={index === active ? styles.active : ""}
               >
-                <Icon name={item.iconName} size={"md"} />
+                <Icon name={item.iconName} size={"xl"} />
                 {item.label}
               </li>
             ))}

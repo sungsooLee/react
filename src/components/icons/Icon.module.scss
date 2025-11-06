@@ -1,4 +1,7 @@
 .svg_icon {
+  &.xs {
+    @apply w-[16px] h-[16px];
+  }
   &.sm {
     @apply w-[18px] h-[18px];
   }
@@ -7,5 +10,8 @@
   }
   &.lg {
     @apply w-[32px] h-[32px];
+  }
+  &.xl {
+    @apply w-[48px] h-[48px];
   }
 }
