@@ -90,6 +90,7 @@ const Home = () => {
               </li>
             ))}
           </ul>
+          <ToggleButton switchMode={true} />
         </section>
       </div>
     </Layout>

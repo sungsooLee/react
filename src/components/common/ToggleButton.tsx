@@ -5,6 +5,7 @@ import styles from "./ToggleButton.module.scss";
 interface ToggleButtonProps {
   initial?: boolean;
   label?: string;
+  switchMode?: boolean;
   onToggle?: (state: boolean) => void;
   className?: string;
 }
@@ -12,6 +13,7 @@ interface ToggleButtonProps {
 export const ToggleButton = ({
   initial = false,
   label,
+  switchMode = false,
   onToggle,
   className,
 }: ToggleButtonProps) => {
@@ -27,7 +29,12 @@ export const ToggleButton = ({
     <button
       type="button"
       onClick={handleClick}
-      className={cn(styles.btn, { [styles.active]: toggled }, className)}
+      className={cn(
+        styles.btn,
+        switchMode && styles.switch,
+        { [styles.active]: toggled },
+        className
+      )}
     >
       {label}
     </button>

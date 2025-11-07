@@ -1,6 +1,18 @@
 .btn {
-  @apply inline-flex;
+  @apply inline-flex items-center;
   &.active {
-    background-color: #ddd;
+    @apply bg-[#ddd];
+  }
+  &.switch {
+    @apply overflow-hidden relative min-w-[50px] h-[24px] bg-[#409eff] rounded-[12px] transition-all duration-[300ms] ease-in-out;
+    &::after {
+      @apply content-[''] absolute top-[3px] left-[3px] w-[18px] h-[18px] rounded-full bg-white translate-x-0 transition-transform duration-[300ms] [transition-timing-function:cubic-bezier(0.77,0,0.175,1)];
+    }
+    &.active {
+      @apply bg-[#dcdfe6];
+      &::after {
+        @apply translate-x-[26px];
+      }
+    }
   }
 }
