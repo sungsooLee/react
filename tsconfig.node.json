@@ -10,5 +10,5 @@
     "noEmit": false,
     "emitDeclarationOnly": true
   },
-  "include": ["node"]
+  "include": ["scripts"] // ✅ 존재하는 폴더로 변경, 또는 필요 없으면 references에서 삭제
 }

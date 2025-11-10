@@ -8,19 +8,16 @@
     "types": ["vite/client"],
     "skipLibCheck": true,
 
-    /* Bundler mode */
     "moduleResolution": "bundler",
-    "allowImportingTsExtensions": false, // emit 허용 시 false
+    "allowImportingTsExtensions": false,
     "verbatimModuleSyntax": true,
     "moduleDetection": "force",
     "jsx": "react-jsx",
 
-    /* 필수 */
     "composite": true,
-    "noEmit": false, // emit 가능해야 references 사용 가능
-    "emitDeclarationOnly": true, // 실제 JS emit 없이 선언 파일만 생성
+    "noEmit": false,
+    "emitDeclarationOnly": true,
 
-    /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
@@ -28,9 +25,10 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
 
-    /* 경로 alias */
     "baseUrl": ".",
-    "paths": { "@/*": ["src/*"] }
+    "paths": { "@/*": ["src/*"] },
+
+    "esModuleInterop": true // ✅ 추가
   },
   "include": ["src"]
 }
