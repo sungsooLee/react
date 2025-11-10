@@ -16,7 +16,7 @@
     "allowSyntheticDefaultImports": true,
 
     "composite": true,
-    "noEmit": true,
+    "noEmit": false,
     "emitDeclarationOnly": false,
 
     "strict": true,
