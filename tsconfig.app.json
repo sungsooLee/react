@@ -10,11 +10,15 @@
 
     /* Bundler mode */
     "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
+    "allowImportingTsExtensions": false, // emit 허용 시 false
     "verbatimModuleSyntax": true,
     "moduleDetection": "force",
-    "noEmit": true,
     "jsx": "react-jsx",
+
+    /* 필수 */
+    "composite": true,
+    "noEmit": false, // emit 가능해야 references 사용 가능
+    "emitDeclarationOnly": true, // 실제 JS emit 없이 선언 파일만 생성
 
     /* Linting */
     "strict": true,
@@ -24,11 +28,9 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
 
-    /* 추가: 경로 alias */
+    /* 경로 alias */
     "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"] // @ → src 폴더
-    }
+    "paths": { "@/*": ["src/*"] }
   },
   "include": ["src"]
 }

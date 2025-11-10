@@ -6,6 +6,7 @@ import styles from "./Home.module.scss";
 import { Link, useNavigate } from "react-router-dom";
 import { ToggleButton } from "@/components/common/ToggleButton";
 import { Icon } from "@/components/icons/Icon";
+import Carousel from "@/components/common/Carousel";
 
 const Home = () => {
   const navigate = useNavigate(); // 훅 호출
@@ -65,6 +66,26 @@ const Home = () => {
     },
   ];
 
+  interface slideProps {
+    label?: string;
+    imgSrc?: string;
+  }
+
+  const slideItems: slideProps[] = [
+    {
+      label: "슬라이드 1",
+      imgSrc: "https://loremflickr.com/600/400",
+    },
+    {
+      label: "슬라이드 2",
+      imgSrc: "https://loremflickr.com/600/400",
+    },
+    {
+      label: "슬라이드 3",
+      imgSrc: "https://loremflickr.com/600/400",
+    },
+  ];
+
   return (
     <Layout headerType="type1" footerType="type1">
       <div className={cn(styles.home)}>
@@ -91,6 +112,18 @@ const Home = () => {
             ))}
           </ul>
           <ToggleButton switchMode={true} />
+        </section>
+        <section>
+          <Carousel
+            items={slideItems.map((item, index) => (
+              <div className={styles.slide_item} key={`id-${index}`}>
+                {item.imgSrc && <img src={item.imgSrc} alt={item.label} />}
+                {item.label && <p className={styles.label}>{item.label}</p>}
+              </div>
+            ))}
+            slidesPerView={1}
+            spaceBetween={20}
+          />
         </section>
       </div>
     </Layout>

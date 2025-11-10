@@ -1,24 +1,22 @@
-@use '../../assets/styles/base/mixin' as *;
+@use "../../assets/styles/base/mixin" as *;
 .layout {
   &__wrap {
-    position: relative;
+    @apply relative;
     &:has(.layout__header) {
-      padding-top: 60px;
+      @apply pt-[60px];
     }
   }
   &__header {
     @apply fixed left-0 top-0 w-full h-[60px] shrink-0 bg-white;
     h1 {
-        text-align: center;
-        font-size: var(--font-size-20);
+      @apply text-center;
+      font-size: var(--font-size-20);
     }
   }
   &__container {
-    width: 100%;
+    @apply w-full;
   }
   &__footer {
-    width: 100%;
-    height: 100px;
-    flex-shrink: 0;
+    @apply w-full h-[100px] shrink-0;
   }
 }
