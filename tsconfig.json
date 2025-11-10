@@ -1,6 +1,8 @@
 {
-  "compilerOptions": {
-    "composite": false
-  },
+  // "files": [],
+  // "references": [
+  //   { "path": "./tsconfig.app.json" }
+  //   // { "path": "./tsconfig.node.json" }
+  // ],
   "include": ["src", "src/global.d.ts"]
 }
