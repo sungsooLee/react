@@ -13,6 +13,7 @@
     "verbatimModuleSyntax": true,
     "moduleDetection": "force",
     "jsx": "react-jsx",
+    "allowSyntheticDefaultImports": true,
 
     "composite": true,
     "noEmit": false,
