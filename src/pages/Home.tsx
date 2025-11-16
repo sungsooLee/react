@@ -107,7 +107,7 @@ const Home = () => {
                 className={index === active ? styles.active : ""}
               >
                 <Icon name={item.iconName} size={"xl"} />
-                {item.label}
+                <span className={styles.label}>{item.label}</span>
               </li>
             ))}
           </ul>

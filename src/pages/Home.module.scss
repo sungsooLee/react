@@ -9,7 +9,9 @@
     @apply flex flex-col;
     & > li {
       &.active {
-        color: var(--color-primary-500);
+        .label {
+          color: var(--color-primary-500);
+        }
       }
     }
   }
