@@ -7,7 +7,7 @@
     }
   }
   &__header {
-    @apply fixed left-0 top-0 w-full h-[60px] shrink-0 bg-white;
+    @apply fixed left-0 top-0 w-full h-[60px] bg-white flex justify-center items-center z-[5];
     h1 {
       @apply text-center;
       font-size: var(--font-size-20);

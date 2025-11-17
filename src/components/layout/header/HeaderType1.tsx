@@ -8,7 +8,7 @@ interface Props {
 const HeaderType1: React.FC<Props> = ({ className }) => {
   return (
     <header className={className}>
-      <h1>Header1</h1>
+      <h1>Portfolio</h1>
     </header>
   )
 }

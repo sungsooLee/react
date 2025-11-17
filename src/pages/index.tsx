@@ -44,17 +44,19 @@ const Portfolio = () => {
   ];
 
   return (
-    <Layout headerType="type1" footerType="type1">
+    <Layout headerType="type1" footerType="none">
       <div className={styles.portfolio}>
         {/* Hero Section */}
         <section className={styles.hero}>
           <div className={styles.hero_content}>
             <h1 className={styles.hero_title}>
               안녕하세요, <br />
-              <span className={styles.hero_name}>프론트엔드 개발자</span>입니다
+              <span className={styles.hero_name}>프론트엔드 개발자 이성수</span>
+              입니다.
             </h1>
             <p className={styles.hero_description}>
-              사용자 경험을 중시하며, 모던한 웹 기술로 의미 있는 프로덕트를 만드는 개발자입니다.
+              사용자 경험을 중시하며, 웹 접근성 준수와, 모던한 웹 기술로 의미
+              있는 프로덕트를 만드는 개발자입니다.
             </p>
             <div className={styles.hero_buttons}>
               <a href="#projects" className={styles.btn_primary}>
@@ -72,12 +74,14 @@ const Portfolio = () => {
           <h2 className={styles.section_title}>About Me</h2>
           <div className={styles.about_content}>
             <p>
-              프론트엔드 개발에 열정을 가진 개발자로, React와 TypeScript를 주로 사용합니다.
-              깔끔한 코드와 사용자 중심의 디자인을 추구하며, 지속적인 학습을 통해 성장하고 있습니다.
+              프론트엔드 개발에 열정을 가진 개발자로, React와 TypeScript를 주로
+              사용합니다. 깔끔한 코드와 사용자 중심의 디자인을 추구하며,
+              지속적인 학습을 통해 성장하고 있습니다.
             </p>
             <p>
-              팀 협업을 중시하며, 효율적인 개발 프로세스와 코드 품질 향상에 관심이 많습니다.
-              새로운 기술을 배우고 적용하는 것을 즐기며, 문제 해결을 위한 창의적인 접근을 좋아합니다.
+              팀 협업을 중시하며, 효율적인 개발 프로세스와 코드 품질 향상에
+              관심이 많습니다. 새로운 기술을 배우고 적용하는 것을 즐기며, 문제
+              해결을 위한 창의적인 접근을 좋아합니다.
             </p>
           </div>
         </section>
@@ -145,16 +149,12 @@ const Portfolio = () => {
             <div className={styles.contact_info}>
               <div className={styles.contact_item}>
                 <strong>Email:</strong>
-                <a href="mailto:your.email@example.com">your.email@example.com</a>
+                <a href="mailto:lsstmi@naver.com">lsstmi@naver.com</a>
               </div>
               <div className={styles.contact_item}>
                 <strong>GitHub:</strong>
-                <a
-                  href="https://github.com/yourusername"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  github.com/yourusername
+                <a href="https://github.com/sungsooLee/" target="_blank">
+                  github.com/sungsooLee/
                 </a>
               </div>
             </div>
@@ -166,4 +166,3 @@ const Portfolio = () => {
 };
 
 export default Portfolio;
-
