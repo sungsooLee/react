@@ -60,14 +60,10 @@
 
   // Section 공통 스타일
   .section {
-    @apply py-16 px-4;
-    max-width: 1200px;
-    margin: 0 auto;
+    @apply py-8 px-4 max-w-[1200px] mx-auto;
 
     .section_title {
-      @apply text-3xl md:text-4xl font-bold mb-12 text-center;
-      position: relative;
-      padding-bottom: 1rem;
+      @apply relative text-3xl md:text-4xl font-semibold mb-12 text-center pb-[1rem];
 
       &::after {
         content: "";
@@ -93,19 +89,15 @@
 
   // Skills Section
   .skills_grid {
-    @apply grid grid-cols-2 md:grid-cols-4 gap-8;
-    max-width: 800px;
-    margin: 0 auto;
+    @apply grid grid-cols-2 md:grid-cols-4 gap-8 mx-auto max-w-[800px];
   }
 
   .skill_item {
-    @apply flex flex-col items-center gap-3 p-6 rounded-lg;
-    background: #f8f9fa;
+    @apply flex flex-col items-center gap-3 p-6 rounded-lg bg-[#f8f9fa];
     transition: all 0.3s ease;
 
     &:hover {
-      @apply transform scale-110 shadow-lg;
-      background: white;
+      @apply transform scale-110 shadow-lg bg-white;
     }
 
     .skill_label {
@@ -153,13 +145,11 @@
     }
 
     .tag {
-      @apply px-3 py-1 rounded-full text-sm;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
+      @apply px-3 py-1 rounded-full text-sm text-gray-700 border-[1px] border-[text-gray-700];
     }
 
     .project_link {
-      @apply inline-flex items-center font-semibold text-purple-600;
+      @apply inline-flex items-center font-medium text-gray-600;
       transition: all 0.3s ease;
 
       &:hover {
@@ -189,7 +179,7 @@
     }
 
     a {
-      @apply text-purple-600 font-medium;
+      @apply text-gray-700 font-medium;
       transition: all 0.3s ease;
 
       &:hover {
@@ -202,12 +192,12 @@
 // 반응형 조정
 @media (max-width: 768px) {
   .portfolio {
-    .hero {
-      .hero_title {
+    .profile {
+      &_title {
         @apply text-3xl;
       }
 
-      .hero_description {
+      &_description {
         @apply text-base;
       }
     }
