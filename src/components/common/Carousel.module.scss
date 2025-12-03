@@ -3,5 +3,14 @@
     .slide_item {
       @apply relative;
     }
+    [class*="swiper-button-prev"] {
+      @apply bg-cover bg-center bg-[url("/react/src/assets/images/components/btn_prev.png")] bg-no-repeat;
+    }
+    [class*="swiper-button-next"] {
+      @apply bg-cover bg-center bg-[url("/react/src/assets/images/components/btn_next.png")] bg-no-repeat;
+    }
+    [class*="swiper-navigation-icon"] {
+      display: none;
+    }
   }
 }

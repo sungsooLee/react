@@ -1,4 +1,3 @@
-import React from "react";
 import Layout from "@/components/layout/Layout";
 import { Icon } from "@/components/icons/Icon";
 import type { IconName } from "@/components/icons";
@@ -21,24 +20,24 @@ const Portfolio = () => {
   // 프로젝트 데이터
   const projects = [
     {
-      title: "프로젝트 1",
-      description: "React와 TypeScript를 활용한 웹 애플리케이션",
+      title: "수협 사이버 직매장 리뉴얼",
+      description: "PC, 모바일 적응형 쇼핑몰 프로젝트",
       image: "https://loremflickr.com/800/600",
-      tags: ["React", "TypeScript", "SCSS"],
+      tags: ["Vue3", "TypeScript", "Element Plus", "SCSS", "Git", "Figma"],
       link: "#",
     },
     {
-      title: "프로젝트 2",
-      description: "반응형 디자인과 모던 UI/UX를 적용한 프로젝트",
+      title: "현대오토에버 교육 플랫폼 리뉴얼",
+      description: "PC, 모바일(BO, FO) 프로젝트",
       image: "https://loremflickr.com/800/600",
-      tags: ["Vue.js", "Tailwind CSS", "Figma"],
+      tags: ["React", "TypeScript", "Radix Ui", "Tailwind CSS", "Git", "Figma"],
       link: "#",
     },
     {
-      title: "프로젝트 3",
-      description: "사용자 경험을 중시한 인터랙티브 웹사이트",
+      title: "NH Pay 카드 리뉴얼(웹 접근성)",
+      description: "모바일 하이브리드 APP 프로젝트",
       image: "https://loremflickr.com/800/600",
-      tags: ["React", "Sass", "Git"],
+      tags: ["Vue3", "SCSS", "Git", "Figma"],
       link: "#",
     },
   ];
@@ -46,19 +45,21 @@ const Portfolio = () => {
   return (
     <Layout headerType="type1" footerType="none">
       <div className={styles.portfolio}>
-        {/* Hero Section */}
-        <section className={styles.hero}>
-          <div className={styles.hero_content}>
-            <h1 className={styles.hero_title}>
+        {/* Profile Section */}
+        <section className={styles.profile}>
+          <div className={styles.profile_content}>
+            <h1 className={styles.profile_title}>
               안녕하세요, <br />
-              <span className={styles.hero_name}>프론트엔드 개발자 이성수</span>
+              <span className={styles.profile_name}>
+                프론트엔드 개발자 이성수
+              </span>
               입니다.
             </h1>
-            <p className={styles.hero_description}>
+            <p className={styles.profile_description}>
               사용자 경험을 중시하며, 웹 접근성 준수와, 모던한 웹 기술로 의미
               있는 프로덕트를 만드는 개발자입니다.
             </p>
-            <div className={styles.hero_buttons}>
+            <div className={styles.profile_buttons}>
               <a href="#projects" className={styles.btn_primary}>
                 프로젝트 보기
               </a>
@@ -90,44 +91,44 @@ const Portfolio = () => {
         <section id="skills" className={styles.section}>
           <h2 className={styles.section_title}>Skills</h2>
           <div className={styles.skills_grid}>
-            {skills.map((skill, index) => (
+            {skills.map((item, index) => (
               <div key={index} className={styles.skill_item}>
-                <Icon name={skill.name} size="xl" />
-                <span className={styles.skill_label}>{skill.label}</span>
+                <Icon name={item.name} size="xl" />
+                <span className={styles.skill_label}>{item.label}</span>
               </div>
             ))}
           </div>
         </section>
 
-        {/* Projects Section */}
+        {/* Recent Projects Section */}
         <section id="projects" className={styles.section}>
-          <h2 className={styles.section_title}>Projects</h2>
+          <h2 className={styles.section_title}>Recent Projects</h2>
           <div className={styles.projects_wrapper}>
             <Carousel
-              items={projects.map((project, index) => (
+              items={projects.map((item, index) => (
                 <div key={index} className={styles.project_card}>
                   <div className={styles.project_image}>
-                    <img src={project.image} alt={project.title} />
+                    <img src={item.image} alt={item.title} />
                   </div>
                   <div className={styles.project_content}>
-                    <h3 className={styles.project_title}>{project.title}</h3>
+                    <h3 className={styles.project_title}>{item.title}</h3>
                     <p className={styles.project_description}>
-                      {project.description}
+                      {item.description}
                     </p>
                     <div className={styles.project_tags}>
-                      {project.tags.map((tag, tagIndex) => (
+                      {item.tags.map((tag, tagIndex) => (
                         <span key={tagIndex} className={styles.tag}>
                           {tag}
                         </span>
                       ))}
                     </div>
                     <a
-                      href={project.link}
+                      href={item.link}
                       className={styles.project_link}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      자세히 보기 →
+                      자세히 보기 <Icon name="arrow_right" size="sm" />
                     </a>
                   </div>
                 </div>

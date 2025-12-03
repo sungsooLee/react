@@ -3,22 +3,22 @@
   color: var(--color-text, #333);
 
   // Hero Section
-  .hero {
+  .profile {
     @apply relative py-20 px-4;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     text-align: center;
 
-    .hero_content {
+    &_content {
       @apply max-w-4xl mx-auto;
     }
 
-    .hero_title {
+    &_title {
       @apply text-4xl md:text-6xl font-bold mb-6;
       line-height: 1.2;
     }
 
-    .hero_name {
+    &_name {
       @apply block mt-2;
       background: linear-gradient(90deg, #fff 0%, #f0f0f0 100%);
       -webkit-background-clip: text;
@@ -26,14 +26,14 @@
       background-clip: text;
     }
 
-    .hero_description {
+    &_description {
       @apply text-lg md:text-xl mb-8 opacity-90;
       max-width: 600px;
       margin-left: auto;
       margin-right: auto;
     }
 
-    .hero_buttons {
+    &_buttons {
       @apply flex gap-4 justify-center flex-wrap;
     }
 
@@ -223,4 +223,3 @@
     }
   }
 }
-
