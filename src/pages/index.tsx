@@ -133,6 +133,7 @@ const Portfolio = () => {
                   </div>
                 </div>
               ))}
+              className={styles.slide_wrap}
               slidesPerView={1}
               spaceBetween={30}
               navigation={true}

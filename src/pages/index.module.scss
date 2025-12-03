@@ -4,18 +4,15 @@
 
   // Hero Section
   .profile {
-    @apply relative py-20 px-4;
+    @apply relative py-20 px-4 text-white text-center;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    text-align: center;
 
     &_content {
       @apply max-w-4xl mx-auto;
     }
 
     &_title {
-      @apply text-4xl md:text-6xl font-bold mb-6;
-      line-height: 1.2;
+      @apply text-4xl md:text-6xl font-bold mb-6 leading-[1.2];
     }
 
     &_name {
@@ -27,10 +24,7 @@
     }
 
     &_description {
-      @apply text-lg md:text-xl mb-8 opacity-90;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
+      @apply text-lg md:text-xl mb-8 opacity-90 max-w-[600px] mx-auto;
     }
 
     &_buttons {
@@ -39,8 +33,7 @@
 
     .btn_primary,
     .btn_secondary {
-      @apply px-6 py-3 rounded-lg font-semibold transition-all duration-300;
-      display: inline-block;
+      @apply px-6 py-3 rounded-lg font-semibold transition-all duration-300 inline-flex;
     }
 
     .btn_primary {
@@ -66,15 +59,7 @@
       @apply relative text-3xl md:text-4xl font-semibold mb-12 text-center pb-[1rem];
 
       &::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 60px;
-        height: 4px;
-        background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-        border-radius: 2px;
+        @apply content-[''] absolute bottom-0 left-1/2 -translate-x-1/2 w-[60px] h-[4px] rounded-[2px] bg-gradient-to-r from-[#667eea] to-[#764ba2];
       }
     }
   }
@@ -93,11 +78,16 @@
   }
 
   .skill_item {
-    @apply flex flex-col items-center gap-3 p-6 rounded-lg bg-[#f8f9fa];
-    transition: all 0.3s ease;
+    @apply flex flex-col items-center gap-3 p-6 rounded-lg bg-[#f8f9fa] transition-all duration-300 ease-in-out;
 
     &:hover {
       @apply transform scale-110 shadow-lg bg-white;
+    }
+
+    &:nth-child(2) {
+      svg {
+        @apply fill-[#333];
+      }
     }
 
     .skill_label {
@@ -111,17 +101,14 @@
   }
 
   .project_card {
-    @apply bg-white rounded-xl overflow-hidden shadow-lg;
-    transition: all 0.3s ease;
+    @apply bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300 ease-in-out;
 
     &:hover {
       @apply shadow-2xl transform scale-105;
     }
 
     .project_image {
-      @apply relative w-full;
-      padding-top: 56.25%; // 16:9 비율
-      overflow: hidden;
+      @apply relative w-full pt-[56.25%] overflow-hidden;
 
       img {
         @apply absolute top-0 left-0 w-full h-full object-cover;
@@ -149,12 +136,23 @@
     }
 
     .project_link {
-      @apply inline-flex items-center font-medium text-gray-600;
-      transition: all 0.3s ease;
+      @apply inline-flex items-center font-medium text-gray-600 transition-all duration-300 ease-in-out;
 
       &:hover {
         @apply text-purple-800 transform translate-x-2;
       }
+    }
+  }
+
+  .slide_wrap {
+    @apply relative;
+
+    [class*="swiper-button-prev"] {
+      @apply top-[40%];
+    }
+
+    [class*="swiper-button-next"] {
+      @apply top-[40%];
     }
   }
 
@@ -171,16 +169,14 @@
   }
 
   .contact_item {
-    @apply flex flex-col md:flex-row items-center justify-center gap-2 p-4 rounded-lg;
-    background: #f8f9fa;
+    @apply flex flex-col md:flex-row items-center justify-center gap-2 p-4 rounded-lg bg-[#f8f9fa];
 
     strong {
       @apply text-gray-800 font-semibold;
     }
 
     a {
-      @apply text-gray-700 font-medium;
-      transition: all 0.3s ease;
+      @apply text-gray-700 font-medium transition-all duration-300 ease-in-out;
 
       &:hover {
         @apply text-purple-800 underline;

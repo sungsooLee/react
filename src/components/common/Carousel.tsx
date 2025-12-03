@@ -19,6 +19,7 @@ interface CarouselProps {
   navigation?: boolean;
   pagination?: boolean;
   itemClassName?: string;
+  className?: string;
 }
 
 const Carousel: React.FC<CarouselProps> = ({
@@ -30,9 +31,10 @@ const Carousel: React.FC<CarouselProps> = ({
   navigation = false,
   pagination = false,
   itemClassName,
+  className,
 }) => {
   return (
-    <div className={styles.carousel}>
+    <div className={cn(styles.carousel, className)}>
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         navigation={navigation}
