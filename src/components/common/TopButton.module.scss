@@ -1,6 +1,9 @@
 .top {
   &_btn {
-    @apply overflow-hidden fixed right-[30px] bottom-[30px] flex items-center justify-center z-[5] bg-white w-[32px] h-[32px] rounded-full border-[1px] border-[var(--color-gray-500)];
+    @apply overflow-hidden fixed right-[30px] bottom-[0px] flex items-center justify-center z-[5] bg-white w-[32px] h-[32px] rounded-full border-[1px] border-[var(--color-gray-500)] opacity-0 transition-[bottom,opacity] duration-300 [transition-timing-function:cubic-bezier(0.25,0.1,0.25,1)];
+    &.active {
+      @apply bottom-[30px] opacity-100;
+    }
   }
   &_icon {
     @apply fill-[var(--color-gray-800)];
