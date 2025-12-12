@@ -1,3 +1,4 @@
+import React, { useEffect, useRef } from "react";
 import Layout from "@/components/layout/Layout";
 import { Icon } from "@/components/icons/Icon";
 import type { IconName } from "@/components/icons";
@@ -5,6 +6,32 @@ import Carousel from "@/components/common/Carousel";
 import styles from "./index.module.scss";
 
 const Portfolio = () => {
+  const sectionsRef = useRef<Array<HTMLElement | null>>([]);
+
+  useEffect(() => {
+    const currentSections = sectionsRef.current; // 로컬 변수에 복사
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            (entry.target as HTMLElement).classList.add(styles.active);
+          }
+        });
+      },
+      { threshold: 0.6 }
+    );
+
+    currentSections.forEach((section) => {
+      if (section) observer.observe(section);
+    });
+
+    return () => {
+      currentSections.forEach((section) => {
+        if (section) observer.unobserve(section);
+      });
+    };
+  }, []);
+
   // 기술 스택 데이터
   const skills: Array<{ name: IconName; label: string }> = [
     { name: "react", label: "React" },
@@ -46,7 +73,12 @@ const Portfolio = () => {
     <Layout headerType="type1" footerType="none">
       <div className={styles.portfolio}>
         {/* Profile Section */}
-        <section className={styles.profile}>
+        <section
+          ref={(el) => {
+            sectionsRef.current[0] = el;
+          }}
+          className={styles.profile}
+        >
           <div className={styles.profile_content}>
             <h1 className={styles.profile_title}>
               안녕하세요, <br />
@@ -71,7 +103,13 @@ const Portfolio = () => {
         </section>
 
         {/* About Section */}
-        <section id="about" className={styles.section}>
+        <section
+          ref={(el) => {
+            sectionsRef.current[1] = el;
+          }}
+          id="about"
+          className={styles.section}
+        >
           <h2 className={styles.section_title}>About Me</h2>
           <div className={styles.about_content}>
             <p>
@@ -88,7 +126,13 @@ const Portfolio = () => {
         </section>
 
         {/* Skills Section */}
-        <section id="skills" className={styles.section}>
+        <section
+          ref={(el) => {
+            sectionsRef.current[2] = el;
+          }}
+          id="skills"
+          className={styles.section}
+        >
           <h2 className={styles.section_title}>Skills</h2>
           <div className={styles.skills_grid}>
             {skills.map((item, index) => (
@@ -101,7 +145,13 @@ const Portfolio = () => {
         </section>
 
         {/* Recent Projects Section */}
-        <section id="projects" className={styles.section}>
+        <section
+          ref={(el) => {
+            sectionsRef.current[3] = el;
+          }}
+          id="projects"
+          className={styles.section}
+        >
           <h2 className={styles.section_title}>Recent Projects</h2>
           <div className={styles.projects_wrapper}>
             <Carousel
@@ -144,7 +194,13 @@ const Portfolio = () => {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className={styles.section}>
+        <section
+          ref={(el) => {
+            sectionsRef.current[4] = el;
+          }}
+          id="contact"
+          className={styles.section}
+        >
           <h2 className={styles.section_title}>Contact</h2>
           <div className={styles.contact_content}>
             <p>프로젝트 제안이나 협업 문의가 있으시면 언제든지 연락주세요.</p>
