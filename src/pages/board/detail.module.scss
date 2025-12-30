@@ -1,5 +1,5 @@
 .wrapper {
-  @apply w-[600px] mx-auto mt-10 font-sans;
+  @apply max-w-[600px] mx-auto mt-10 font-sans px-[16px];
 
   h1 {
     @apply text-2xl mb-4;
