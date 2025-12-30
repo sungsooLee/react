@@ -1,0 +1,38 @@
+.wrapper {
+  @apply w-[600px] mx-auto mt-10 font-sans;
+
+  h1 {
+    @apply text-center text-2xl mb-5;
+  }
+
+  .input,
+  .textarea {
+    @apply w-full p-2 mb-2 rounded border border-gray-300 text-sm;
+  }
+
+  .button {
+    @apply px-4 py-2 mr-2 bg-green-500 text-white rounded cursor-pointer;
+    &:hover {
+      @apply bg-green-600;
+    }
+  }
+
+  .board_list {
+    @apply list-none p-0 mt-5;
+
+    .board_item {
+      @apply flex justify-between items-center p-2 border-b;
+
+      a {
+        @apply no-underline font-bold text-gray-800;
+      }
+
+      .btn_delete {
+        @apply px-2 py-1 bg-red-500 text-white rounded cursor-pointer;
+        &:hover {
+          @apply bg-red-600;
+        }
+      }
+    }
+  }
+}

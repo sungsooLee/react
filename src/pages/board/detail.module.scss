@@ -1,0 +1,36 @@
+.wrapper {
+  @apply w-[600px] mx-auto mt-10 font-sans;
+
+  h1 {
+    @apply text-2xl mb-4;
+  }
+
+  p {
+    @apply text-base mb-4;
+  }
+
+  .button {
+    @apply px-3 py-1 rounded text-white cursor-pointer;
+  }
+
+  .btn_edit {
+    @apply bg-blue-500 hover:bg-blue-600;
+  }
+
+  .btn_save {
+    @apply bg-green-500 hover:bg-green-600;
+  }
+
+  .btn_cancel {
+    @apply bg-gray-500 hover:bg-gray-600;
+  }
+
+  .history_back {
+    @apply text-gray-800 no-underline hover:underline mt-5 inline-block;
+  }
+
+  input,
+  textarea {
+    @apply w-full p-2 mb-2 rounded border border-gray-300 text-sm;
+  }
+}
