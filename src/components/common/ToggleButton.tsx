@@ -3,7 +3,7 @@ import cn from "classnames";
 import styles from "./ToggleButton.module.scss";
 
 interface ToggleButtonProps {
-  initial?: boolean;
+  isActive?: boolean;
   label?: string;
   switchMode?: boolean;
   onToggle?: (state: boolean) => void;
@@ -11,13 +11,13 @@ interface ToggleButtonProps {
 }
 
 export const ToggleButton = ({
-  initial = false,
+  isActive = false,
   label,
   switchMode = false,
   onToggle,
   className,
 }: ToggleButtonProps) => {
-  const [toggled, setToggled] = useState(initial);
+  const [toggled, setToggled] = useState(isActive);
 
   const handleClick = () => {
     const newState = !toggled;
