@@ -96,7 +96,7 @@ const Home = () => {
           <button onClick={() => navigate("/")}>Index</button>
         </div>
         <section>
-          <ToggleButton initial={true} label={label} onToggle={handleClick} />
+          <ToggleButton isActive={true} label={label} onToggle={handleClick} />
           {visible && <div>visible</div>}
         </section>
         <section>
