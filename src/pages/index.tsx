@@ -36,9 +36,9 @@ const Portfolio = () => {
   // 기술 스택 데이터
   const skills: Array<{ name: IconName; label: string }> = [
     { name: "react", label: "React" },
+    { name: "vue", label: "Vue.js" },
     { name: "ts", label: "TypeScript" },
     { name: "js", label: "JavaScript" },
-    { name: "vue", label: "Vue.js" },
     { name: "sass", label: "Sass" },
     { name: "tailwind", label: "Tailwind CSS" },
     { name: "git", label: "Git" },
@@ -322,8 +322,8 @@ const Portfolio = () => {
           <div className={styles.profile_content}>
             <h1 className={styles.profile_title}>
               안녕하세요, <br />
-              <span className={styles.profile_name}>UI Publisher 이성수</span>
-              입니다.
+              <span className={styles.profile_name}>UI Publisher</span>
+              이성수 입니다.
             </h1>
             <p className={styles.profile_description}>
               사용자 경험을 중시하며, 웹 접근성 준수와, 모던한 웹 기술로 의미
