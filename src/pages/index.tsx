@@ -53,12 +53,14 @@ const Portfolio = () => {
       content: (
         <>
           <p>
-            2025.09 ~ 2025.12
             <strong>수협 사이버 수산물 직매장 구축 (Vue.js)</strong>
+            기간 : 2025.09 ~ 2025.12 <br />
+            역할 : 공통 컴포넌트 및 고객센터, 온라인 몰 메뉴 화면 퍼블리싱
           </p>
           <p>
-            2025.01 ~ 2025.08
             <strong>현대오토에버 교육 플랫폼 구축 (React.js)</strong>
+            기간 : 2025.01 ~ 2025.08 <br />
+            역할 : 공통 컴포넌트 및 관리자, 프론트 화면 퍼블리싱
           </p>
         </>
       ),
@@ -68,8 +70,9 @@ const Portfolio = () => {
       content: (
         <>
           <p>
-            2024.04 ~ 2024.10
             <strong>NH농협카드 모바일앱 구축(Vue.js)</strong>
+            기간 : 2024.04 ~ 2024.10 <br />
+            역할 : 카드, 결제 메뉴 담당
           </p>
         </>
       ),
@@ -79,16 +82,19 @@ const Portfolio = () => {
       content: (
         <>
           <p>
-            2023.02 ~2023.05
             <strong>라이나생명보험 구축(Vue.js)</strong>
+            기간 : 2023.02 ~2023.05 <br />
+            역할 : 웹 접근성 및 상품 화면 담당
           </p>
           <p>
-            2023.06 ~2023.10
             <strong> KB Pay 라이프 구축</strong>
+            기간 : 2023.06 ~2023.10 <br />
+            역할 : 쇼핑, 여행 카테고리 화면 담당
           </p>
           <p>
-            2023.11 ~2024.03
             <strong>일본UI뱅크 모바일 구축(웹스퀘어)</strong>
+            기간 : 2023.11 ~2024.03 <br />
+            역할 : 프론트 화면 퍼블리싱
           </p>
         </>
       ),
@@ -98,12 +104,14 @@ const Portfolio = () => {
       content: (
         <>
           <p>
-            2022.03 ~2022.10
             <strong>신한은행 NEWAPP SOL 구축</strong>
+            기간 : 2022.03 ~2022.10 <br />
+            역할 : 퍼블팀 PL
           </p>
           <p>
-            2022.11 ~2023.02
             <strong>롯데손해보험 MARS 구축</strong>
+            기간 : 2022.11 ~2023.02 <br />
+            역할 : 통합 테스트 및 개선사항 지원
           </p>
         </>
       ),
@@ -113,8 +121,9 @@ const Portfolio = () => {
       content: (
         <>
           <p>
-            2021.12 ~2022.02
             <strong>KB카드 Wallet 구축</strong>
+            기간 : 2021.12 ~2022.02 <br />
+            역할 : 퍼블팀 PL
           </p>
         </>
       ),
@@ -124,8 +133,8 @@ const Portfolio = () => {
       content: (
         <>
           <p>
-            2019.01 ~2021.10
             <strong>메리츠화재 운영</strong>
+            기간 : 2019.01 ~2021.10
           </p>
         </>
       ),
@@ -135,13 +144,13 @@ const Portfolio = () => {
       content: (
         <>
           <p>
-            2018.01 ~ 2018.03 <strong>할리스 리뉴얼</strong>
+            <strong>할리스 리뉴얼</strong> 기간 : 2018.01 ~ 2018.03
           </p>
           <p>
-            2018.04 ~ 2018.07 <strong>신세계면세점 메인 개편</strong>
+            <strong>신세계면세점 메인 개편</strong> 기간 : 2018.04 ~ 2018.07
           </p>
           <p>
-            2018.08 ~ 2018.12 <strong>신세계면세점 운영</strong>
+            <strong>신세계면세점 운영</strong> 기간 : 2018.08 ~ 2018.12
           </p>
         </>
       ),
@@ -151,22 +160,22 @@ const Portfolio = () => {
       content: (
         <>
           <p>
-            2017.02 ~ 2017.05 <strong>리쏘빌 구축 </strong>
+            <strong>리쏘빌 구축 </strong>기간 : 2017.02 ~ 2017.05
           </p>
           <p>
-            2017.06 ~ 2017.09 <strong>엔나이스 1.5ver</strong>
+            <strong>엔나이스 1.5ver</strong>기간 : 2017.06 ~ 2017.09
           </p>
           <p>
-            2017.08 ~ 2017.09 <strong>위드미 리뉴얼 </strong>
+            <strong>위드미 리뉴얼 </strong>기간 : 2017.08 ~ 2017.09
           </p>
           <p>
-            2017.07 ~ 2017.10 <strong>토이킹덤 </strong>
+            <strong>토이킹덤 </strong>기간 : 2017.07 ~ 2017.10
           </p>
           <p>
-            2017.10 ~ 2017.12 <strong>롯데브랜드 PC 구축 </strong>
+            <strong>롯데브랜드 PC 구축 </strong>기간 : 2017.10 ~ 2017.12
           </p>
           <p>
-            2017.12 ~ 2018.01 <strong>AHC 영문작업 </strong>
+            <strong>AHC 영문작업 </strong>기간 : 2017.12 ~ 2018.01
           </p>
         </>
       ),
@@ -176,13 +185,13 @@ const Portfolio = () => {
       content: (
         <>
           <p>
-            2016.03 ~ 2016.05 <strong>Nice app 구축 </strong>
+            <strong>Nice app 구축 </strong> 기간 : 2016.03 ~ 2016.05
           </p>
           <p>
-            2016.05 ~ 2017.08 <strong>Hapsode 구축</strong>
+            <strong>Hapsode 구축</strong> 기간 : 2016.05 ~ 2017.08
           </p>
           <p>
-            2016.10 ~ 2016.12 <strong>디즈니캘린더</strong>
+            <strong>디즈니캘린더</strong> 기간 : 2016.10 ~ 2016.12
           </p>
         </>
       ),
@@ -192,10 +201,10 @@ const Portfolio = () => {
       content: (
         <>
           <p>
-            2015.06 ~ 2015.08 <strong>LG생활건강 빌리빙 구축</strong>
+            <strong>LG생활건강 빌리빙 구축</strong> 기간 : 2015.06 ~ 2015.08
           </p>
           <p>
-            2015.08 ~ 2016.02 <strong>Luxewater(중국브랜드) 구축</strong>
+            <strong>Luxewater(중국브랜드) 구축</strong> 기간 : 2015.08 ~ 2016.02
           </p>
         </>
       ),
@@ -205,14 +214,12 @@ const Portfolio = () => {
       content: (
         <>
           <p>
-            2014.01 ~ 2014.06
-            <strong>외환은행 기업뱅킹 리뉴얼 프로젝트 </strong>
+            <strong>외환은행 기업뱅킹 리뉴얼 프로젝트 </strong> 기간 : 2014.01 ~
+            2014.06
           </p>
           <p>
-            2014.07 ~ 2014.11 <strong>KB국민카드 모바일 리뉴얼 프로젝트</strong>
-          </p>
-          <p>
-            2015.05 <strong>KB인베스트먼트 ERP리뉴얼 프로젝트</strong>
+            <strong>KB국민카드 모바일 리뉴얼 프로젝트</strong> 기간 : 2014.07 ~
+            2014.11
           </p>
         </>
       ),
@@ -222,27 +229,27 @@ const Portfolio = () => {
       content: (
         <>
           <p>
-            2013.01 ~ 2013.04
             <strong>
               SC제일은행 온라인 뱅킹 Revamp 프로젝트(모바일,반응형)
             </strong>
+            기간 : 2013.01 ~ 2013.04
           </p>
           <p>
-            2013.05 ~ 2013.05
             <strong>LG CNS 프로젝트 컨텐츠 및 가이드 기업 메인 작업</strong>
+            기간 : 2013.05 ~ 2013.05
           </p>
           <p>
-            2013.05 ~ 2013.05
-            <strong>모우소셜컴즈 관리자 메인 및 컨텐츠 페이지 작업</strong>
+            <strong>모우소셜컴즈 관리자 메인 및 컨텐츠 페이지 작업</strong> 기간
+            : 2013.05 ~ 2013.05
           </p>
           <p>
-            2013.06 ~ 2013.09
             <strong>
               산업은행 인터넷 홈페이지 뱅킹 구축 프로젝트 기업뱅킹
             </strong>
+            기간 : 2013.06 ~ 2013.09
           </p>
           <p>
-            2013.10 ~ 2014.01<strong>농협 A마켓 리뉴얼 프로젝트</strong>
+            <strong>농협 A마켓 리뉴얼 프로젝트</strong> 기간 : 2013.10 ~ 2014.01
           </p>
         </>
       ),
@@ -252,7 +259,8 @@ const Portfolio = () => {
       content: (
         <>
           <p>
-            2012.07 ~ 2012.10<strong>농협 e-금융 확대개발 퍼블리싱 작업</strong>
+            <strong>농협 e-금융 확대개발 퍼블리싱 작업</strong> 기간 : 2012.07 ~
+            2012.10
           </p>
         </>
       ),
@@ -314,9 +322,7 @@ const Portfolio = () => {
           <div className={styles.profile_content}>
             <h1 className={styles.profile_title}>
               안녕하세요, <br />
-              <span className={styles.profile_name}>
-                프론트엔드 UI 개발자(Publisher) 이성수
-              </span>
+              <span className={styles.profile_name}>UI Publisher 이성수</span>
               입니다.
             </h1>
             <p className={styles.profile_description}>
