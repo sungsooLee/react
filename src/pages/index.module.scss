@@ -2,7 +2,7 @@
   @apply min-h-screen;
   color: var(--color-text, #333);
 
-  // Hero Section
+  // profile Section
   .profile {
     @apply relative py-20 px-4 text-white text-center;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -84,9 +84,9 @@
   .skill_item {
     @apply flex flex-col items-center gap-3 p-6 rounded-lg bg-[#f8f9fa] transition-all duration-300 ease-in-out;
 
-    &:hover {
-      @apply transform scale-110 shadow-lg bg-white;
-    }
+    // &:hover {
+    //   @apply transform scale-110 shadow-lg bg-white;
+    // }
 
     &:nth-child(2) {
       svg {

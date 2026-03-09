@@ -1,0 +1,56 @@
+.accordion {
+  @apply flex flex-col gap-4;
+}
+
+.accordion_item {
+  @apply border border-gray-200 rounded-xl overflow-hidden;
+}
+
+.accordion_header {
+  @apply w-full flex justify-between items-center p-[16px] font-semibold bg-white cursor-pointer;
+}
+
+.icon {
+  @apply text-lg text-gray-400 rotate-0 transition-transform duration-300 ease-in-out;
+
+  &.active {
+    @apply -rotate-180;
+  }
+}
+
+.accordion_content {
+  height: 0;
+  overflow: hidden;
+
+  transition:
+    height 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.3s ease;
+
+  opacity: 0;
+}
+
+.open {
+  @apply opacity-100 !h-auto;
+}
+
+.inner {
+  @apply p-[16px] pt-0 opacity-0;
+  transform: translateY(-8px);
+
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+  strong {
+    @apply block;
+  }
+
+  p {
+    & + p {
+      @apply mt-[8px];
+    }
+  }
+}
+
+.open .inner {
+  transform: translateY(0);
+  @apply opacity-100;
+}
