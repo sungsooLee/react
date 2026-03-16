@@ -10,7 +10,7 @@
       @apply bg-cover bg-center bg-[url("@/assets/images/components/btn_next.png")] bg-no-repeat;
     }
     [class*="swiper-navigation-icon"] {
-      display: none;
+      @apply hidden;
     }
   }
 }

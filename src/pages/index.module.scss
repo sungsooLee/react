@@ -70,7 +70,7 @@
 
   // About Section
   .about_content {
-    @apply max-w-3xl mx-auto text-center space-y-4;
+    @apply max-w-3xl mx-auto text-left space-y-4;
     p {
       @apply text-lg leading-relaxed text-gray-700;
     }
@@ -101,15 +101,15 @@
 
   // Projects Section
   .projects_wrapper {
-    @apply max-w-5xl mx-auto;
+    @apply max-w-5xl mx-auto pb-[30px];
   }
 
   .project_card {
-    @apply bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300 ease-in-out;
+    @apply bg-white overflow-hidden border-solid border-gray-100 border-[1px] rounded-xl transition-all duration-300 ease-in-out;
 
-    &:hover {
-      @apply shadow-2xl transform scale-105;
-    }
+    // &:hover {
+    //   @apply shadow-2xl transform scale-105;
+    // }
 
     .project_image {
       @apply relative w-full pt-[56.25%] overflow-hidden;
@@ -120,7 +120,7 @@
     }
 
     .project_content {
-      @apply p-6;
+      @apply overflow-hidden p-6 border-gray-100 border-t-[1px];
     }
 
     .project_title {
@@ -128,11 +128,11 @@
     }
 
     .project_description {
-      @apply text-gray-600 mb-4 leading-relaxed;
+      @apply text-gray-600 leading-relaxed;
     }
 
     .project_tags {
-      @apply flex flex-wrap gap-2 mb-4;
+      @apply flex flex-wrap gap-2 mt-2 mb-2;
     }
 
     .tag {

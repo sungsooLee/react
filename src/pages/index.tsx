@@ -5,6 +5,11 @@ import type { IconName } from "@/components/icons";
 import Carousel from "@/components/common/Carousel";
 import Accordion from "@/components/common/Accordion";
 import styles from "./index.module.scss";
+import slideImg from "@/assets/images/sh_shopping.jpg";
+import slideImg2 from "@/assets/images/hd_auto.jpg";
+import slideImg3 from "@/assets/images/nh_pay.jpg";
+import slideImg4 from "@/assets/images/ui_bank.jpg";
+import slideImg5 from "@/assets/images/kb_pay.jpg";
 
 const Portfolio = () => {
   const sectionsRef = useRef<Array<HTMLElement | null>>([]);
@@ -273,7 +278,7 @@ const Portfolio = () => {
       title: "수협 사이버 직매장 리뉴얼",
       description: "PC, 모바일 적응형 쇼핑몰 프로젝트",
       term: "2025.8 ~ 2025.12",
-      image: "https://loremflickr.com/800/600",
+      image: slideImg,
       tags: ["Vue3", "TypeScript", "Element Plus", "SCSS", "Git", "Figma"],
       link: "https://www.shshopping.co.kr/shypMall/display",
     },
@@ -281,7 +286,7 @@ const Portfolio = () => {
       title: "현대오토에버 교육 플랫폼 리뉴얼",
       description: "PC, 모바일(BO, FO) 프로젝트",
       term: "2025.1 ~ 2025.8",
-      image: "https://loremflickr.com/800/600",
+      image: slideImg2,
       tags: ["React", "TypeScript", "Radix Ui", "Tailwind CSS", "Git", "Figma"],
       link: "#",
     },
@@ -289,23 +294,25 @@ const Portfolio = () => {
       title: "NH Pay 카드 리뉴얼(웹 접근성)",
       description: "모바일 하이브리드 APP 프로젝트",
       term: "2024.4 ~ 2024.10",
-      image: "https://loremflickr.com/800/600",
+      image: slideImg3,
       tags: ["Vue3", "SCSS", "Git", "Figma"],
       link: "#",
     },
     {
       title: "신한은행 UI뱅크",
       description: "일본 다국어 모바일 하이브리드 APP 프로젝트",
-      image: "https://loremflickr.com/800/600",
+      term: "2023.11 ~ 2024.03",
+      image: slideImg4,
       tags: ["웹스퀘어", "CSS", "SVN", "Figma"],
       link: "#",
     },
     {
       title: "KB Pay 쇼핑/여행 APP 프로젝트",
       description: "KB PAY 모바일 하이브리드 APP 프로젝트",
-      image: "https://loremflickr.com/800/600",
+      term: "2023.06 ~ 2023.10",
+      image: slideImg5,
       tags: ["HTML", "JAVASCRIPT", "CSS", "SVN"],
-      link: "#",
+      link: "https://nhpay.nonghyup.com/",
     },
   ];
 
