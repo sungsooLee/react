@@ -9,7 +9,8 @@ type IconSize = "xs" | "sm" | "md" | "lg" | "xl";
 interface IconProps {
   name: IconName;
   size?: IconSize;
-  color?: string;
+  fillColor?: string;
+  strokeColor?: string;
   className?: string;
 }
 
@@ -24,7 +25,8 @@ const sizeMap = {
 export const Icon: React.FC<IconProps> = ({
   name,
   size = "md",
-  color = "currentColor",
+  fillColor = "currentColor",
+  strokeColor = "currentColor",
   className,
 }) => {
   const SvgIcon = iconMap[name];
@@ -39,7 +41,8 @@ export const Icon: React.FC<IconProps> = ({
     <SvgIcon
       width={iconSize}
       height={iconSize}
-      fill={color}
+      fill={fillColor}
+      stroke={strokeColor}
       className={cn(styles.svg_icon, styles[size], className)}
     />
   );
