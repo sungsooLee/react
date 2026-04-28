@@ -1,0 +1,71 @@
+.wrapper {
+  padding: 20px;
+  font-family: sans-serif;
+}
+
+.title {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.search {
+  margin-bottom: 10px;
+  padding: 6px 8px;
+  border: 1px solid #ccc;
+}
+
+.statsBox {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.graph {
+  display: flex;
+  height: 6px;
+  margin-bottom: 12px;
+  background: #eee;
+}
+
+.completed {
+  background: #4caf50;
+}
+
+.remaining {
+  background: #ddd;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+
+  th,
+  td {
+    border: 1px solid #e5e5e5;
+    padding: 8px;
+  }
+
+  th {
+    background: #fafafa;
+  }
+}
+
+.name {
+  text-align: left;
+}
+
+/* ✅ 상태 클래스 */
+.status-complete {
+  color: #4caf50;
+  font-weight: 600;
+}
+
+.status-progress {
+  color: #2196f3;
+}
+
+.status-wait {
+  color: #999;
+}
