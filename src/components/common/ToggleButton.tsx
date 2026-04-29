@@ -33,7 +33,7 @@ export const ToggleButton = ({
         styles.btn,
         switchMode && styles.switch,
         { [styles.active]: toggled },
-        className
+        className,
       )}
     >
       {label}
