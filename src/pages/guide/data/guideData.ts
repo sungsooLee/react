@@ -4,19 +4,20 @@ export const guideData: ListItem[] = [
   // 퍼블 작업리스트
   // 완료시 completionDate 에 날짜를 기입해주세요. (ex.2026-05-11)
 
-  // screenName: 화면명
-  // pageId: 화면 ID
-  // screenId: 스크린아이디
+  // menuName: 메뉴명(공통, 마이페이지 등등)
+  // screenName: 화면경로(뎁스표기)
+  // pageId: 화면명
+  // pageId: 화면아이디
   // pageType: 페이지 타입 Page,Pop-up
   // completionDate: 완료일
   // lastUpdateDate: 수정일
   // remarks: 비고
   {
     id: 1,
-    // depth: 1,
-    screenName: "메인",
+    menuName: "공통",
+    screenName: "팝업",
+    pageLink: "",
     pageId: "",
-    screenId: "",
     pageType: "Page",
     completionDate: "",
     lastUpdateDate: "",
@@ -24,10 +25,10 @@ export const guideData: ListItem[] = [
   },
   {
     id: 2,
-    // depth: 2,
+    menuName: "",
     screenName: "헤더",
+    pageLink: "",
     pageId: "",
-    screenId: "",
     pageType: "Component",
     completionDate: "2025-04-15",
     lastUpdateDate: "",
@@ -35,10 +36,10 @@ export const guideData: ListItem[] = [
   },
   {
     id: 3,
-    // depth: 3,
+    menuName: "",
     screenName: "네비게이션",
+    pageLink: "",
     pageId: "",
-    screenId: "",
     pageType: "Component",
     completionDate: "",
     lastUpdateDate: "",
@@ -46,10 +47,10 @@ export const guideData: ListItem[] = [
   },
   {
     id: 4,
-    // depth: 4,
+    menuName: "",
     screenName: "드롭다운",
+    pageLink: "",
     pageId: "",
-    screenId: "",
     pageType: "Component",
     completionDate: "",
     lastUpdateDate: "",
@@ -57,10 +58,10 @@ export const guideData: ListItem[] = [
   },
   {
     id: 5,
-    // depth: 5,
+    menuName: "",
     screenName: "서브메뉴",
+    pageLink: "",
     pageId: "",
-    screenId: "",
     pageType: "Component",
     completionDate: "",
     lastUpdateDate: "",
@@ -68,10 +69,10 @@ export const guideData: ListItem[] = [
   },
   {
     id: 6,
-    // depth: 6,
+    menuName: "",
     screenName: "상세링크",
-    pageId: "/detail",
-    screenId: "detail",
+    pageLink: "/detail",
+    pageId: "detail",
     pageType: "Page",
     completionDate: "",
     lastUpdateDate: "",

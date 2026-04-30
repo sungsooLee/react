@@ -1,8 +1,10 @@
 import React, { useMemo, useState } from "react";
-import "./guide.scss";
+
 import { guideData } from "./data/guideData";
 import { ListItem } from "./type/guide";
 import { Link } from "react-router-dom";
+import cn from "classnames";
+import "./guide.scss";
 
 /* 상태 계산 */
 const getStatus = (item: ListItem) => {
@@ -92,15 +94,26 @@ const TaskList: React.FC = () => {
       {/* 🔥 테이블 */}
       <div className="table-wrap">
         <table className="table">
+          <colgroup>
+            <col style={{ width: "200px" }} />
+            <col />
+            <col style={{ width: "300px" }} />
+            <col style={{ width: "150px" }} />
+            <col style={{ width: "150px" }} />
+            <col style={{ width: "150px" }} />
+            <col style={{ width: "150px" }} />
+            <col />
+          </colgroup>
           <thead>
             <tr>
-              <th>스크린명</th>
-              <th>페이지</th>
-              <th>타입</th>
-              <th>완료일</th>
-              <th>수정일</th>
-              <th>비고</th>
-              <th>상태</th>
+              <th>메뉴명</th>
+              <th>화면경로</th>
+              <th>화면ID</th>
+              <th className={"center"}>타입</th>
+              <th className={"center"}>완료일</th>
+              <th className={"center"}>수정일</th>
+              <th className={"center"}>상태</th>
+              <th className={"center"}>비고</th>
             </tr>
           </thead>
 
@@ -110,23 +123,25 @@ const TaskList: React.FC = () => {
 
               return (
                 <tr key={item.id}>
+                  <td>{item.menuName}</td>
                   <td className="name">{item.screenName}</td>
 
                   <td>
-                    {item.pageId && (
-                      <Link to={item.pageId} className="link">
-                        {item.pageId}
+                    {item.pageLink && (
+                      <Link to={item.pageLink} className="link">
+                        {item.pageLink}
                       </Link>
                     )}
-                    {item.screenId && <span> ({item.screenId})</span>}
+                    {item.pageId && <span> ({item.pageId})</span>}
                   </td>
 
-                  <td>{item.pageType}</td>
-                  <td>{item.completionDate || "-"}</td>
-                  <td>{item.lastUpdateDate || "-"}</td>
-                  <td>{item.remarks}</td>
-
-                  <td className={statusClassMap[status]}>{status}</td>
+                  <td className={"center"}>{item.pageType}</td>
+                  <td className={"center"}>{item.completionDate || "-"}</td>
+                  <td className={"center"}>{item.lastUpdateDate || "-"}</td>
+                  <td className={cn(statusClassMap[status], "center")}>
+                    {status}
+                  </td>
+                  <td className={"center"}>{item.remarks}</td>
                 </tr>
               );
             })}

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { ToggleButton } from "@/components/common/ToggleButton";
-import "./guide-page.scss";
+import "./guide.scss";
 
 const ToggleGuide = () => {
   const [state, setState] = useState(false);
@@ -21,7 +21,7 @@ const ToggleGuide = () => {
   return (
     <div className="guide-detail">
       <h2>Toggle Button</h2>
-      <p>상태를 토글하는 버튼 컴포넌트입니다.</p>
+      <p>토글 기능이 있는 버튼 컴포넌트입니다.</p>
 
       {/* Preview */}
       <div className="section">

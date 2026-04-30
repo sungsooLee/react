@@ -1,9 +1,9 @@
 export interface ListItem {
   id: number;
-  // depth: number;
+  menuName: string;
   screenName: string;
+  pageLink: string;
   pageId: string;
-  screenId: string;
   pageType: string;
   completionDate: string;
   lastUpdateDate: string;
