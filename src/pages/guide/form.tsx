@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FormGroup } from "@/components/common/form/formGroup";
 import { FormItem } from "@/components/common/form/formItem";
+import { Textarea } from "@/components/common/textarea/textarea";
 import cn from "classnames";
 import styles from "@/components/common/form/form.module.scss";
 import "./guide.scss";
@@ -8,6 +9,7 @@ import "./guide.scss";
 const FormGuide = () => {
   const [userId, setUserId] = useState("");
   const [phone, setPhone] = useState("");
+  const [comment, setComment] = useState("");
 
   const code = `import { FormGroup } from "@/components/common/form/FormGroup";
 import { FormItem } from "@/components/common/form/FormItem";
@@ -19,6 +21,7 @@ import { FormItem } from "@/components/common/form/FormItem";
     type="text" 
     placeholder="아이디를 입력하세요"
     guideText="영문, 숫자 조합 8자 이상"
+    isRequired
     >
     {(fields) => (
         <div className={styles.inputBox}>
@@ -64,13 +67,10 @@ import { FormItem } from "@/components/common/form/FormItem";
           <FormGroup>
             {/* 기본 케이스 */}
             <FormItem
-              label={
-                <span>
-                  아이디 <em style={{ color: "red" }}>*</em>
-                </span>
-              }
+              label={<span>아이디</span>}
               guideText="영문, 숫자 조합 8자 이상 입력해주세요."
               value={userId} // value 제어는 상위에서
+              isRequired
             >
               {(fields) => (
                 <div className={styles.inputBox}>
@@ -118,6 +118,23 @@ import { FormItem } from "@/components/common/form/FormItem";
                     인증번호 발송
                   </button>
                 </>
+              )}
+            </FormItem>
+
+            {/* textarea 케이스 */}
+            <FormItem
+              label="상세 의견"
+              isRequired
+              value={comment} // 현재 입력값 전달
+            >
+              {(fields) => (
+                <Textarea
+                  {...fields} // id, placeholder, type, value가 한 번에 전달됨
+                  showCount
+                  maxLength={500}
+                  canResize={false}
+                  onChange={(e) => setComment(e.target.value)}
+                />
               )}
             </FormItem>
           </FormGroup>

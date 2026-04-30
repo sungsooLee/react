@@ -15,6 +15,7 @@ interface FormItemProps {
   // children은 위에서 정의한 RenderPropsArgs를 인자로 받는 함수여야 함
   children: (args: RenderPropsArgs) => ReactNode;
   type?: string;
+  isRequired?: boolean;
   placeholder?: string;
   value?: string;
   guideText?: string;
@@ -27,6 +28,7 @@ export const FormItem = ({
   label,
   children,
   type = "text",
+  isRequired,
   placeholder = "입력해주세요",
   value,
   guideText,
@@ -41,7 +43,9 @@ export const FormItem = ({
       {/* 1. Label 영역: useId로 생성된 ID를 htmlFor에 연결 */}
       {label && (
         <div className={styles.labelPart}>
-          <label htmlFor={generatedId}>{label}</label>
+          <label htmlFor={generatedId}>
+            {label} {isRequired && <em className={styles.required}>*</em>}
+          </label>
         </div>
       )}
 
@@ -56,15 +60,17 @@ export const FormItem = ({
       </div>
 
       {/* 3. Message 영역: 에러 -> 성공 -> 가이드 순으로 우선순위 노출 */}
-      <div className={styles.messagePart}>
-        {errorText ? (
-          <p className={styles.error}>{errorText}</p>
-        ) : successText ? (
-          <p className={styles.success}>{successText}</p>
-        ) : (
-          guideText && <p className={styles.guide}>{guideText}</p>
-        )}
-      </div>
+      {(errorText || successText || guideText) && (
+        <div className={styles.message_area}>
+          {errorText ? (
+            <p className={styles.error}>{errorText}</p>
+          ) : successText ? (
+            <p className={styles.success}>{successText}</p>
+          ) : (
+            <p className={styles.guide}>{guideText}</p>
+          )}
+        </div>
+      )}
     </div>
   );
 };

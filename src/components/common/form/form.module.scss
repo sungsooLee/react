@@ -21,6 +21,12 @@
     font-size: 14px;
     font-weight: 700;
     min-height: 20px;
+
+    .required {
+      margin-left: 4px;
+      color: #ff4d4f;
+      font-style: normal;
+    }
   }
 
   .fieldPart {
@@ -50,7 +56,7 @@
     }
   }
 
-  .messagePart {
+  .message_area {
     min-height: 18px;
     font-size: 12px;
     .guide {

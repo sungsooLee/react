@@ -300,7 +300,10 @@
 
 .guide-detail p {
   color: #6b7280;
-  margin-bottom: 20px;
+
+  & + .section {
+    margin-top: 28px;
+  }
 }
 
 /* 섹션 */
