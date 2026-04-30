@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./guide.scss";
 import ToggleButton from "./toggle-button";
+import form from "./form";
 import Icon from "./icon";
 
 type GuideItem = {
@@ -20,6 +21,11 @@ const guideList: GuideItem[] = [
     key: "icons",
     label: "Icons", // 👈 아이콘 가이드 추가
     component: Icon,
+  },
+  {
+    key: "form",
+    label: "Form", // 👈 아이콘 가이드 추가
+    component: form,
   },
   // 👉 계속 추가
   // { key: "button", label: "Button", component: ButtonGuide },
