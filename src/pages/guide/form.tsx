@@ -68,9 +68,9 @@ import { FormItem } from "@/components/common/form/FormItem";
             {/* 기본 케이스 */}
             <FormItem
               label={<span>아이디</span>}
+              isRequired
               guideText="영문, 숫자 조합 8자 이상 입력해주세요."
               value={userId} // value 제어는 상위에서
-              isRequired
             >
               {(fields) => (
                 <div className={styles.inputBox}>
@@ -95,6 +95,7 @@ import { FormItem } from "@/components/common/form/FormItem";
             {/* 버튼 결합 및 에러 케이스 */}
             <FormItem
               label="휴대폰 번호"
+              isRequired
               type="tel"
               errorText={
                 phone.length > 0 && phone.length < 10
@@ -124,7 +125,6 @@ import { FormItem } from "@/components/common/form/FormItem";
             {/* textarea 케이스 */}
             <FormItem
               label="상세 의견"
-              isRequired
               value={comment} // 현재 입력값 전달
             >
               {(fields) => (
