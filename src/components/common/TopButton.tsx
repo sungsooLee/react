@@ -39,7 +39,7 @@ const TopButton = () => {
       onClick={scrollToTop}
       className={cn(styles.top_btn, active && styles.active)}
     >
-      <Icon name="arrow_top" size="sm" className={styles.top_icon} />
+      <Icon name={'arrow_top'} size={'sm'} className={styles.top_icon} />
     </button>
   );
 };

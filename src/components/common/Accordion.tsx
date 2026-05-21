@@ -56,7 +56,7 @@ const Accordion: React.FC<AccordionProps> = ({
               <span>{item.title}</span>
 
               <span className={cn(styles.icon, isOpen && styles.active)}>
-                <Icon name="arrow_down" size="sm" />
+                <Icon name={'arrow_down'} size={'sm'} />
               </span>
             </button>
 
