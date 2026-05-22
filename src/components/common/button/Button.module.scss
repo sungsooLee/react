@@ -1,0 +1,26 @@
+.btn {
+  border-radius: var(--radius-sm);
+  &.primary {
+    border-color: #292b2f;
+    background-color: #292b2f;
+  }
+  &.secondary {
+    border-color: #a3a5ad;
+    background-color: #fff;
+  }
+  &.small {
+    height: 28px;
+    padding: 0.5rem 0.8rem;
+    border-radius: var(--radius-md);
+  }
+  &.medium {
+    height: 36px;
+    padding: 0.7rem 1.2rem;
+    border-radius: var(--radius-lg);
+  }
+  &.large {
+    height: 48px;
+    padding: 1.2rem 2rem;
+    border-radius: var(--radius-xl);
+  }
+}

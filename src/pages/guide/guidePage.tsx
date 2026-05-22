@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import cn from "classnames";
 import { Link } from "react-router-dom";
 import "./guide.scss";
 import ToggleButton from "./toggle-button";
 import form from "./form";
 import Icon from "./icon";
+import SelectButton from "./select-button";
 
 type GuideItem = {
   key: string;
@@ -19,13 +21,18 @@ const guideList: GuideItem[] = [
   },
   {
     key: "icons",
-    label: "Icons", // 👈 아이콘 가이드 추가
+    label: "Icons",
     component: Icon,
   },
   {
     key: "form",
-    label: "Form", // 👈 아이콘 가이드 추가
+    label: "Form",
     component: form,
+  },
+  {
+    key: "select button",
+    label: "SelectButton",
+    component: SelectButton,
   },
   // 👉 계속 추가
   // { key: "button", label: "Button", component: ButtonGuide },
@@ -42,7 +49,7 @@ const GuidePage = () => {
       {/* 🔥 헤더 */}
       <div className="guide-header">
         <h1>퍼블리싱 가이드</h1>
-        <p>컴포넌트 사용법을 확인하고 바로 복사하세요</p>
+        <p>컴포넌트 사용법을 확인하고 복사해서 사용</p>
         <Link to=".." className="btn-guide">
           퍼블 작업리스트 보기
         </Link>
@@ -53,7 +60,9 @@ const GuidePage = () => {
         {guideList.map((item) => (
           <button
             key={item.key}
-            className={activeKey === item.key ? "tab active" : "tab"}
+            className={cn("tab", {
+              active: activeKey === item.key,
+            })}
             onClick={() => setActiveKey(item.key)}
           >
             {item.label}
