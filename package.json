@@ -43,8 +43,6 @@
     "vite-plugin-pages": "^0.33.1"
   },
   "pnpm": {
-    "overrides": {
-      "vite": "^7.x"
-    }
+    "overrides": {}
   }
 }
