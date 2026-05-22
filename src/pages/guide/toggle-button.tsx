@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { ToggleButton } from "@/components/common/ToggleButton";
+import { ToggleButton } from "@/components/common/togglebutton/ToggleButton";
 import "./guide.scss";
 
 const ToggleGuide = () => {
   const [state, setState] = useState(false);
 
-  const code = `import { ToggleButton } from "@/components/common/ToggleButton";
+  const code = `import { ToggleButton } from "@/components/common/togglebutton/ToggleButton";
 
 <ToggleButton
   label="토글 버튼"

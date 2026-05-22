@@ -4,9 +4,9 @@ import Layout from "@/components/layout/Layout";
 import cn from "classnames";
 import styles from "./Home.module.scss";
 import { Link, useNavigate } from "react-router-dom";
-import { ToggleButton } from "@/components/common/ToggleButton";
+import { ToggleButton } from "@/components/common/togglebutton/ToggleButton";
 import { Icon } from "@/components/icons/Icon";
-import Carousel from "@/components/common/Carousel";
+import Carousel from "@/components/common/carousel/Carousel";
 
 const Home = () => {
   const navigate = useNavigate(); // 훅 호출
@@ -21,7 +21,7 @@ const Home = () => {
   useEffect(() => {
     const id = setInterval(
       () => setActive((i) => (i + 1) % items.length),
-      2000
+      2000,
     );
     return () => clearInterval(id);
   }, []);

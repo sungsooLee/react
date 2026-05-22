@@ -1,5 +1,5 @@
 const detail = () => {
-  return <div>detail</div>;
+  return <div className="body_large_r">detail</div>;
 };
 
 export default detail;

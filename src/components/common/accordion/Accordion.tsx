@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import cn from "classnames";
 import styles from "./Accordion.module.scss";
-import { Icon } from "../icons/Icon";
+import { Icon } from "../../icons/Icon";
 
 interface AccordionItem {
   title: React.ReactNode;
@@ -56,7 +56,7 @@ const Accordion: React.FC<AccordionProps> = ({
               <span>{item.title}</span>
 
               <span className={cn(styles.icon, isOpen && styles.active)}>
-                <Icon name={'arrow_down'} size={'sm'} />
+                <Icon name={"arrow_down"} size={"sm"} />
               </span>
             </button>
 

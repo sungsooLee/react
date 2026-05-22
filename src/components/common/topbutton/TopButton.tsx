@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import cn from "classnames";
 import styles from "./TopButton.module.scss";
-import { Icon } from "../icons/Icon";
+import { Icon } from "../../icons/Icon";
 
 const TopButton = () => {
   const [visible, setVisible] = useState(false);
@@ -39,7 +39,7 @@ const TopButton = () => {
       onClick={scrollToTop}
       className={cn(styles.top_btn, active && styles.active)}
     >
-      <Icon name={'arrow_top'} size={'sm'} className={styles.top_icon} />
+      <Icon name={"arrow_top"} size={"sm"} className={styles.top_icon} />
     </button>
   );
 };

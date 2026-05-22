@@ -3,7 +3,7 @@ import React from "react";
 import Header from "./header/index";
 import Footer from "./footer/index";
 import styles from "./layout.module.scss";
-import TopButton from "../common/TopButton";
+import TopButton from "../common/topbutton/TopButton";
 
 export type HeaderType = "type1" | "type2" | "none";
 export type FooterType = "type1" | "type2" | "none";
