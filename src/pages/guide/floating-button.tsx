@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import cn from "classnames";
-import { FloatingButtonGroup } from "@/components/common/fab/FloatingButton"
+import { FloatingButtonGroup } from "@/components/common/fab/floatingButton"
 import "./guide.scss";
 
 const FloatingButtonGuide = () => {
