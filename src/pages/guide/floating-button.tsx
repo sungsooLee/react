@@ -3,7 +3,6 @@ import cn from "classnames";
 import { FloatingButtonGroup } from "@/components/common/fab/FloatingButton"
 import "./guide.scss";
 
-// 커밋테스트
 const FloatingButtonGuide = () => {
 
   const code = `import { FloatingButtonGroup } from "@/components/common/fab/FloatingButton";
