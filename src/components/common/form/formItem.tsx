@@ -1,11 +1,7 @@
-import React, {
-  InputHTMLAttributes,
-  ReactNode,
-  useId,
-} from "react";
+import React, { InputHTMLAttributes, ReactNode, useId } from "react";
 
 import cn from "classnames";
-import styles from "./form.module.scss";
+import styles from "./Form.module.scss";
 
 export type FormItemType =
   | "text"
@@ -21,23 +17,14 @@ interface RenderPropsArgs {
 
 interface FormItemProps {
   label?: ReactNode;
-
   children: (args: RenderPropsArgs) => ReactNode;
-
   type?: FormItemType;
-
   isRequired?: boolean;
-
   placeholder?: string;
-
   value?: string;
-
   guideText?: string;
-
   errorText?: string;
-
   successText?: string;
-
   className?: string;
 }
 
@@ -58,13 +45,9 @@ export const FormItem = ({
   /**
    * numeric 대응
    */
-  const resolvedType =
-    type === "numeric" ? "text" : type;
+  const resolvedType = type === "numeric" ? "text" : type;
 
-  const resolvedInputMode =
-    type === "numeric"
-      ? "numeric"
-      : undefined;
+  const resolvedInputMode = type === "numeric" ? "numeric" : undefined;
 
   return (
     <div className={cn(styles.formItem, className)}>
@@ -74,11 +57,7 @@ export const FormItem = ({
           <label htmlFor={generatedId}>
             {label}
 
-            {isRequired && (
-              <em className={styles.required}>
-                *
-              </em>
-            )}
+            {isRequired && <em className={styles.required}>*</em>}
           </label>
         </div>
       )}
@@ -97,22 +76,14 @@ export const FormItem = ({
       </div>
 
       {/* Message */}
-      {(errorText ||
-        successText ||
-        guideText) && (
+      {(errorText || successText || guideText) && (
         <div className={styles.message_area}>
           {errorText ? (
-            <p className={styles.error}>
-              {errorText}
-            </p>
+            <p className={styles.error}>{errorText}</p>
           ) : successText ? (
-            <p className={styles.success}>
-              {successText}
-            </p>
+            <p className={styles.success}>{successText}</p>
           ) : (
-            <p className={styles.guide}>
-              {guideText}
-            </p>
+            <p className={styles.guide}>{guideText}</p>
           )}
         </div>
       )}

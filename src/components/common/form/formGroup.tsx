@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 import cn from "classnames";
-import styles from "./form.module.scss";
+import styles from "./Form.module.scss";
 
 interface FormGroupProps {
   children: ReactNode;

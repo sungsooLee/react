@@ -25,14 +25,14 @@
     }
   }
 
-  .countArea {
+  .guide_area {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     margin-top: 4px;
     font-size: 12px;
     color: #999;
 
-    .current {
+    .count_view {
       color: #333;
       font-weight: 500;
     }
