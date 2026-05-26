@@ -1,6 +1,6 @@
 import React, { ReactNode, useState, useEffect } from "react";
 import cn from "classnames";
-import styles from "./floatingButton.module.scss";
+import styles from "./FloatingButton.module.scss";
 
 interface FloatingButtonGroupProps {
   className?: string;

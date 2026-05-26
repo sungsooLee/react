@@ -8,7 +8,7 @@ const TextareaGuide = () => {
   const [resizeValue, setResizeValue] = useState("");
   const [errorValue, setErrorValue] = useState("");
 
-  const code = `import { Textarea } from "@/components/common/textarea/textarea";
+  const code = `import { Textarea } from "@/components/common/textarea/Textarea";
 
 /* 1. 기본 textarea */
 <Textarea

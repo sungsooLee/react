@@ -1,4 +1,4 @@
-// @/components/common/textarea/textarea.tsx (또는 FormTextarea.tsx)
+// @/components/common/textarea/Textarea.tsx
 import React from "react";
 import cn from "classnames";
 import styles from "./Textarea.module.scss"; // 또는 해당 scss 경로

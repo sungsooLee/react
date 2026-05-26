@@ -3,7 +3,7 @@ import { FormGroup } from "@/components/common/form/FormGroup";
 import { FormItem } from "@/components/common/form/FormItem";
 import { Textarea } from "@/components/common/textarea/Textarea";
 import cn from "classnames";
-import styles from "@/components/common/form/form.module.scss";
+import styles from "@/components/common/form/Form.module.scss";
 import "./guide.scss";
 
 const FormGuide = () => {
