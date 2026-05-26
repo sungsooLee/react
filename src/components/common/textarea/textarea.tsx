@@ -7,7 +7,11 @@ interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement
   showCount?: boolean;
   canResize?: boolean;
   placeholder?: string;
+  id?: string;
+  name?: string;
   guideText?: string;
+  error?: boolean;
+  errorText?: string;
 }
 
 // 명시적으로 export를 붙여줍니다.
@@ -15,32 +19,38 @@ export const Textarea = ({
   showCount,
   canResize = false,
   placeholder = "내용을 입력하세요",
+  id,
+  name,
   guideText,
+  error = false,
+  errorText,
   className,
   ...props
 }: TextareaProps) => {
   return (
     <div className={styles.textarea_wrap}>
       <textarea
+        id={id}
+        name={name}
         placeholder={placeholder}
         className={cn(
           styles.textarea,
-          { [styles.noResize]: !canResize },
+          { [styles.no_resize]: !canResize, [styles.is_error]: error },
           className,
         )}
         {...props}
       />
-      {(guideText || (showCount && props.maxLength)) && (
+      {(guideText || errorText || (showCount && props.maxLength)) && (
         <div className={styles.guide_area}>
-          {guideText && <p>{guideText}</p>}
+          {guideText && <p className={styles.guide_text}>{guideText}</p>}
+          {errorText && <p className={styles.error_text}>{errorText}</p>}
 
           {showCount && props.maxLength && (
             <>
-              <span className={styles.count_view}>
+              <p className={styles.count_view}>
                 {String(props.value || "").length}
-              </span>
-
-              <span className={styles.max}>/ {props.maxLength}자</span>
+                <span className={styles.max_view}>/ {props.maxLength}자</span>
+              </p>
             </>
           )}
         </div>

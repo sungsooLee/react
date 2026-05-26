@@ -7,6 +7,7 @@ import form from "./form";
 import Icon from "./icon";
 import SelectButton from "./select-button";
 import FloatingButton from "./floating-button";
+import Textarea from "./textarea";
 
 type GuideItem = {
   key: string;
@@ -39,6 +40,11 @@ const guideList: GuideItem[] = [
     key: "floating button",
     label: "FloatingButton",
     component: FloatingButton,
+  },
+  {
+    key: "textarea",
+    label: "Textarea",
+    component: Textarea,
   },
   // 👉 계속 추가
   // { key: "button", label: "Button", component: ButtonGuide },
