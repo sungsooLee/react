@@ -1,88 +1,52 @@
 :root {
-  --color-black: #292b2f;
-  --color-gray: #a3a5ad;
-  --color-soft-gray: #eceef1;
+  // gray
+  --color-black: #000000;
+  --color-gray-800: #292b2f;
+  --color-gray-700: #4c4f58;
+  --color-gray-600: #72747b;
+  --color-gray-500: #a3a5ad;
+  --color-gray-400: #c3c6ce;
+  --color-gray-300: #dee2e6;
+  --color-gray-200: #eceef1;
+  --color-gray-100: #f9fafb;
   --color-white: #ffffff;
+
+  // primary
+  --color-pri-700: #0c4d9c;
+  --color-pri-600: #1572ed;
+  --color-pri-500: #5997fb;
+  --color-pri-400: #95baf6;
+  --color-pri-300: #c0d4f4;
+  --color-pri-200: #ddeafb;
+  --color-pri-100: #f1f7ff;
+
+  // secondary
+  --color-sec01-700: #26348f;
+  --color-sec01-600: #4355c8;
+  --color-sec01-500: #7283ed;
+  --color-sec01-400: #91a9ff;
+  --color-sec01-300: #c0cdff;
+  --color-sec01-200: #e5ebff;
+  --color-sec01-100: #f3f6ff;
+
+  --color-sec02-700: #0067ac;
+  --color-sec02-600: #1785cf;
+  --color-sec02-500: #3eaff2;
+  --color-sec02-400: #73d1f6;
+  --color-sec02-300: #b5eaff;
+  --color-sec02-200: #def6ff;
+  --color-sec02-100: #f0faff;
 
   // status
   --color-error: #d61111;
   --color-success: #2574e0;
   --color-processing: #19a847;
   --color-warning: #fdbb30;
-  // --color-black: #000000;
-  // --color-white: #ffffff;
-  // --color-transparent: transparent;
-  // --color-grayblue-01: #eff4f9;
-  // --color-grayblue-02: #e0e9f3;
-  // --color-grayblue-03: #dce3eb;
-  // --color-grayblue-04: #becad9;
-  // --color-grayblue-05: #f8fafc;
-  // // gray-scale
-  // --color-gray-25: #fdfdfd;
-  // --color-gray-50: #fafafa;
-  // --color-gray-75: #f5f5f5;
-  // --color-gray-100: #eaeaea;
-  // --color-gray-200: #cccccc;
-  // --color-gray-300: #b2b2b2;
-  // --color-gray-400: #999999;
-  // --color-gray-500: #808080;
-  // --color-gray-600: #666666;
-  // --color-gray-700: #4d4d4d;
-  // --color-gray-800: #333333;
-  // --color-gray-900: #1a1a1a;
-  // // primary-color-Brand
-  // --color-primary-50: #e6f2ff;
-  // --color-primary-200: #a8cdf5;
-  // --color-primary-500: #2582e5;
-  // --color-primary-600: #0563c8;
-  // --color-primary-700: #024bb1;
-  // --color-primary-900: #00235f;
-  // --color-gradient-primary: linear-gradient(
-  //   40deg,
-  //   #7cb5ef 0%,
-  //   #519bea 29%,
-  //   #003694 100%
-  // );
-  // // secondary1:Coral
-  // --color-secondary1-500: #fe4c58;
-  // // secondary2:Mint
-  // --color-secondary2-500: #4bcad0;
-  // // secondary3:Orange
-  // --color-secondary3-400: #ffa141;
-  // --color-secondary3-500: #ff8913;
-  // // secondary4:Green
-  // --color-secondary4-300: #6be9a6;
-  // // secondary5:Yellow
-  // --color-secondary5-400: #ffcf3f;
-  // // status-color
-  // --color-info-50: #f4fbfe;
-  // --color-info-500: #00aae9;
-  // --color-info-600: #098ed2;
-  // --color-success-500: #12b76a;
-  // --color-success-600: #009855;
-  // --color-error-500: #f14437;
-  // --color-warning-400: #ffcf3f;
-  // --color-warning-500: #fcbd00;
-  // // button color
-  // --color-primary: var(--color-primary-500);
-  // --color-primary-hover: var(--color-primary-600);
-  // --color-primary-disabled: var(--color-gray-75);
-  // --color-primary-disabled-text: var(--color-gray-200);
-  // --color-secondary: var(--color-gray-900);
-  // --color-secondary-hover: var(--color-gray-800);
-  // --color-secondary-disabled: #eaeaea;
-  // --color-secondary-disabled-text: var(--color-gray-200);
-  // --color-tertiery: #eff4f9;
-  // --color-tertiery-hover: #e0e9f3;
-  // --color-tertiery-disabled: var(--color-tertiery);
-  // --color-tertiery-disabled-text: var(--color-gray-200);
-  // --color-negative: #f14437;
-  // // label color
-  // --color-coral-500: #fe4c58;
-  // --color-coral-50: #fff5f6;
-  // --color-mint-500: #26c0c6;
-  // --color-mint-100: #daf5f7;
-  // --color-mint-50: #ecfafb;
-  // --color-orange-500: #ff8913;
-  // --color-orange-100: #ffe7d0; // --color-orange-50: #fff3e7;
+
+  // gradient
+  --color-gra01: linear-gradient(#1ba3f8 0%, #245de5 100%);
+  --color-gra02: linear-gradient(#7c8ee5 0%, #679fee 100%);
+  --color-gra03: linear-gradient(#7c8ee5 0%, #48cbff 100%);
+  --color-gra04: linear-gradient(#24cfff 0%, #c12fff 100%);
+  --color-gra05: linear-gradient(#0083ca 0%, #998fff 50%, #d88fff 100%);
 }

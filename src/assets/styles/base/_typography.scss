@@ -1,3 +1,37 @@
+/* display */
+.display {
+  &_large {
+    &_b {
+      font-weight: bold;
+      font-size: 4rem;
+    }
+  }
+
+  &_medium {
+    &_b {
+      font-weight: var(--font-weight-bold);
+      font-size: 3rem;
+    }
+
+    &_l {
+      font-weight: var(--font-weight-regular);
+      font-size: 3rem;
+    }
+  }
+
+  &_small {
+    &_b {
+      font-weight: var(--font-weight-bold);
+      font-size: 2.6rem;
+    }
+
+    &_l {
+      font-weight: var(--font-weight-regular);
+      font-size: 2.6rem;
+    }
+  }
+}
+
 /* title */
 .title {
   &_h1 {
@@ -21,6 +55,12 @@
 
 /* body */
 .body {
+  &_xlarge {
+    font-weight: var(--font-weight-regular);
+    font-size: 2rem;
+    letter-spacing: -0.5px;
+  }
+
   &_large {
     &_b {
       font-weight: bold;
@@ -28,9 +68,47 @@
       letter-spacing: -0.5px;
     }
 
-    &_r {
-      font-weight: normal;
+    &_sb {
+      font-weight: var(--font-weight-semibold);
       font-size: 1.7rem;
+      letter-spacing: -0.5px;
+    }
+
+    &_m {
+      font-weight: var(--font-weight-medium);
+      font-size: 1.7rem;
+      letter-spacing: -0.5px;
+    }
+
+    &_r {
+      font-weight: var(--font-weight-regular);
+      font-size: 1.7rem;
+      letter-spacing: -0.5px;
+    }
+  }
+
+  &_medium {
+    &_b {
+      font-weight: bold;
+      font-size: 1.5rem;
+      letter-spacing: -0.5px;
+    }
+
+    &_sb {
+      font-weight: var(--font-weight-semibold);
+      font-size: 1.5rem;
+      letter-spacing: -0.5px;
+    }
+
+    &_m {
+      font-weight: var(--font-weight-medium);
+      font-size: 1.5rem;
+      letter-spacing: -0.5px;
+    }
+
+    &_r {
+      font-weight: var(--font-weight-regular);
+      font-size: 1.5rem;
       letter-spacing: -0.5px;
     }
   }
@@ -38,6 +116,18 @@
   &_small {
     &_b {
       font-weight: bold;
+      font-size: 1.4rem;
+      letter-spacing: -0.5px;
+    }
+
+    &_sb {
+      font-weight: var(--font-weight-semibold);
+      font-size: 1.4rem;
+      letter-spacing: -0.5px;
+    }
+
+    &_m {
+      font-weight: var(--font-weight-medium);
       font-size: 1.4rem;
       letter-spacing: -0.5px;
     }
@@ -56,6 +146,12 @@
       letter-spacing: -0.5px;
     }
 
+    &_m {
+      font-weight: var(--font-weight-medium);
+      font-size: 1.2rem;
+      letter-spacing: -0.5px;
+    }
+
     &_r {
       font-weight: normal;
       font-size: 1.2rem;
@@ -66,6 +162,12 @@
   &_xxsmall {
     &_b {
       font-weight: bold;
+      font-size: 1.1rem;
+      letter-spacing: -0.5px;
+    }
+
+    &_m {
+      font-weight: var(--font-weight-medium);
       font-size: 1.1rem;
       letter-spacing: -0.5px;
     }
