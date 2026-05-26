@@ -6,6 +6,7 @@ import ToggleButton from "./toggle-button";
 import form from "./form";
 import Icon from "./icon";
 import SelectButton from "./select-button";
+import FloatingButton from "./floating-button";
 
 type GuideItem = {
   key: string;
@@ -33,6 +34,11 @@ const guideList: GuideItem[] = [
     key: "select button",
     label: "SelectButton",
     component: SelectButton,
+  },
+  {
+    key: "floating button",
+    label: "FloatingButton",
+    component: FloatingButton,
   },
   // 👉 계속 추가
   // { key: "button", label: "Button", component: ButtonGuide },
