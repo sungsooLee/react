@@ -8,6 +8,13 @@
     border-color: #a3a5ad;
     background-color: #fff;
   }
+  &.text {
+    font-size: 1.7rem;
+    color: var(--color-black);
+    font-weight: var(--font-weight-regular);
+  }
+  &.underline {
+  }
   &.small {
     height: 28px;
     padding: 0.5rem 0.8rem;

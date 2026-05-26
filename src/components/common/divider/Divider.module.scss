@@ -1,0 +1,17 @@
+.divider {
+  &.horizontal {
+    width: 100%;
+    &.slim {
+      height: 1px;
+      background-color: var(--color-gray);
+    }
+    &.thick {
+      height: 2px;
+      background-color: var(--color-black);
+    }
+  }
+  &.vertical {
+    width: 1px;
+    height: 100%;
+  }
+}

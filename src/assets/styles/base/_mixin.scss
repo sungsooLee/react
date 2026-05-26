@@ -1,5 +1,12 @@
 // flex row 센터정렬
-@mixin flex-center-row {
-	display: flex;
-	align-items: center;
+@mixin flex_center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin line-clamp($lines: 2) {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
 }
