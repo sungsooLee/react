@@ -247,3 +247,55 @@
     letter-spacing: -0.5px;
   }
 }
+
+/* text */
+.large {
+  &_b {
+    &_sentence {
+      font-weight: bold;
+      font-size: 1.7rem;
+      letter-spacing: -0.5px;
+    }
+  }
+  &_r {
+    &_sentence {
+      font-weight: var(--font-weight-regular);
+      font-size: 1.7rem;
+      letter-spacing: -0.5px;
+    }
+  }
+}
+
+.medium {
+  &_b {
+    &_sentence {
+      font-weight: bold;
+      font-size: 1.5rem;
+      letter-spacing: -0.5px;
+    }
+  }
+  &_r {
+    &_sentence {
+      font-weight: var(--font-weight-regular);
+      font-size: 1.5rem;
+      letter-spacing: -0.5px;
+    }
+  }
+}
+
+.small {
+  &_b {
+    &_sentence {
+      font-weight: bold;
+      font-size: 1.4rem;
+      letter-spacing: -0.5px;
+    }
+  }
+  &_r {
+    &_sentence {
+      font-weight: var(--font-weight-regular);
+      font-size: 1.4rem;
+      letter-spacing: -0.5px;
+    }
+  }
+}
