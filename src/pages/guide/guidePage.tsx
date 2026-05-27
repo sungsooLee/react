@@ -9,6 +9,7 @@ import SelectButton from "./select-button";
 import FloatingButton from "./floating-button";
 import Textarea from "./textarea";
 import Tab from "./tab";
+import Popup from "./popup";
 
 type GuideItem = {
   key: string;
@@ -52,6 +53,11 @@ const guideList: GuideItem[] = [
     label: "Tab",
     component: Tab,
   },
+  {
+    key: "popup",
+    label: "Popup",
+    component: Popup,
+  }
   // 👉 계속 추가
   // { key: "button", label: "Button", component: ButtonGuide },
 ];
