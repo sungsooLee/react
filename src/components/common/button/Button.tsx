@@ -4,7 +4,7 @@ import styles from "./Button.module.scss";
 
 interface ButtonProps {
   children: React.ReactNode;
-  variant?: "primary" | "secondary" | "text" | "underline";
+  variant?: "primary" | "secondary" | "text" | "underline" | "normal";
   size?: "small" | "medium" | "large";
   className?: string;
   onClick?: () => void;

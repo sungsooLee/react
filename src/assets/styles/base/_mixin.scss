@@ -4,7 +4,7 @@
   align-items: center;
 }
 
-@mixin line-clamp($lines: 2) {
+@mixin line_clamp($lines: 2) {
   display: -webkit-box;
   overflow: hidden;
   -webkit-box-orient: vertical;

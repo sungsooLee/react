@@ -31,7 +31,7 @@ const IconGuide = () => {
                 title="클릭 시 컴포넌트 코드 복사"
               >
                 <div className="icon-visual">
-                  <Icon width={32} height={32} />
+                  <Icon width={32} height={32} stroke={"#000"} />
                 </div>
                 <span className="icon-name">{name}</span>
               </div>
