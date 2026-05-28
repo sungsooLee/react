@@ -13,6 +13,7 @@ import Popup from "./popup";
 import Table from "./table";
 import Accordion from "./accordion";
 import Tooltip from "./tooltip";
+import Alert from "./alert";
 
 type GuideItem = {
   key: string;
@@ -60,6 +61,11 @@ const guideList: GuideItem[] = [
     key: "popup",
     label: "Popup",
     component: Popup,
+  },
+  {
+    key: "alert",
+    label: "Alert",
+    component: Alert,
   },
   {
     key: "table",

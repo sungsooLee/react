@@ -12,16 +12,16 @@
 .tab {
     flex:1;
   padding: 10px 16px;
-  border-bottom: 1px solid #ECEEF1;
-  background: #fff;
-  color: #C3C6CE;
+  border-bottom: 1px solid var(--color-gray-200);
+  background: var(--color-white);
+  color: var(--color-gray-400);
   font-size: 14px;
   line-height: 1.4;
   cursor: pointer;
 
   &.active {
-    color: #111;
-    border-bottom: 2px solid #111;
+    color: var(--color-gray-800);
+    border-bottom: 2px solid var(--color-gray-800);
   }
 
   &.disabled,
