@@ -3,7 +3,8 @@ import cn from "classnames";
 import styles from "./Accordion.module.scss";
 import { Icon } from "../../icons/Icon";
 
-interface AccordionItem {
+export interface AccordionItem {
+  id?: string;
   title: React.ReactNode;
   content: React.ReactNode;
   defaultOpen?: boolean;
@@ -13,14 +14,12 @@ interface AccordionProps {
   items: AccordionItem[];
   multiOpen?: boolean;
   className?: string;
-  itemClassName?: string;
 }
 
 const Accordion: React.FC<AccordionProps> = ({
   items,
   multiOpen = true,
   className,
-  itemClassName,
 }) => {
   const [openIndexes, setOpenIndexes] = useState<number[]>(
     items
@@ -35,7 +34,7 @@ const Accordion: React.FC<AccordionProps> = ({
       setOpenIndexes((prev) =>
         prev.includes(index)
           ? prev.filter((i) => i !== index)
-          : [...prev, index],
+          : [...prev, index], 
       );
     } else {
       setOpenIndexes((prev) => (prev.includes(index) ? [] : [index]));
@@ -48,15 +47,20 @@ const Accordion: React.FC<AccordionProps> = ({
         const isOpen = openIndexes.includes(index);
 
         return (
-          <div key={index} className={cn(styles.accordion_item, itemClassName)}>
+          <div
+            key={item.id ?? index}
+            className={cn(styles.accordion_item)}
+          >
             <button
+              type="button"
               className={styles.accordion_header}
+              aria-expanded={isOpen}
               onClick={() => toggle(index)}
             >
               <span>{item.title}</span>
 
               <span className={cn(styles.icon, isOpen && styles.active)}>
-                <Icon name={"arrow_down"} size={"sm"} />
+                <Icon name="arrow_down" size="sm" />
               </span>
             </button>
 
