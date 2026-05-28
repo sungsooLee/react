@@ -1,6 +1,9 @@
 import { useState } from "react";
 import Layout from "@/components/layout/Layout";
 import cn from "classnames";
+import "./index.scss";
+import { SearchBox } from "@/components/ui/searchbox/SearchBox";
+import { TabGroup } from "@/components/common/tab/Tab";
 
 const Main = () => {
   const [activeMenuIndex, setActiveMenuIndex] = useState(2);
@@ -40,7 +43,32 @@ const Main = () => {
       asideActiveMenuIndex={activeMenuIndex}
       footerType="none"
     >
-      <div className={cn("contents")}></div>
+      <div className={cn("contents")}>
+        {/* SearchBox */}
+        <SearchBox />
+
+        {/* TabGroup  */}
+        <TabGroup
+          items={[
+            { id: "tab1", label: "전체", content: <div>탭 1 콘텐츠</div> },
+            {
+              id: "tab2",
+              label: "신규 가망 고객",
+              content: <div>탭 2 콘텐츠</div>,
+            },
+            {
+              id: "tab3",
+              label: "Cross-Selling 가망 고객",
+              content: <div>탭 3 콘텐츠</div>,
+            },
+            {
+              id: "tab4",
+              label: "이탈 가망 고객",
+              content: <div>탭 4 콘텐츠</div>,
+            },
+          ]}
+        />
+      </div>
     </Layout>
   );
 };

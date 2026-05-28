@@ -1,11 +1,8 @@
 // src/components/layout/Layout.tsx
 import React, { useState } from "react";
-
 import Header from "./header";
 import Footer from "./footer";
-
 import TopButton from "../common/topbutton/TopButton";
-
 import cn from "classnames";
 import styles from "./layout.module.scss";
 

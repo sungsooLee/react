@@ -1,27 +1,28 @@
-.tabGroup {
+.tab_group {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
-.tabList {
+.tab_list {
   display: flex;
   margin-bottom: 20px;
 }
 
 .tab {
-    flex:1;
+  flex: 1;
   padding: 10px 16px;
-  border-bottom: 1px solid #ECEEF1;
+  border-bottom: 1px solid #eceef1;
   background: #fff;
-  color: #C3C6CE;
+  color: #c3c6ce;
   font-size: 14px;
   line-height: 1.4;
   cursor: pointer;
 
   &.active {
     color: #111;
-    border-bottom: 2px solid #111;
+    border-bottom: 2px solid var(--color-gray-800);
+    font-weight: var(--font-weight-bold);
   }
 
   &.disabled,
@@ -31,7 +32,7 @@
   }
 }
 
-.tabPanel {
+.tab_panel {
   width: 100%;
-  font-size:20px;
+  font-size: 20px;
 }
