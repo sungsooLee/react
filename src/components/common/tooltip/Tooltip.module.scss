@@ -24,7 +24,7 @@
   white-space: normal;
   overflow-wrap: break-word;
   word-break: keep-all;
-  pointer-events: none;
+  pointer-events: auto;
 
   &::after {
     content: "";
@@ -34,6 +34,25 @@
     background-color: #fff;
     box-sizing: border-box;
   }
+}
+
+.closeButton {
+  position: absolute;
+  right: 8px;
+  top: 6px;
+  width: 18px;
+  height: 18px;
+  border: none;
+  background: transparent;
+  color: #292b2f;
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.content {
+  display: block;
+  padding-right: 16px;
 }
 
 .top {

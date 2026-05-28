@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import cn from "classnames";
 import styles from "./Tooltip.module.scss";
 
@@ -18,35 +18,26 @@ export const Tooltip = ({
   className,
 }: TooltipProps) => {
   const [visible, setVisible] = useState(false);
-  const containerRef = useRef<HTMLSpanElement>(null);
-
-  const toggle = () => setVisible((prev) => !prev);
-
-  useEffect(() => {
-    if (!visible) return;
-
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        containerRef.current &&
-        !containerRef.current.contains(event.target as Node)
-      ) {
-        setVisible(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [visible]);
+  const open = () => setVisible(true);
+  const close = () => setVisible(false);
 
   return (
-    <span ref={containerRef} className={cn(styles.tooltip, className)}>
-      <span className={styles.trigger} onClick={toggle}>
+    <span className={cn(styles.tooltip, className)}>
+      <span className={styles.trigger} onClick={open}>
         {children}
       </span>
 
       {visible && (
         <span className={cn(styles.tooltipBox, styles[placement])}>
-          {content}
+          <button
+            type="button"
+            className={styles.closeButton}
+            onClick={close}
+            aria-label="툴팁 닫기"
+          >
+            ×
+          </button>
+          <span className={styles.content}>{content}</span>
         </span>
       )}
     </span>
