@@ -19,6 +19,9 @@
   &.normal {
     padding: 0;
     background-color: transparent;
+    &.large {
+      padding: 0;
+    }
   }
   &.small {
     height: 28px;

@@ -26,15 +26,19 @@
     left: 0;
     top: 48px;
     flex-shrink: 0;
+    width: 150px;
+    height: calc(100vh - 48px);
+    padding: 8px 12px;
+    background-color: var(--color-gray-100);
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     &.open {
       width: 224px;
-      height: calc(100vh - 48px);
-      padding: 8px 12px;
-      background-color: var(--color-gray-100);
     }
 
     .btn_toggle {
       display: inline-flex;
+      justify-content: flex-end;
+      width: 100%;
     }
 
     .nav {
@@ -45,6 +49,8 @@
             button {
               color: var(--color-pri-600);
               font-weight: var(--font-weight-bold);
+              border-radius: var(--radius-lg);
+              border: 1px solid var(--color-pri-600);
               svg {
                 path {
                   fill: #5997fb !important;
@@ -68,6 +74,7 @@
             font-size: 1.4rem;
             font-weight: var(--font-weight-regular);
             color: var(--color-gray-800);
+            border: 1px solid transparent;
             svg {
               margin-right: 8px;
             }

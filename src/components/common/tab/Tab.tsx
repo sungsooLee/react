@@ -46,14 +46,14 @@ export const TabGroup = ({
   if (items.length === 0) return null;
 
   return (
-    <div className={cn(styles.tabGroup, className)}>
-      <div className={styles.tabList} role="tablist">
+    <div className={cn(styles.tab_group, className)}>
+      <div className={styles.tab_list} role="tablist">
         {items.map((item) => {
           const isActive = item.id === activeItem?.id;
 
           return (
             <button
-              key={item.id} 
+              key={item.id}
               type="button"
               role="tab"
               id={`tab-${item.id}`}
@@ -73,7 +73,7 @@ export const TabGroup = ({
       </div>
 
       <div
-        className={styles.tabPanel}
+        className={styles.tab_panel}
         role="tabpanel"
         id={`tabpanel-${activeItem.id}`}
         aria-labelledby={`tab-${activeItem.id}`}

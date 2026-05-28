@@ -1,11 +1,8 @@
 // src/components/layout/Layout.tsx
 import React, { useState } from "react";
-
 import Header from "./header";
 import Footer from "./footer";
-
 import TopButton from "../common/topbutton/TopButton";
-
 import cn from "classnames";
 import styles from "./layout.module.scss";
 
@@ -69,7 +66,10 @@ const Layout: React.FC<LayoutProps> = ({
               className={styles.btn_toggle}
               onClick={handleAsideToggle}
             >
-              {isAsideOpen ? "닫기" : "열기"}
+              <Icon
+                name={isAsideOpen ? "ic_nav_toggle" : "ic_nav_toggle"}
+                size={"md"}
+              />
             </Button>
 
             {/* Nav */}
