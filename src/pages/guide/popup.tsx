@@ -7,39 +7,38 @@ const PopupGuide = () => {
 
 const [isOpen, setIsOpen] = useState(false);
 
-<button className="btn-guide" onClick={() => setIsOpen(true)}>바텀 팝업 열기</button>
+<button className="btn-guide" onClick={() => setIsOpen(true)}>미디엄 팝업 열기</button>
 <PopupGroup
   title="타이틀"
-  style="bottom"
+  size="medium"
   isOpen={isOpen}
   onClose={() => setIsOpen(false)}
-  content={<div>바텀 팝업 내용입니다.</div>}
+  content={<div>중앙 레이어 팝업 내용입니다.</div>}
+  footer={
+    <>
+      <button type="button" className="btn-guide" onClick={() => setIsOpen(false)}>취소</button>
+      <button type="button" className="btn-guide" onClick={() => setIsOpen(false)}>확인</button>
+    </>
+  }
 />`;
 
   const code2 = `import { PopupGroup } from "@/components/common/popup/Popup";
 
 const [isOpen, setIsOpen] = useState(false);
 
-<button className="btn-guide" onClick={() => setIsOpen(true)}>전체 풀 팝업 열기</button>
+<button className="btn-guide" onClick={() => setIsOpen(true)}>라지 팝업 열기</button>
 <PopupGroup
   title="타이틀"
-  style="full"
+  size="large"
   isOpen={isOpen}
   onClose={() => setIsOpen(false)}
-  content={<div>전체 풀 팝업 내용입니다.</div>}
-/>`;
-
-  const code3 = `import { PopupGroup } from "@/components/common/popup/Popup";
-
-const [isOpen, setIsOpen] = useState(false);
-
-<button className="btn-guide" onClick={() => setIsOpen(true)}>중앙 팝업 열기</button>
-<PopupGroup
-  title="타이틀"
-  style="center"
-  isOpen={isOpen}
-  onClose={() => setIsOpen(false)}
-  content={<div>중앙 팝업 내용입니다.</div>}
+  content={<div>넓은 중앙 레이어 팝업 내용입니다.</div>}
+  footer={
+    <>
+      <button type="button" className="btn-guide" onClick={() => setIsOpen(false)}>취소</button>
+      <button type="button" className="btn-guide" onClick={() => setIsOpen(false)}>저장</button>
+    </>
+  }
 />`;
 
   const handleCopy = () => {
@@ -52,32 +51,44 @@ const [isOpen, setIsOpen] = useState(false);
     alert("복사 완료!");
   };
 
-  const handleCopy3 = () => {
-    navigator.clipboard.writeText(code3);
-    alert("복사 완료!");
-  };
-
   const [isOpen, setIsOpen] = useState(false);
   const [isOpen2, setIsOpen2] = useState(false);
-  const [isOpen3, setIsOpen3] = useState(false);
 
   return (
     <div className="guide-detail">
       <h2>Popup</h2>
-      <p>바텀, 풀, 중앙 타입 팝업 컴포넌트입니다.</p>
+      <p>중앙 레이어 타입 팝업 컴포넌트입니다. 사이즈는 medium, large를 지원합니다.</p>
 
       <div className="section">
-        <h3>Preview (bottom)</h3>
+        <h3>Preview (medium)</h3>
         <div className="preview-box">
           <button className="btn-guide" onClick={() => setIsOpen(true)}>
-            바텀 팝업 열기
+            미디엄 팝업 열기
           </button>
           <PopupGroup
             title="타이틀"
-            style="bottom"
+            size="medium"
             isOpen={isOpen}
             onClose={() => setIsOpen(false)}
-            content={<div>바텀 팝업 내용입니다.</div>}
+            content={<div>중앙 레이어 팝업 내용입니다.</div>}
+            footer={
+              <>
+                <button
+                  type="button"
+                  className="btn-guide"
+                  onClick={() => setIsOpen(false)}
+                >
+                  취소
+                </button>
+                <button
+                  type="button"
+                  className="btn-guide"
+                  onClick={() => setIsOpen(false)}
+                >
+                  확인
+                </button>
+              </>
+            }
           />
         </div>
       </div>
@@ -95,17 +106,35 @@ const [isOpen, setIsOpen] = useState(false);
       </div>
 
       <div className="section">
-        <h3>Preview (full)</h3>
+        <h3>Preview (large)</h3>
         <div className="preview-box">
           <button className="btn-guide" onClick={() => setIsOpen2(true)}>
-            전체 풀 팝업 열기
+            라지 팝업 열기
           </button>
           <PopupGroup
             title="타이틀"
-            style="full"
+            size="large"
             isOpen={isOpen2}
             onClose={() => setIsOpen2(false)}
-            content={<div>전체 풀 팝업 내용입니다.</div>}
+            content={<div>넓은 중앙 레이어 팝업 내용입니다.</div>}
+            footer={
+              <>
+                <button
+                  type="button"
+                  className="btn-guide"
+                  onClick={() => setIsOpen2(false)}
+                >
+                  취소
+                </button>
+                <button
+                  type="button"
+                  className="btn-guide"
+                  onClick={() => setIsOpen2(false)}
+                >
+                  저장
+                </button>
+              </>
+            }
           />
         </div>
       </div>
@@ -119,34 +148,6 @@ const [isOpen, setIsOpen] = useState(false);
         </div>
         <pre className="code-block">
           <code>{code2}</code>
-        </pre>
-      </div>
-
-      <div className="section">
-        <h3>Preview (center)</h3>
-        <div className="preview-box">
-          <button className="btn-guide" onClick={() => setIsOpen3(true)}>
-            중앙 팝업 열기
-          </button>
-          <PopupGroup
-            title="타이틀"
-            style="center"
-            isOpen={isOpen3}
-            onClose={() => setIsOpen3(false)}
-            content={<div>중앙 팝업 내용입니다.</div>}
-          />
-        </div>
-      </div>
-
-      <div className="section">
-        <div className="code-header">
-          <h3>Code</h3>
-          <button onClick={handleCopy3} className="copy-btn">
-            복사
-          </button>
-        </div>
-        <pre className="code-block">
-          <code>{code3}</code>
         </pre>
       </div>
     </div>
