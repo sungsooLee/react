@@ -20,13 +20,13 @@ const Layout: React.FC<LayoutProps> = ({
   children,
 }) => {
   return (
-    <div className={styles.layout__wrap}>
+    <div className={styles.wrap}>
       {headerType !== "none" && (
-        <Header className={styles.layout__header} type={headerType} />
+        <Header className={styles.header} type={headerType} />
       )}
-      <main className={styles.layout__container}>{children}</main>
+      <main className={styles.container}>{children}</main>
       {footerType !== "none" && (
-        <Footer className={styles.layout__footer} type={footerType} />
+        <Footer className={styles.footer} type={footerType} />
       )}
       <TopButton />
     </div>
