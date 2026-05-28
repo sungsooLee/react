@@ -69,7 +69,10 @@ const Layout: React.FC<LayoutProps> = ({
               className={styles.btn_toggle}
               onClick={handleAsideToggle}
             >
-              {isAsideOpen ? "닫기" : "열기"}
+              <Icon
+                name={isAsideOpen ? "ic_nav_toggle" : "ic_nav_toggle"}
+                size={"md"}
+              />
             </Button>
 
             {/* Nav */}
