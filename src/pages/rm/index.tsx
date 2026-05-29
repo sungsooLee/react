@@ -2,13 +2,13 @@ import { useState } from "react";
 import Layout from "@/components/layout/Layout";
 // import cn from "classnames";
 import "./index.scss";
-import { SearchBox } from "@/components/ui/searchbox/SearchBox";
-import { TabGroup } from "@/components/common/tab/Tab";
-import { ContentWrapper } from "@/components/layout/contents/ContentWrapper";
+// import { SearchBox } from "@/components/ui/searchbox/SearchBox";
+// import { TabGroup } from "@/components/common/tab/Tab";
+import { ContentsWrapper } from "@/components/layout/contents/ContentsWrapper";
 import { TopMenu } from "@/components/layout/topmenu/TopMenu";
 
 // tab contents
-const AllCont = () => <div>전체 고객 콘텐츠 (여기에 복잡한 코드 작성)</div>;
+// const AllCont = () => <div>전체 고객 콘텐츠 (여기에 복잡한 코드 작성)</div>;
 
 const Main = () => {
   const [activeMenuIndex, setActiveMenuIndex] = useState(2);
@@ -48,6 +48,8 @@ const Main = () => {
     },
   ];
 
+  const [value, setValue] = useState("");
+
   return (
     <Layout
       headerType="none"
@@ -56,12 +58,22 @@ const Main = () => {
       asideActiveMenuIndex={activeMenuIndex}
       footerType="none"
     >
-      <ContentWrapper layout={"center"}>
-        <TopMenu notificationCount={3} userName={"김우리"} />
-        {/* SearchBox */}
-        <SearchBox />
-
-        {/* TabGroup  */}
+      <TopMenu
+        userName="김우리"
+        notificationCount={3}
+        dropdownItems={[
+          { label: "본부담당자", value: "user1" },
+          { label: "본부담당자2", value: "user2" },
+        ]}
+        dropdownValue={value}
+        onDropdownChange={setValue}
+        dropdownPlaceholder={"선택"}
+      />
+      <ContentsWrapper layout={"column"} columns={3}>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        {/* <SearchBox />
         <TabGroup
           items={[
             { id: "tab1", label: "전체", content: <AllCont /> },
@@ -81,8 +93,8 @@ const Main = () => {
               content: <div>탭 4 콘텐츠</div>,
             },
           ]}
-        />
-      </ContentWrapper>
+        /> */}
+      </ContentsWrapper>
     </Layout>
   );
 };

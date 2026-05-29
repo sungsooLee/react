@@ -74,10 +74,11 @@ const Layout: React.FC<LayoutProps> = ({
                 className={styles.btn_toggle}
                 onClick={handleAsideToggle}
               >
-                <Icon
+                <span className="sr_only">토글</span>
+                {/* <Icon
                   name={isAsideOpen ? "ic_nav_toggle" : "ic_nav_toggle"}
                   size={"md"}
-                />
+                /> */}
               </Button>
             </div>
 

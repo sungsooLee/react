@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: flex-end;
   min-height: 48px;
+  margin-bottom: 8px;
   padding-right: 32px;
   .alarm_view {
     position: relative;
@@ -48,6 +49,22 @@
       font-size: 1.3rem;
       font-weight: var(--font-weight-regular);
       color: var(--color-gray-800);
+    }
+  }
+
+  .select_menu {
+    margin-left: 16px;
+    min-width: 88px;
+    &::before {
+      display: inline-flex;
+      content: "";
+      width: 1px;
+      height: 8px;
+      margin-right: 4px;
+      background-color: var(--color-gray-300);
+    }
+    button {
+      background-color: transparent !important;
     }
   }
 }
