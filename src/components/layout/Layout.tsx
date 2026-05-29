@@ -101,7 +101,7 @@ const Layout: React.FC<LayoutProps> = ({
                         fillColor="none"
                         className="nav_icon"
                       />
-                      {item.label}
+                      <span className={styles.label}>{item.label}</span>
                     </Button>
                   </li>
                 ))}

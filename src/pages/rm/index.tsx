@@ -70,9 +70,9 @@ const Main = () => {
         dropdownPlaceholder={"선택"}
       />
       <ContentsWrapper layout={"column"} columns={3}>
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
+        <div style={{ backgroundColor: "rgba(235, 190, 172, 0.20)" }}>1</div>
+        <div style={{ backgroundColor: "rgba(235, 190, 172, 0.20)" }}>2</div>
+        <div style={{ backgroundColor: "rgba(235, 190, 172, 0.20)" }}>3</div>
         {/* <SearchBox />
         <TabGroup
           items={[
