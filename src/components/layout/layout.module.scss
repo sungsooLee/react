@@ -1,6 +1,7 @@
 @use "../../assets/styles/base/mixin" as *;
 .wrap {
   font-size: 1.6rem;
+  padding: 8px;
   &:has(.header) {
     @apply pt-[60px];
   }
@@ -24,21 +25,84 @@
   .aside {
     position: sticky;
     left: 0;
-    top: 48px;
+    top: 0;
     flex-shrink: 0;
     width: 150px;
-    height: calc(100vh - 48px);
-    padding: 8px 12px;
-    background-color: var(--color-gray-100);
+    height: calc(100dvh - 16px);
+    padding: 0 8px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-gray-300);
+    background: var(--color-White);
+
+    /* Shadow/Shadow_lv02 */
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.04);
     transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     &.open {
-      width: 224px;
+      width: 232px;
     }
-
-    .btn_toggle {
-      display: inline-flex;
-      justify-content: flex-end;
-      width: 100%;
+    .logo_wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+      min-height: 56px;
+      margin-bottom: 24px;
+      padding: 0 12px;
+      .logo {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        svg {
+          flex-shrink: 0;
+          width: 33px;
+          height: 33px;
+        }
+        .label {
+          margin-left: 6px;
+          font-size: 1.4rem;
+          line-height: 1.2;
+          background: linear-gradient(124deg, #0795e4 23.59%, #c12fff 98.48%);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      }
+      .btn_toggle {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 0;
+        background-color: transparent;
+        z-index: 1;
+        &::before {
+          overflow: hidden;
+          display: flex;
+          content: "";
+          width: 20px;
+          height: 16px;
+          margin-right: 10px;
+          border: 2px solid var(--color-gray-700);
+          border-radius: 3px;
+          background-color: var(--color-White);
+        }
+        &::after {
+          position: absolute;
+          right: 23px;
+          top: 50%;
+          overflow: hidden;
+          display: flex;
+          content: "";
+          width: 3px;
+          height: 10px;
+          margin-top: -5px;
+          border-radius: 2px;
+          background-color: var(--color-gray-700);
+        }
+      }
     }
 
     .nav {
@@ -84,7 +148,7 @@
     }
   }
   .container {
-    @apply w-full flex-1;
+    @apply w-full flex-1 ml-[8px];
   }
   .footer {
     @apply w-full h-[100px] shrink-0;
