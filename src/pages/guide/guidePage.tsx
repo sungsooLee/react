@@ -14,6 +14,7 @@ import Table from "./table";
 import Accordion from "./accordion";
 import Tooltip from "./tooltip";
 import Alert from "./alert";
+import Dropdown from "./dropdown";
 
 type GuideItem = {
   key: string;
@@ -81,6 +82,11 @@ const guideList: GuideItem[] = [
     key: "tooltip",
     label: "Tooltip",
     component: Tooltip,
+  },
+  {
+    key: "dropdown",
+    label: "Dropdown",
+    component: Dropdown,
   },
   // 👉 계속 추가
   // { key: "button", label: "Button", component: ButtonGuide },

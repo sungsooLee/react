@@ -1,112 +1,112 @@
 .tooltip {
   position: relative;
   display: inline-flex;
-}
 
-.trigger {
-  display: inline-flex;
-  cursor: pointer;
-}
+  .trigger {
+    display: inline-flex;
+    cursor: pointer;
+  }
 
-.tooltipBox {
-  position: absolute;
-  z-index: 20;
-  display: inline-block;
-  width: max-content;
-  max-width: 500px;
-  padding: 8px 12px;
-  border-radius: 8px;
-  background-color: var(--color-white);
-  border: 1px solid var(--color-gray-800);
-  color: var(--color-gray-800);
-  font-size: 13px;
-  line-height: 1.4;
-  white-space: normal;
-  overflow-wrap: break-word;
-  word-break: keep-all;
-  pointer-events: auto;
-
-  &::after {
-    content: "";
+  .tooltipBox {
     position: absolute;
-    width: 10px;
-    height: 10px;
+    z-index: 20;
+    display: inline-block;
+    width: max-content;
+    max-width: 500px;
+    padding: 8px 12px;
+    border-radius: 8px;
     background-color: var(--color-white);
-    box-sizing: border-box;
+    border: 1px solid var(--color-gray-800);
+    color: var(--color-gray-800);
+    font-size: 13px;
+    line-height: 1.4;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: keep-all;
+    pointer-events: auto;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: var(--color-white);
+      box-sizing: border-box;
+    }
+
+    &.top {
+      bottom: calc(100% + 10px);
+      left: 50%;
+      transform: translateX(-50%);
+
+      &::after {
+        left: 50%;
+        bottom: -5px;
+        border-right: 1px solid var(--color-gray-800);
+        border-bottom: 1px solid var(--color-gray-800);
+        transform: translateX(-50%) rotate(45deg);
+      }
+    }
+
+    &.bottom {
+      top: calc(100% + 10px);
+      left: 50%;
+      transform: translateX(-50%);
+
+      &::after {
+        left: 50%;
+        top: -5px;
+        border-left: 1px solid var(--color-gray-800);
+        border-top: 1px solid var(--color-gray-800);
+        transform: translateX(-50%) rotate(45deg);
+      }
+    }
+
+    &.left {
+      right: calc(100% + 10px);
+      top: 50%;
+      transform: translateY(-50%);
+
+      &::after {
+        right: -5px;
+        top: 50%;
+        border-top: 1px solid var(--color-gray-800);
+        border-right: 1px solid var(--color-gray-800);
+        transform: translateY(-50%) rotate(45deg);
+      }
+    }
+
+    &.right {
+      left: calc(100% + 10px);
+      top: 50%;
+      transform: translateY(-50%);
+
+      &::after {
+        left: -5px;
+        top: 50%;
+        border-bottom: 1px solid var(--color-gray-800);
+        border-left: 1px solid var(--color-gray-800);
+        transform: translateY(-50%) rotate(45deg);
+      }
+    }
   }
-}
 
-.closeButton {
-  position: absolute;
-  right: 8px;
-  top: 6px;
-  width: 18px;
-  height: 18px;
-  border: none;
-  background: transparent;
-  color: var(--color-gray-800);
-  font-size: 14px;
-  line-height: 1;
-  cursor: pointer;
-}
-
-.content {
-  display: block;
-  padding-right: 16px;
-}
-
-.top {
-  bottom: calc(100% + 10px);
-  left: 50%;
-  transform: translateX(-50%);
-
-  &::after {
-    left: 50%;
-    bottom: -5px;
-    border-right: 1px solid var(--color-gray-800);
-    border-bottom: 1px solid var(--color-gray-800);
-    transform: translateX(-50%) rotate(45deg);
+  .closeButton {
+    position: absolute;
+    right: 8px;
+    top: 6px;
+    width: 18px;
+    height: 18px;
+    border: none;
+    background: transparent;
+    color: var(--color-gray-800);
+    font-size: 14px;
+    line-height: 1;
+    cursor: pointer;
   }
-}
 
-.bottom {
-  top: calc(100% + 10px);
-  left: 50%;
-  transform: translateX(-50%);
-
-  &::after {
-    left: 50%;
-    top: -5px;
-    border-left: 1px solid var(--color-gray-800);
-    border-top: 1px solid var(--color-gray-800);
-    transform: translateX(-50%) rotate(45deg);
-  }
-}
-
-.left {
-  right: calc(100% + 10px);
-  top: 50%;
-  transform: translateY(-50%);
-
-  &::after {
-    right: -5px;
-    top: 50%;
-    border-top: 1px solid var(--color-gray-800);
-    border-right: 1px solid var(--color-gray-800);
-    transform: translateY(-50%) rotate(45deg);
-  }
-}
-
-.right {
-  left: calc(100% + 10px);
-  top: 50%;
-  transform: translateY(-50%);
-
-  &::after {
-    left: -5px;
-    top: 50%;
-    border-bottom: 1px solid var(--color-gray-800);
-    border-left: 1px solid var(--color-gray-800);
-    transform: translateY(-50%) rotate(45deg);
+  .content {
+    display: block;
+    padding-right: 16px;
   }
 }
