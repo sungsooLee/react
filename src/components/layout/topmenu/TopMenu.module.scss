@@ -1,0 +1,53 @@
+.top_menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 48px;
+  padding-right: 32px;
+  .alarm_view {
+    position: relative;
+    .num_view {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      right: 8px;
+      top: 2px;
+      overflow: hidden;
+      width: 16px;
+      height: 16px;
+      background-color: var(--color-error);
+      border-radius: 8px;
+      color: var(--color-white);
+      font-size: 1.2rem;
+    }
+  }
+  .user_view {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: 16px;
+    &.no_img {
+      &::before {
+        content: "";
+        overflow: hidden;
+        width: 32px;
+        height: 32px;
+        border-radius: 16px;
+        background-color: var(--color-gray-800);
+      }
+    }
+    .img_profile {
+      overflow: hidden;
+      width: 32px;
+      height: 32px;
+      border-radius: 16px;
+    }
+    .label {
+      margin-left: 8px;
+      font-size: 1.3rem;
+      font-weight: var(--font-weight-regular);
+      color: var(--color-gray-800);
+    }
+  }
+}

@@ -1,9 +1,11 @@
 import { useState } from "react";
 import Layout from "@/components/layout/Layout";
-import cn from "classnames";
+// import cn from "classnames";
 import "./index.scss";
 import { SearchBox } from "@/components/ui/searchbox/SearchBox";
 import { TabGroup } from "@/components/common/tab/Tab";
+import { ContentWrapper } from "@/components/layout/contents/ContentWrapper";
+import { TopMenu } from "@/components/layout/topmenu/TopMenu";
 
 // tab contents
 const AllCont = () => <div>전체 고객 콘텐츠 (여기에 복잡한 코드 작성)</div>;
@@ -36,17 +38,26 @@ const Main = () => {
         setActiveMenuIndex(2);
       },
     },
+    {
+      key: "schedule",
+      label: "일정관리",
+      iconName: "ic_schedule",
+      onClick: () => {
+        setActiveMenuIndex(3);
+      },
+    },
   ];
 
   return (
     <Layout
-      headerType="type2"
+      headerType="none"
       hasAside={true}
       asideMenuItems={menuItems}
       asideActiveMenuIndex={activeMenuIndex}
       footerType="none"
     >
-      <div className={cn("contents")}>
+      <ContentWrapper layout={"center"}>
+        <TopMenu notificationCount={3} userName={"김우리"} />
         {/* SearchBox */}
         <SearchBox />
 
@@ -71,7 +82,7 @@ const Main = () => {
             },
           ]}
         />
-      </div>
+      </ContentWrapper>
     </Layout>
   );
 };

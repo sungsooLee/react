@@ -5,7 +5,6 @@ import Footer from "./footer";
 import TopButton from "../common/topbutton/TopButton";
 import cn from "classnames";
 import styles from "./layout.module.scss";
-
 import { Button } from "../common/button/Button";
 import { Icon } from "../icons/Icon";
 
@@ -60,17 +59,27 @@ const Layout: React.FC<LayoutProps> = ({
         {/* Aside */}
         {hasAside && (
           <aside className={cn(styles.aside, isAsideOpen && styles.open)}>
-            {/* Toggle Button */}
-            <Button
-              variant="normal"
-              className={styles.btn_toggle}
-              onClick={handleAsideToggle}
-            >
-              <Icon
-                name={isAsideOpen ? "ic_nav_toggle" : "ic_nav_toggle"}
-                size={"md"}
-              />
-            </Button>
+            <div className={styles.logo_wrap}>
+              <h1 className={styles.logo}>
+                <Icon name={"ic_logo"} size={"lg"} strokeColor={"none"} />
+                <span className={styles.label}>
+                  WON-SHOT
+                  <br />
+                  기업리포트
+                </span>
+              </h1>
+              {/* Toggle Button */}
+              <Button
+                variant="normal"
+                className={styles.btn_toggle}
+                onClick={handleAsideToggle}
+              >
+                <Icon
+                  name={isAsideOpen ? "ic_nav_toggle" : "ic_nav_toggle"}
+                  size={"md"}
+                />
+              </Button>
+            </div>
 
             {/* Nav */}
             <nav className={styles.nav}>

@@ -4,7 +4,9 @@
     justify-content: space-between;
     position: relative;
     width: 100%;
+    max-width: 800px;
     height: 72px;
+    margin: 0 auto;
     padding: 12px 16px;
     border-radius: var(--radius-xxl);
     background: var(--color-White, #fff);
