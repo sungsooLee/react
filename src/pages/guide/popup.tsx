@@ -3,17 +3,23 @@ import { PopupGroup } from "@/components/common/popup/Popup";
 import "./guide.scss";
 
 const PopupGuide = () => {
-  const code = `import { PopupGroup } from "@/components/common/popup/Popup";
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalLargeOpen, setIsModalLargeOpen] = useState(false);
+  const [isLayerOpen, setIsLayerOpen] = useState(false);
+
+  const modalCode = `import { useState } from "react";
+import { PopupGroup } from "@/components/common/popup/Popup";
 
 const [isOpen, setIsOpen] = useState(false);
 
-<button className="btn-guide" onClick={() => setIsOpen(true)}>미디엄 팝업 열기</button>
+<button className="btn-guide" onClick={() => setIsOpen(true)}>Modal 열기</button>
 <PopupGroup
+  variant="modal"
   title="타이틀"
   size="medium"
   isOpen={isOpen}
   onClose={() => setIsOpen(false)}
-  content={<div>중앙 레이어 팝업 내용입니다.</div>}
+  content={<div>Modal 팝업 내용입니다.</div>}
   footer={
     <>
       <button type="button" className="btn-guide" onClick={() => setIsOpen(false)}>취소</button>
@@ -22,114 +28,94 @@ const [isOpen, setIsOpen] = useState(false);
   }
 />`;
 
-  const code2 = `import { PopupGroup } from "@/components/common/popup/Popup";
+  const layerCode = `import { useState } from "react";
+import { PopupGroup } from "@/components/common/popup/Popup";
 
 const [isOpen, setIsOpen] = useState(false);
 
-<button className="btn-guide" onClick={() => setIsOpen(true)}>라지 팝업 열기</button>
+<button className="btn-guide" onClick={() => setIsOpen(true)}>Layer 열기</button>
 <PopupGroup
-  title="타이틀"
-  size="large"
+  variant="layer"
   isOpen={isOpen}
   onClose={() => setIsOpen(false)}
-  content={<div>넓은 중앙 레이어 팝업 내용입니다.</div>}
-  footer={
-    <>
-      <button type="button" className="btn-guide" onClick={() => setIsOpen(false)}>취소</button>
-      <button type="button" className="btn-guide" onClick={() => setIsOpen(false)}>저장</button>
-    </>
-  }
+  content={<div>Layer 팝업 내용입니다.</div>}
 />`;
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText(code);
+  const handleCopy = (text: string) => {
+    navigator.clipboard.writeText(text);
     alert("복사 완료!");
   };
-
-  const handleCopy2 = () => {
-    navigator.clipboard.writeText(code2);
-    alert("복사 완료!");
-  };
-
-  const [isOpen, setIsOpen] = useState(false);
-  const [isOpen2, setIsOpen2] = useState(false);
 
   return (
     <div className="guide-detail">
       <h2>Popup</h2>
-      <p>중앙 레이어 타입 팝업 컴포넌트입니다. 사이즈는 medium, large를 지원합니다.</p>
+      <p>
+        Modal(중앙, dim)과 Layer(중앙, 560×640, dim 없음) 타입을 지원하는
+        팝업 컴포넌트입니다.
+      </p>
 
       <div className="section">
-        <h3>Preview (medium)</h3>
+        <h3>Preview (Modal)</h3>
+        <p>
+          헤더·푸터가 있으며, Modal 열릴 때 body 스크롤이 잠깁니다. size는
+          medium, large를 사용합니다.
+        </p>
         <div className="preview-box">
-          <button className="btn-guide" onClick={() => setIsOpen(true)}>
-            미디엄 팝업 열기
+          <button className="btn-guide" onClick={() => setIsModalOpen(true)}>
+            Modal 열기
+          </button>
+          <button
+            className="btn-guide"
+            onClick={() => setIsModalLargeOpen(true)}
+          >
+            Modal Large 열기
           </button>
           <PopupGroup
+            variant="modal"
             title="타이틀"
             size="medium"
-            isOpen={isOpen}
-            onClose={() => setIsOpen(false)}
-            content={<div>중앙 레이어 팝업 내용입니다.</div>}
+            isOpen={isModalOpen}
+            onClose={() => setIsModalOpen(false)}
+            content={<div>Modal 팝업 내용입니다.</div>}
             footer={
               <>
                 <button
                   type="button"
                   className="btn-guide"
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => setIsModalOpen(false)}
                 >
                   취소
                 </button>
                 <button
                   type="button"
                   className="btn-guide"
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => setIsModalOpen(false)}
                 >
                   확인
                 </button>
               </>
             }
           />
-        </div>
-      </div>
-
-      <div className="section">
-        <div className="code-header">
-          <h3>Code</h3>
-          <button onClick={handleCopy} className="copy-btn">
-            복사
-          </button>
-        </div>
-        <pre className="code-block">
-          <code>{code}</code>
-        </pre>
-      </div>
-
-      <div className="section">
-        <h3>Preview (large)</h3>
-        <div className="preview-box">
-          <button className="btn-guide" onClick={() => setIsOpen2(true)}>
-            라지 팝업 열기
-          </button>
           <PopupGroup
+            variant="modal"
             title="타이틀"
             size="large"
-            isOpen={isOpen2}
-            onClose={() => setIsOpen2(false)}
-            content={<div>넓은 중앙 레이어 팝업 내용입니다.</div>}
+            isOpen={isModalLargeOpen}
+            onClose={() => setIsModalLargeOpen(false)}
+            content={<div>넓은 Modal 팝업 내용입니다.</div>}
             footer={
               <>
                 <button
                   type="button"
                   className="btn-guide"
-                  onClick={() => setIsOpen2(false)}
+                  onClick={() => setIsModalLargeOpen(false)}
                 >
                   취소
                 </button>
                 <button
                   type="button"
                   className="btn-guide"
-                  onClick={() => setIsOpen2(false)}
+                  onClick={() => setIsModalLargeOpen(false)}
                 >
                   저장
                 </button>
@@ -142,12 +128,44 @@ const [isOpen, setIsOpen] = useState(false);
       <div className="section">
         <div className="code-header">
           <h3>Code</h3>
-          <button onClick={handleCopy2} className="copy-btn">
+          <button onClick={() => handleCopy(modalCode)} className="copy-btn">
             복사
           </button>
         </div>
         <pre className="code-block">
-          <code>{code2}</code>
+          <code>{modalCode}</code>
+        </pre>
+      </div>
+
+      <div className="section">
+        <h3>Preview (Layer)</h3>
+        <p>
+          dim 없음, body 스크롤 잠금 없음. 하단에 「오늘 하루 보지 않기」
+          체크박스 UI가 표시되며(표시용), 닫기는 × 버튼(onClose)으로
+          합니다. 문구 변경 시 hideTodayText를 사용합니다.
+        </p>
+        <div className="preview-box">
+          <button className="btn-guide" onClick={() => setIsLayerOpen(true)}>
+            Layer 열기
+          </button>
+          <PopupGroup
+            variant="layer"
+            isOpen={isLayerOpen}
+            onClose={() => setIsLayerOpen(false)}
+            content={<div>Layer 팝업 내용입니다.</div>}
+          />
+        </div>
+      </div>
+
+      <div className="section">
+        <div className="code-header">
+          <h3>Code</h3>
+          <button onClick={() => handleCopy(layerCode)} className="copy-btn">
+            복사
+          </button>
+        </div>
+        <pre className="code-block">
+          <code>{layerCode}</code>
         </pre>
       </div>
     </div>

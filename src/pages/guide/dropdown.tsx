@@ -3,7 +3,7 @@ import Dropdown from "@/components/common/dropdown/Dropdown";
 import "./guide.scss";
 
 const dropdownItems = [
-  { value: "option1", label: "텍스트텍스트텍스트텍스트텍스트텍스트텍스트" },
+  { value: "option1", label: "텍스트텍스트텍트텍스트텍스트텍텍스트텍스트텍텍스트텍스트텍스트텍스트텍스트" },
   { value: "option2", label: "옵션 2" },
   { value: "option3", label: "옵션 3" },
 ];

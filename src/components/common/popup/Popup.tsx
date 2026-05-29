@@ -1,53 +1,89 @@
 import React, { ReactNode, useEffect } from "react";
 import cn from "classnames";
+import Checkbox from "@/components/common/checkbox/Checkbox";
 import styles from "./Popup.module.scss";
-
-type PopupSize = "large" | "medium";
+export type PopupVariant = "modal" | "layer";
+export type PopupSize = "large" | "medium";
 
 interface PopupGroupProps {
+  variant?: PopupVariant;
   className?: string;
   title?: string;
   content?: ReactNode;
   footer?: ReactNode;
   size?: PopupSize;
+  hideTodayText?: string;
   isOpen?: boolean;
   onClose?: () => void;
 }
 
 export const PopupGroup = ({
+  variant = "modal",
   className,
   title,
   content,
   footer,
   size = "medium",
+  hideTodayText = "오늘 하루 보지 않기",
   isOpen,
   onClose,
 }: PopupGroupProps) => {
-
   useEffect(() => {
-    document.body.style.overflow = isOpen ? "hidden" : "auto";
+    if (variant !== "modal" || !isOpen) return;
+
+    document.body.style.overflow = "hidden";
+
     return () => {
       document.body.style.overflow = "auto";
     };
-  }, [isOpen]);
+  }, [isOpen, variant]);
 
-  const sizeClass = styles[size];
- 
+  const isModal = variant === "modal";
+
   return (
-    <div className={cn(styles.popup, className, isOpen && styles.open)}>
-      <div className={styles.dim}></div>
-      <div className={cn(styles.popup_area, sizeClass)}>
-        <div className={styles.popup_header}>
-          <h3>{title}</h3>
-          <button className={styles.close_btn} onClick={onClose}>
-            닫기
-          </button>
+    <div
+      className={cn(styles.popup, className, {
+        [styles.open]: isOpen,
+        [styles.modal]: isModal,
+        [styles.layer]: !isModal,
+      })}
+    >
+      {isModal && <div className={styles.dim} onClick={onClose} />}
+
+      {isModal ? (
+        <div className={cn(styles.modal_area, styles[size])}>
+          <div className={styles.modal_header}>
+            <h3>{title}</h3>
+            <button
+              type="button"
+              className={styles.close_btn}
+              onClick={onClose}
+              aria-label="팝업 닫기"
+            >
+              닫기
+            </button>
+          </div>
+          <div className={styles.modal_content}>{content}</div>
+          {footer && <div className={styles.modal_footer}>{footer}</div>}
         </div>
-        <div className={styles.popup_content}>
-          {content}
+      ) : (
+        <div className={styles.layer_area}>
+          <div className={styles.layer_content}>{content}</div>
+          <div className={styles.layer_bottom}>
+            <Checkbox label={hideTodayText} />
+            <button
+              type="button"
+              className={styles.layer_close_btn}
+              onClick={onClose}
+              aria-label="팝업 닫기"
+            >
+              ×
+            </button>
+          </div>
         </div>
-        {footer && <div className={styles.popup_footer}>{footer}</div>}
-      </div>
+      )}
     </div>
   );
 };
+
+export default PopupGroup;

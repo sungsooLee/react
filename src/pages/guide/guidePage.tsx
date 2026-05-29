@@ -15,6 +15,8 @@ import Accordion from "./accordion";
 import Tooltip from "./tooltip";
 import Alert from "./alert";
 import Dropdown from "./dropdown";
+import Checkbox from "./checkbox";
+import Radio from "./radio";
 
 type GuideItem = {
   key: string;
@@ -87,6 +89,16 @@ const guideList: GuideItem[] = [
     key: "dropdown",
     label: "Dropdown",
     component: Dropdown,
+  },
+  {
+    key: "checkbox",
+    label: "Checkbox",
+    component: Checkbox,
+  },
+  {
+    key: "radio",
+    label: "Radio",
+    component: Radio,
   },
   // 👉 계속 추가
   // { key: "button", label: "Button", component: ButtonGuide },
