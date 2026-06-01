@@ -15,14 +15,19 @@ export const SearchBox = ({ className }: SearchBoxProps) => {
       <div className={styles.search_area}>
         <textarea name="" id=""></textarea>
       </div>
-      <Button
-        className={styles.btn_submit}
-        variant="normal"
-        type={"submit"}
-        size={"large"}
-      >
-        <Icon name={"ic_btn_submit"} size={"xl"} strokeColor="none" />
-      </Button>
+      <div className={styles.btn_area}>
+        <Button className={styles.btn_clear} variant="normal">
+          <Icon name={"ic_btn_clear"} size={"md"} strokeColor="none" />
+        </Button>
+        <Button
+          className={styles.btn_submit}
+          variant="normal"
+          type={"submit"}
+          size={"large"}
+        >
+          <Icon name={"ic_btn_submit"} size={"xl"} strokeColor="none" />
+        </Button>
+      </div>
     </div>
   );
 };

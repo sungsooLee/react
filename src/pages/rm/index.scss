@@ -4,3 +4,16 @@
   margin: 0 auto;
   padding-top: 64px;
 }
+
+.page_title {
+  text-align: center;
+  background: linear-gradient(
+    121deg,
+    #0083ca 15.59%,
+    #998fff 53.17%,
+    #d88fff 89.09%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

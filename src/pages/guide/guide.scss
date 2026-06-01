@@ -301,6 +301,7 @@
 }
 
 .guide-detail p {
+  font-size: 16px;
   color: #6b7280;
 
   & + .section {
@@ -320,8 +321,11 @@
   margin-bottom: 28px;
 }
 
-.section h3 {
+.section h3,
+.section h4 {
   margin-bottom: 12px;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 /* 프리뷰 */

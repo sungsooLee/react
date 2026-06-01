@@ -13,6 +13,7 @@ interface TabGroupProps {
   items: TabItem[];
   activeId?: string;
   defaultActiveId?: string;
+  variant?: "line" | "rounded";
   onChange?: (id: string) => void;
   className?: string;
 }
@@ -21,6 +22,7 @@ export const TabGroup = ({
   items,
   activeId,
   defaultActiveId,
+  variant = "line",
   onChange,
   className,
 }: TabGroupProps) => {
@@ -46,7 +48,7 @@ export const TabGroup = ({
   if (items.length === 0) return null;
 
   return (
-    <div className={cn(styles.tab_group, className)}>
+    <div className={cn(styles.tab_group, styles[`type_${variant}`], className)}>
       <div className={styles.tab_list} role="tablist">
         {items.map((item) => {
           const isActive = item.id === activeItem?.id;
