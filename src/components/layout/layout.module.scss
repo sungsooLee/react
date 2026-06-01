@@ -23,27 +23,22 @@
   }
 
   .aside {
+    overflow: hidden;
     position: sticky;
     left: 0;
     top: 0;
     flex-shrink: 0;
-    width: 150px;
+    width: 64px;
     height: calc(100dvh - 16px);
     padding: 0 8px;
     border-radius: var(--radius-md);
-    border: 1px solid var(--color-gray-300);
-    background: var(--color-White);
-
-    /* Shadow/Shadow_lv02 */
-    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.04);
-    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    &.open {
-      width: 232px;
-    }
+    border: 1px solid var(--color-gray-200);
+    background: var(--color-gray-200);
     .logo_wrap {
       position: relative;
       display: flex;
       align-items: center;
+      justify-content: center;
       min-height: 56px;
       margin-bottom: 24px;
       padding: 0 12px;
@@ -57,6 +52,7 @@
           height: 33px;
         }
         .label {
+          display: none;
           margin-left: 6px;
           font-size: 1.4rem;
           line-height: 1.2;
@@ -64,6 +60,7 @@
           background-clip: text;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
+          opacity: 0;
         }
       }
       .btn_toggle {
@@ -77,10 +74,9 @@
         justify-content: flex-end;
         padding: 0;
         background-color: transparent;
-        z-index: 1;
         &::before {
+          display: none;
           overflow: hidden;
-          display: flex;
           content: "";
           width: 20px;
           height: 16px;
@@ -88,19 +84,21 @@
           border: 2px solid var(--color-gray-700);
           border-radius: 3px;
           background-color: var(--color-White);
+          opacity: 0;
         }
         &::after {
+          display: none;
           position: absolute;
           right: 23px;
           top: 50%;
           overflow: hidden;
-          display: flex;
           content: "";
           width: 3px;
           height: 10px;
           margin-top: -5px;
           border-radius: 2px;
           background-color: var(--color-gray-700);
+          opacity: 0;
         }
       }
     }
@@ -111,15 +109,26 @@
           margin-top: 4px;
           &.active {
             button {
-              color: var(--color-pri-600);
-              font-weight: var(--font-weight-bold);
-              border-radius: var(--radius-lg);
-              border: 1px solid var(--color-pri-600);
+              border: 1px solid #f3f7fa;
+              border-radius: var(--radius-md);
+              background-color: #f3f7fa;
               svg {
                 path {
                   fill: #5997fb !important;
                 }
               }
+              .label {
+                color: var(--color-pri-600);
+                font-weight: var(--font-weight-bold);
+              }
+            }
+          }
+          button {
+            justify-content: center;
+            padding: 0;
+            .label {
+              display: none;
+              opacity: 0;
             }
           }
           &:first-child {
@@ -139,16 +148,59 @@
             font-weight: var(--font-weight-regular);
             color: var(--color-gray-800);
             border: 1px solid transparent;
-            svg {
-              margin-right: 8px;
-            }
           }
+        }
+      }
+    }
+
+    &.open {
+      width: 232px;
+      background: var(--color-White);
+      border: 1px solid var(--color-gray-300);
+      box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.04);
+      transition: width 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+
+      .logo_wrap {
+        justify-content: flex-start;
+        .logo .label {
+          display: block;
+          opacity: 1;
+        }
+      }
+
+      .nav_menu_item {
+        button {
+          justify-content: flex-start;
+          padding-left: 8px;
+          svg {
+            margin-right: 8px;
+          }
+          .label {
+            display: block;
+            opacity: 1;
+          }
+        }
+
+        &.active button {
+          border-radius: var(--radius-lg);
+          border: 1px solid var(--color-pri-600);
+          background-color: var(--color-White);
+        }
+      }
+
+      .btn_toggle {
+        &::before,
+        &::after {
+          display: flex;
+          opacity: 1;
         }
       }
     }
   }
   .container {
-    @apply w-full flex-1 ml-[8px];
+    width: 100%;
+    flex: 1;
+    margin-left: 8px;
   }
   .footer {
     @apply w-full h-[100px] shrink-0;
