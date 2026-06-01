@@ -1,0 +1,130 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 40px 24px;
+  background: #f5f7fb;
+}
+
+.title {
+  margin: 0 0 8px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.desc {
+  margin: 0 0 32px;
+  font-size: 14px;
+  color: #6b7280;
+  text-align: center;
+}
+
+.icon_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  padding: 24px;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.icon_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+// .icon_label {
+//   font-size: 13px;
+//   color: #6b7280;
+// }
+
+@property --summit-gradient-start {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #7c8ee5;
+}
+
+@property --summit-gradient-end {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #48cbff;
+}
+
+@property --summit-circle-start {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #f1f7ff;
+}
+
+@property --summit-circle-end {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #f1f7ff;
+}
+
+.summit_btn {
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-radius: 50%;
+  line-height: 0;
+
+  &:hover:not(.is_active) .summit_icon {
+    animation: summit-hover-flow 2s ease-in-out infinite;
+    filter: drop-shadow(0 0 10px rgba(124, 142, 229, 0.4));
+    transform: scale(1.06);
+  }
+
+  &.is_active .summit_icon {
+    --summit-circle-start: #7c8ee5;
+    --summit-circle-end: #48cbff;
+    --summit-gradient-start: #ffffff;
+    --summit-gradient-end: #ffffff;
+  }
+}
+
+.summit_icon {
+  --summit-circle-start: #f1f7ff;
+  --summit-circle-end: #f1f7ff;
+  --summit-gradient-start: #7c8ee5;
+  --summit-gradient-end: #48cbff;
+  display: block;
+  transition:
+    --summit-gradient-start 0.4s ease,
+    --summit-gradient-end 0.4s ease,
+    --summit-circle-start 0.2s ease,
+    --summit-circle-end 0.2s ease,
+    transform 0.3s ease,
+    filter 0.3s ease;
+}
+
+@keyframes summit-hover-flow {
+  0% {
+    --summit-gradient-start: #7c8ee5;
+    --summit-gradient-end: #48cbff;
+  }
+  25% {
+    --summit-gradient-start: #a855f7;
+    --summit-gradient-end: #22d3ee;
+  }
+  50% {
+    --summit-gradient-start: #ec4899;
+    --summit-gradient-end: #6366f1;
+  }
+  75% {
+    --summit-gradient-start: #48cbff;
+    --summit-gradient-end: #998fff;
+  }
+  100% {
+    --summit-gradient-start: #7c8ee5;
+    --summit-gradient-end: #48cbff;
+  }
+}
