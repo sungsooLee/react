@@ -24,6 +24,16 @@
   margin-left: auto;
   .alarm_view {
     position: relative;
+    &.active {
+      &::after {
+        overflow: hidden;
+        content: "";
+        width: 6px;
+        height: 6px;
+        background-color: var(--status-error);
+        border-radius: 3px;
+      }
+    }
     .num_view {
       display: flex;
       align-items: center;

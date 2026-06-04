@@ -7,6 +7,7 @@ import cn from "classnames";
 import styles from "./layout.module.scss";
 import { Button } from "../common/button/Button";
 import { Icon } from "../icons/Icon";
+import type { HeaderType2Props } from "../layout/header/HeaderType2";
 
 export type HeaderType = "type1" | "type2" | "none";
 export type FooterType = "type1" | "type2" | "none";
@@ -21,7 +22,9 @@ export interface AsideMenuItem {
 interface LayoutProps {
   headerType?: HeaderType;
   footerType?: FooterType;
+  headerType2Props?: Omit<HeaderType2Props, "className">;
   hasAside?: boolean;
+  hasAsideToggle?: boolean;
   asideMenuItems?: AsideMenuItem[];
   asideActiveMenuIndex?: number;
   children: React.ReactNode;
@@ -30,10 +33,11 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({
   headerType = "type1",
   footerType = "type1",
+  headerType2Props,
   hasAside = false,
+  hasAsideToggle = false,
   asideMenuItems = [],
   asideActiveMenuIndex = 0,
-
   children,
 }) => {
   const [isAsideOpen, setIsAsideOpen] = useState(true);
@@ -51,6 +55,7 @@ const Layout: React.FC<LayoutProps> = ({
             headerType === "type2" ? styles.header_type2 : styles.header,
           )}
           type={headerType}
+          headerType2Props={headerType2Props}
         />
       )}
 
@@ -58,28 +63,26 @@ const Layout: React.FC<LayoutProps> = ({
       <div className={styles.layout}>
         {/* Aside */}
         {hasAside && (
-          <aside className={cn(styles.aside, isAsideOpen && styles.open)}>
-            <div className={styles.logo_wrap}>
-              <h1 className={styles.logo}>
-                <Icon name={"ic_logo"} size={"lg"} strokeColor={"none"} />
-                <span className={styles.label}>
-                  WON-SHOT
-                  <br />
-                  기업리포트
-                </span>
-              </h1>
+          <aside
+            className={cn(
+              styles.aside,
+              (!hasAsideToggle || isAsideOpen) && styles.open,
+            )}
+          >
+            <div className={styles.lnb_wrap}>
               {/* Toggle Button */}
-              <Button
-                variant="normal"
-                className={styles.btn_toggle}
-                onClick={handleAsideToggle}
-              >
-                <span className="sr_only">토글</span>
-                {/* <Icon
-                  name={isAsideOpen ? "ic_nav_toggle" : "ic_nav_toggle"}
-                  size={"md"}
-                /> */}
-              </Button>
+              {hasAsideToggle && (
+                <Button
+                  variant="normal"
+                  className={styles.btn_toggle}
+                  onClick={handleAsideToggle}
+                  type="button"
+                >
+                  <span className="sr_only">토글</span>
+
+                  <Icon name="ic_nav_toggle" size="md" strokeColor="none" />
+                </Button>
+              )}
             </div>
 
             {/* Nav */}

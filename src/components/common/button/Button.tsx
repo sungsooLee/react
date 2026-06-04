@@ -4,7 +4,14 @@ import styles from "./Button.module.scss";
 
 interface ButtonProps {
   children: React.ReactNode;
-  variant?: "primary" | "secondary" | "text" | "underline" | "normal";
+  variant?:
+    | "primary"
+    | "secondary"
+    | "text"
+    | "underline"
+    | "normal"
+    | "line"
+    | "line_gray";
   size?: "small" | "medium" | "large";
   className?: string;
   onClick?: () => void;
