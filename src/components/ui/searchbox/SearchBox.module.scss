@@ -1,33 +1,44 @@
 .search {
   &_box {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
     max-width: 800px;
-    min-height: 72px;
     margin: 0 auto;
-    padding: 12px 16px;
-    border-radius: var(--radius-xxl);
-    background: var(--color-White, #fff);
-    box-shadow: 0 2px 24px 0 rgba(47, 96, 255, 0.24);
-    gap: 16px;
-
     .btn_area {
       display: inline-flex;
       align-items: center;
       flex-shrink: 0;
+      .btn_clear {
+        flex-shrink: 0;
+        transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        transform-origin: center;
+        &:hover {
+          transform: rotate(360deg);
+        }
+      }
+
+      .btn_submit {
+        flex-shrink: 0;
+        width: 48px;
+        margin-left: 12px;
+      }
     }
 
-    .btn_clear {
-      flex-shrink: 0;
+    .chips_area {
+      flex: none;
+      width: 100%;
     }
+  }
 
-    .btn_submit {
-      flex-shrink: 0;
-      width: 48px;
-      margin-left: 12px;
-    }
+  &_inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    min-height: 88px;
+    padding: 20px 24px 20px 32px;
+    border-radius: var(--radius-xxl);
+    background: var(--color-White, #fff);
+    box-shadow: 0 2px 24px 0 rgba(47, 96, 255, 0.24);
+    gap: 16px;
   }
 
   &_area {
@@ -36,26 +47,22 @@
 
     textarea {
       display: block;
-
       width: 100%;
       min-height: 24px;
       max-height: 240px;
-
       padding: 0;
-
       border: 0;
+      font-size: 2rem;
+      line-height: 1.5;
       outline: none;
-
       resize: none;
       overflow-y: auto;
-
       background: transparent;
 
-      font-size: 16px;
-      line-height: 1.5;
-
       &::placeholder {
-        color: #999;
+        font-size: 2rem;
+        font-weight: var(--font-weight-regular);
+        color: var(--color-gray-400);
       }
     }
   }

@@ -1,19 +1,18 @@
 @use "../../assets/styles/base/mixin" as *;
 .wrap {
   font-size: 1.6rem;
-  padding: 8px;
   &:has(.header) {
-    @apply pt-[60px];
+    @apply pt-[56px];
   }
   .header {
-    @apply fixed left-0 top-0 w-full h-[60px] bg-white flex justify-center items-center z-[5] shadow-[0_4px_6px_#00000026];
+    @apply fixed left-0 top-0 w-full h-[56px] bg-white flex justify-center items-center z-[5] shadow-[0_4px_6px_#00000026];
     h1 {
       @apply text-center;
       font-size: var(--font-size-20);
     }
 
     &_type2 {
-      @apply h-[48px] sticky left-0 top-0 flex items-center bg-white px-[18px];
+      @apply h-[56px] sticky left-0 top-0 flex items-center bg-white px-[18px];
       border-bottom: 1px solid var(--color-gray-300);
     }
   }
@@ -26,43 +25,18 @@
     overflow: hidden;
     position: sticky;
     left: 0;
-    top: 0;
+    top: 56px;
     flex-shrink: 0;
     width: 64px;
-    height: calc(100dvh - 16px);
+    height: calc(100dvh - 56px);
     padding: 0 8px;
-    border-radius: var(--radius-md);
-    border: 1px solid var(--color-gray-200);
     background: var(--color-gray-200);
-    .logo_wrap {
+    .lnb_wrap {
       position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 56px;
-      margin-bottom: 24px;
-      padding: 0 12px;
-      .logo {
-        flex: 1;
-        display: flex;
-        align-items: center;
-        svg {
-          flex-shrink: 0;
-          width: 33px;
-          height: 33px;
-        }
-        .label {
-          display: none;
-          margin-left: 6px;
-          font-size: 1.4rem;
-          line-height: 1.2;
-          background: linear-gradient(124deg, #0795e4 23.59%, #c12fff 98.48%);
-          background-clip: text;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          opacity: 0;
-        }
-      }
+      padding: 16px 12px 0;
       .btn_toggle {
         position: absolute;
         left: 0;
@@ -154,18 +128,13 @@
     }
 
     &.open {
-      width: 232px;
+      width: 240px;
       background: var(--color-White);
-      border: 1px solid var(--color-gray-300);
-      box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.04);
+      border-right: 1px solid var(--color-gray-300);
       transition: width 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 
-      .logo_wrap {
+      .lnb_wrap {
         justify-content: flex-start;
-        .logo .label {
-          display: block;
-          opacity: 1;
-        }
       }
 
       .nav_menu_item {

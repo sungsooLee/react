@@ -23,6 +23,39 @@
       padding: 0;
     }
   }
+  &.line {
+    border: 1px solid var(--color-pri-500);
+    &.large {
+      padding: 11px 20px;
+      font-size: 1.7rem;
+      font-weight: var(--font-weight-semibold);
+      color: var(--color-pri-500);
+      border-radius: var(--radius-md);
+    }
+    &_gray {
+      &.large {
+        padding: 11px 20px;
+        font-size: 1.7rem;
+        font-weight: var(--font-weight-semibold);
+        color: var(--color-gray-700);
+        border-radius: var(--radius-md);
+      }
+      &.medium {
+        padding: 7.5px 12px;
+        font-size: 1.4rem;
+        font-weight: var(--font-weight-semibold);
+        color: var(--color-gray-700);
+        border-radius: 10px;
+      }
+      &.small {
+        padding: 5px 8px;
+        font-size: 1.2rem;
+        font-weight: var(--font-weight-medium);
+        color: var(--color-gray-700);
+        border-radius: var(--radius-md);
+      }
+    }
+  }
   &.small {
     height: 28px;
     padding: 0.5rem 0.8rem;

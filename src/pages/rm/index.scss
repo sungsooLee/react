@@ -7,6 +7,16 @@
 
 .page_title {
   text-align: center;
+  font-size: 1.6rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-pri-600);
+}
+
+.page_text {
+  text-align: center;
+  margin: 4px 0 24px;
+  font-size: 3rem;
+  font-weight: var(--font-weight-bold);
   background: linear-gradient(
     121deg,
     #0083ca 15.59%,

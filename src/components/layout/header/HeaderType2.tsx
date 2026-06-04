@@ -4,12 +4,19 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./header.scss";
 import { Button } from "@/components/common/button/Button";
-import userProfile from "../../../assets/images/rm/sample.png";
-interface Props {
+import cn from "classnames";
+
+export interface HeaderType2Props {
   className?: string;
+  hasAlarm?: boolean;
+  bagCount?: number;
 }
 
-const HeaderType2: React.FC<Props> = ({ className }) => {
+const HeaderType2: React.FC<HeaderType2Props> = ({
+  className,
+  hasAlarm = false,
+  bagCount = 0,
+}) => {
   return (
     <header className={className}>
       <h1 className={"logo"}>
@@ -18,21 +25,29 @@ const HeaderType2: React.FC<Props> = ({ className }) => {
           <span className={"label"}>WON-SHOT 기업리포트</span>
         </Link>
       </h1>
+
       <div className={"quick_menu"}>
-        <div className={"alarm_view"}>
+        <div
+          className={cn("alarm_view", {
+            active: hasAlarm,
+          })}
+        >
           <Button variant="normal">
             <Icon
-              name={"ic_alarm"}
+              name={"icon_ui_bell"}
               size={"md"}
               strokeColor={"#4C4F58"}
               fillColor={"#4C4F58"}
             />
           </Button>
-          <span className={"num_view"}>3</span>
         </div>
-        <div className={"user_view"}>
-          <img src={userProfile} alt={""} className={"img_profile"} />
-          <span className={"label"}>김우리</span>
+
+        <div className={cn("bag_view")}>
+          <Button variant="normal">
+            <Icon name={"icon_ui_bag"} size={"md"} />
+
+            {bagCount > 0 && <span className={"num_view"}>{bagCount}</span>}
+          </Button>
         </div>
       </div>
     </header>

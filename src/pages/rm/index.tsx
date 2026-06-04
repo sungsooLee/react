@@ -5,7 +5,6 @@ import "./index.scss";
 import { SearchBox } from "@/components/ui/searchbox/SearchBox";
 // import { TabGroup } from "@/components/common/tab/Tab";
 import { ContentsWrapper } from "@/components/layout/contents/ContentsWrapper";
-import { TopMenu } from "@/components/layout/topmenu/TopMenu";
 
 // tab contents
 // const AllCont = () => <div>전체 고객 콘텐츠 (여기에 복잡한 코드 작성)</div>;
@@ -48,33 +47,34 @@ const Main = () => {
     },
   ];
 
-  const [value, setValue] = useState("");
-
   return (
     <Layout
-      headerType="none"
+      headerType={"type2"}
+      headerType2Props={{
+        hasAlarm: true,
+        bagCount: 3,
+      }}
       hasAside={true}
+      hasAsideToggle={false}
       asideMenuItems={menuItems}
       asideActiveMenuIndex={activeMenuIndex}
       footerType="none"
     >
-      <TopMenu
-        userName="김우리"
-        notificationCount={3}
-        dropdownItems={[
-          { label: "본부담당자", value: "user1" },
-          { label: "본부담당자2", value: "user2" },
-        ]}
-        dropdownValue={value}
-        onDropdownChange={setValue}
-        dropdownPlaceholder={"선택"}
-      />
       <ContentsWrapper layout={"center"} className={"menu_rm"}>
-        <h2 className="page_title">{"AI 로 보는 우리 지점 가망 고객"}</h2>
+        <h2 className="page_title">{"명동금융센터"}</h2>
+        <p className="page_text">{"AI 로 보는 우리 지점 가망 고객"}</p>
         {/* <div style={{ backgroundColor: "rgba(235, 190, 172, 0.20)" }}>1</div>
         <div style={{ backgroundColor: "rgba(235, 190, 172, 0.20)" }}>2</div>
         <div style={{ backgroundColor: "rgba(235, 190, 172, 0.20)" }}>3</div> */}
-        <SearchBox />
+        <SearchBox
+          placeholder={"ex) 생산적 금융 기업"}
+          chipsItems={[
+            { item: "생산적 금융 기업" },
+            { item: "시설자금 수요 기업" },
+            { item: "외환 거래" },
+            { item: "신용등급 높은" },
+          ]}
+        />
         {/* <TabGroup
           items={[
             { id: "tab1", label: "전체", content: <AllCont /> },
