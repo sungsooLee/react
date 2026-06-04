@@ -2,7 +2,7 @@ import { useState } from "react";
 import Layout from "@/components/layout/Layout";
 // import cn from "classnames";
 import "./index.scss";
-// import { SearchBox } from "@/components/ui/searchbox/SearchBox";
+import { SearchBox } from "@/components/ui/searchbox/SearchBox";
 // import { TabGroup } from "@/components/common/tab/Tab";
 import { ContentsWrapper } from "@/components/layout/contents/ContentsWrapper";
 import { TopMenu } from "@/components/layout/topmenu/TopMenu";
@@ -69,12 +69,13 @@ const Main = () => {
         onDropdownChange={setValue}
         dropdownPlaceholder={"선택"}
       />
-      <ContentsWrapper layout={"column"} columns={3}>
-        <div style={{ backgroundColor: "rgba(235, 190, 172, 0.20)" }}>1</div>
+      <ContentsWrapper layout={"center"} className={"menu_rm"}>
+        <h2 className="page_title">{"AI 로 보는 우리 지점 가망 고객"}</h2>
+        {/* <div style={{ backgroundColor: "rgba(235, 190, 172, 0.20)" }}>1</div>
         <div style={{ backgroundColor: "rgba(235, 190, 172, 0.20)" }}>2</div>
-        <div style={{ backgroundColor: "rgba(235, 190, 172, 0.20)" }}>3</div>
-        {/* <SearchBox />
-        <TabGroup
+        <div style={{ backgroundColor: "rgba(235, 190, 172, 0.20)" }}>3</div> */}
+        <SearchBox />
+        {/* <TabGroup
           items={[
             { id: "tab1", label: "전체", content: <AllCont /> },
             {
