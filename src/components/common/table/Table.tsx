@@ -45,7 +45,7 @@ export default function Table<T extends Record<string, React.ReactNode>>({
   showHeader = true,
 }: TableProps<T>) {
   return (
-    <div className={cn(styles.tableWrap, className)}>
+    <div className={cn(styles.table_wrap, className)}>
       <table className={styles.table}>
         {showHeader && (
           <thead>

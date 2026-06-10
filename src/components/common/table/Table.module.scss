@@ -1,9 +1,22 @@
-.tableWrap {
+.table_wrap {
   width: 100%;
   overflow-x: auto;
   border: 1px solid var(--color-gray-200);
   border-radius: 10px;
   background: var(--color-white);
+
+  &.horizontal {
+    .table {
+      tbody {
+        th {
+          text-align: left;
+        }
+        td {
+          text-align: left;
+        }
+      }
+    }
+  }
 
   .table {
     width: 100%;

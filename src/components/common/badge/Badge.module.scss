@@ -1,0 +1,26 @@
+.badge {
+  &_wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  &_item {
+    display: inline-flex;
+    align-items: center;
+    height: 21px;
+    padding: 0 6px;
+    border-radius: 9px;
+    font-size: 1.2rem;
+    font-weight: var(--font-weight-regular);
+
+    &.small {
+      height: 21px;
+    }
+
+    &.blue {
+      background: var(--color-pri-200);
+      color: var(--badge-state-01);
+    }
+  }
+}

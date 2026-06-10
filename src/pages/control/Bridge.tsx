@@ -2,13 +2,51 @@ import { useState } from "react";
 import { PopupGroup } from "@/components/common/popup/Popup";
 import { Button } from "@/components/common/button/Button";
 import { MessageBox } from "@/components/ui/messageBox/MessageBox";
+import { Badge } from "@/components/common/badge/Badge";
+import "./Bridge.scss";
 // import { TabGroup } from "@/components/common/tab/Tab";
 
 // tab contents
 // const AllCont = () => <div>전체 고객 콘텐츠 (여기에 복잡한 코드 작성)</div>;
 
 const PopContents = () => (
-  <div>
+  <>
+    {/* table */}
+    <div className="table_wrap horizontal">
+      <table className="table">
+        <caption className="sr_only">AI 집중점검 결과 상세</caption>
+
+        <colgroup>
+          <col style={{ width: "160px" }} />
+          <col />
+          <col style={{ width: "160px" }} />
+          <col />
+        </colgroup>
+
+        <tbody>
+          <tr>
+            <th scope="row">관리조치(보고)명</th>
+            <td>신탁업무 절차 점검 결과 검토</td>
+            <th scope="row">점검주기</th>
+            <td>분기별</td>
+          </tr>
+          <tr>
+            <th scope="row">기안부서</th>
+            <td>자산관리그룹</td>
+            <th scope="row">기안자</th>
+            <td>김우리 과장</td>
+          </tr>
+          <tr>
+            <th scope="row">AI 분석일시</th>
+            <td>2026-05-07 09:14</td>
+            <th scope="row">집중점검 판단 유형</th>
+            <td>과거 관리조치 수행 이력 + 감독기관 보도자료</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    {/* MessageBox */}
     <MessageBox
       variant="result"
       title={"AI 종합판단 결과"}
@@ -24,6 +62,7 @@ const PopContents = () => (
       }
     />
 
+    {/* MessageBox */}
     <MessageBox
       variant="summary"
       title={"AI 보도자료 핵심 요약"}
@@ -58,7 +97,66 @@ const PopContents = () => (
         </>
       }
     />
-  </div>
+
+    <h2 className="title_h2">연관 보도자료 목록</h2>
+
+    {/* table */}
+    <div className="table_wrap">
+      <table className="table">
+        <caption className="sr_only">연관 보도자료 목록</caption>
+
+        <colgroup>
+          <col style={{ width: "120px" }} />
+          <col style={{ width: "120px" }} />
+          <col />
+          <col />
+          <col style={{ width: "120px" }} />
+          <col style={{ width: "120px" }} />
+        </colgroup>
+
+        <thead>
+          <tr>
+            <th scope="col">보도일</th>
+            <th scope="col">기관</th>
+            <th scope="col">제목</th>
+            <th scope="col">주요키워드</th>
+            <th scope="col">연관도</th>
+            <th scope="col">상세</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>2026-04-18</td>
+            <td>금융감독원</td>
+            <td className="left">운영리스크 손실사건 관리 미흡 사례 발표</td>
+            <td>
+              <Badge
+                labels={[
+                  {
+                    text: "손실사건 등록",                    
+                    color: "blue",
+                  },
+                  {
+                    text: "승인 지연",                    
+                    color: "blue",
+                  },
+                  {
+                    text: "증빙 누락",                    
+                    color: "blue",
+                  },
+                ]}
+              />
+            </td>
+            <td><p className="point">92%</p></td>
+            <td>
+              <Button variant="underline">원문 보기</Button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </>
 );
 
 const Bridge = () => {
