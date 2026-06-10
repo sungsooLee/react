@@ -4,13 +4,54 @@ import { Button } from "@/components/common/button/Button";
 import { MessageBox } from "@/components/ui/messageBox/MessageBox";
 import { Badge } from "@/components/common/badge/Badge";
 import "./Bridge.scss";
+import Checkbox from "@/components/common/checkbox/Checkbox";
 // import { TabGroup } from "@/components/common/tab/Tab";
 
 // tab contents
 // const AllCont = () => <div>전체 고객 콘텐츠 (여기에 복잡한 코드 작성)</div>;
 
-const PopContents = () => (
-  <>
+
+
+const PopContents = () => {
+  const cellList = [
+    {
+      id: 1,
+      agency: "금융감독원",
+      title: "운영리스크 손실사건 관리 미흡 사례 발표",
+      score: 92,
+    },
+    {
+      id: 2,
+      agency: "금융감독원",
+      title: "운영리스크 손실사건 관리 미흡 사례 발표",
+      score: 92,
+    },
+  ];
+
+  const [checkedRows, setCheckedRows] = useState<number[]>([]);
+
+  const isAllChecked =
+    cellList.length > 0 &&
+    checkedRows.length === cellList.length;
+
+  const handleAllCheck = () => {
+    if (isAllChecked) {
+      setCheckedRows([]);
+    } else {
+      setCheckedRows(cellList.map((item) => item.id));
+    }
+  };
+
+  const handleRowCheck = (id: number) => {
+    setCheckedRows((prev) =>
+      prev.includes(id)
+        ? prev.filter((item) => item !== id)
+        : [...prev, id]
+    );
+  };
+
+  return(
+    <>
     {/* table */}
     <div className="table_wrap horizontal">
       <table className="table">
@@ -116,7 +157,9 @@ const PopContents = () => (
 
         <thead>
           <tr>
-            <th scope="col">보도일</th>
+            <th scope="col"><Checkbox checked={isAllChecked}
+                  onChange={handleAllCheck} />
+                  </th>
             <th scope="col">기관</th>
             <th scope="col">제목</th>
             <th scope="col">주요키워드</th>
@@ -125,42 +168,71 @@ const PopContents = () => (
           </tr>
         </thead>
 
-        <tbody>
-          <tr>
-            <td>2026-04-18</td>
-            <td>금융감독원</td>
-            <td className="left">운영리스크 손실사건 관리 미흡 사례 발표</td>
-            <td>
-              <Badge
-                labels={[
-                  {
-                    text: "손실사건 등록",                    
-                    color: "blue",
-                  },
-                  {
-                    text: "승인 지연",                    
-                    color: "blue",
-                  },
-                  {
-                    text: "증빙 누락",                    
-                    color: "blue",
-                  },
-                ]}
-              />
-            </td>
-            <td><p className="point">92%</p></td>
-            <td>
-              <Button variant="underline">원문 보기</Button>
-            </td>
-          </tr>
-        </tbody>
+       <tbody>
+            {cellList.map((item) => {
+              const checked = checkedRows.includes(item.id);
+
+              return (
+                <tr
+                  key={item.id}
+                  className={checked ? "checked" : ""}
+                >
+                  <td>
+                    <Checkbox
+                      checked={checked}
+                      onChange={() => handleRowCheck(item.id)}
+                    />
+                  </td>
+
+                  <td>{item.agency}</td>
+
+                  <td className="left">
+                    {item.title}
+                  </td>
+
+                  <td>
+                    <Badge
+                      labels={[
+                        {
+                          text: "손실사건 등록",
+                          color: "blue",
+                        },
+                        {
+                          text: "승인 지연",
+                          color: "blue",
+                        },
+                        {
+                          text: "증빙 누락",
+                          color: "blue",
+                        },
+                      ]}
+                    />
+                  </td>
+
+                  <td>
+                    <p className="point">{item.score}%</p>
+                  </td>
+
+                  <td>
+                    <Button variant="underline">
+                      원문 보기
+                    </Button>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
       </table>
     </div>
   </>
-);
+  );
+}
+
+
 
 const Bridge = () => {
   const [isOpen, setIsOpen] = useState(false);
+  
 
   //   const [activeMenuIndex, setActiveMenuIndex] = useState(2);
 
