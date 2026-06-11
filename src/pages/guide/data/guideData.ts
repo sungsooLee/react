@@ -78,4 +78,15 @@ export const guideData: ListItem[] = [
     lastUpdateDate: "",
     remarks: "",
   },
+  {
+    id: 7,
+    menuName: "내부통제",
+    screenName: "브릿지 화면",
+    pageLink: "/control/Bridge",
+    pageId: "",
+    pageType: "Popup",
+    completionDate: "",
+    lastUpdateDate: "",
+    remarks: "",
+  },
 ];

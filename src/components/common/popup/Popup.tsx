@@ -3,7 +3,7 @@ import cn from "classnames";
 import Checkbox from "@/components/common/checkbox/Checkbox";
 import styles from "./Popup.module.scss";
 export type PopupVariant = "modal" | "layer";
-export type PopupSize = "large" | "medium";
+export type PopupSize = "xlarge" | "large" | "medium";
 
 interface PopupGroupProps {
   variant?: PopupVariant;
