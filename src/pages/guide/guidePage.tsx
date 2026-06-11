@@ -14,6 +14,7 @@ import Table from "./table";
 import Accordion from "./accordion";
 import Tooltip from "./tooltip";
 import Alert from "./alert";
+import Toast from "./toast";
 import Dropdown from "./dropdown";
 import Checkbox from "./checkbox";
 import Radio from "./radio";
@@ -69,6 +70,11 @@ const guideList: GuideItem[] = [
     key: "alert",
     label: "Alert",
     component: Alert,
+  },
+  {
+    key: "toast",
+    label: "Toast",
+    component: Toast,
   },
   {
     key: "table",
