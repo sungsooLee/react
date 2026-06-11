@@ -1,10 +1,10 @@
 import { useState } from "react";
-import Toast, { ToastVariant } from "@/components/common/toast/Toast";
+import Toast from "@/components/common/toast/Toast";
 import "./guide.scss";
 
 const ToastGuide = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [variant, setVariant] = useState<ToastVariant>("default");
+  const [variant, setVariant] = useState("default");
 
   const code = `import { useState } from "react";
 import Toast from "@/components/common/toast/Toast";
@@ -29,7 +29,7 @@ const [isOpen, setIsOpen] = useState(false);
     alert("복사 완료!");
   };
 
-  const handleOpen = (nextVariant: ToastVariant) => {
+  const handleOpen = (nextVariant) => {
     setVariant(nextVariant);
     setIsOpen(true);
   };

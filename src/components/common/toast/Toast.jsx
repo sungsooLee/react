@@ -1,19 +1,6 @@
-import { ReactNode, useEffect } from "react";
+import { useEffect } from "react";
 import cn from "classnames";
 import styles from "./Toast.module.scss";
-
-export type ToastVariant = "default" | "success" | "error" | "warning";
-export type ToastPosition = "top" | "bottom";
-
-interface ToastProps {
-  isOpen?: boolean;
-  message?: ReactNode;
-  variant?: ToastVariant;
-  position?: ToastPosition;
-  duration?: number;
-  className?: string;
-  onClose?: () => void;
-}
 
 export const Toast = ({
   isOpen = false,
@@ -23,7 +10,7 @@ export const Toast = ({
   duration = 3000,
   className,
   onClose,
-}: ToastProps) => {
+}) => {
   useEffect(() => {
     if (!isOpen || !duration || !onClose) return;
 
@@ -45,8 +32,7 @@ export const Toast = ({
       aria-live="polite"
     >
       <div className={styles.toastArea}>
-          <div className={cn(styles.toastIcon, styles[variant])}>
-          </div>
+        <div className={cn(styles.toastIcon, styles[variant])}></div>
         <div className={styles.toastContent}>
           {message && <p className={styles.toastMessage}>{message}</p>}
         </div>
