@@ -8,6 +8,7 @@ import Icon from "./icon";
 import SelectButton from "./select-button";
 import FloatingButton from "./floating-button";
 import Textarea from "./textarea";
+import TextField from "./textfield";
 import Tab from "./tab";
 import Popup from "./popup";
 import Table from "./table";
@@ -55,6 +56,11 @@ const guideList: GuideItem[] = [
     key: "textarea",
     label: "Textarea",
     component: Textarea,
+  },
+  {
+    key: "textfield",
+    label: "TextField",
+    component: TextField,
   },
   {
     key: "tab",

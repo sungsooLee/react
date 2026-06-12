@@ -1,0 +1,92 @@
+.information_check_wrap {
+  .all_check {
+    margin-bottom: 16px;
+
+    .all_check_area {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .all_check_box {
+        display: flex;
+        align-items: center;
+
+        .all_check_count {
+          display: flex;
+          align-items: center;
+          font-size: var(--font-size-13);
+          color: var(--color-black);
+          gap: 2px;
+          margin-left: 10px;
+
+          .number {
+            font-weight: var(--font-weight-bold);
+          }
+        }
+      }
+
+      .all_check_reset {
+        button {
+          width: 24px;
+          height: 24px;
+          background-color: red;
+        }
+      }
+    }
+  }
+
+  .information_list_wrap {
+    .information_item {
+      .information_item_title {
+        strong {
+          font-size: var(--font-size-16);
+          color: var(--color-black);
+        }
+      }
+    }
+
+    .information_list {
+      li + li {
+        margin-top: 12px;
+      }
+    }
+  }
+}
+
+.information_item {
+  background-color: var(--color-gray-100);
+  border-radius: 16px;
+  padding: 20px 16px;
+
+  .information_item_title {
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--color-gray-200);
+
+    strong {
+      font-size: var(--font-size-16);
+      color: var(--color-gray-800);
+      font-weight: var(--font-weight-semibold);
+    }
+  }
+
+  ul {
+    li {
+      .box {
+        display: table;
+        padding: 2px 0;
+
+        .box_name {
+          display: table-cell;
+          min-width: 132px;
+          padding-right: 12px;
+        }
+
+        .box_form {
+          display: table-cell;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

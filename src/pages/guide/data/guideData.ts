@@ -89,4 +89,15 @@ export const guideData: ListItem[] = [
     lastUpdateDate: "",
     remarks: "",
   },
+  {
+    id: 8,
+    menuName: "업무자동화",
+    screenName: "브릿지 화면",
+    pageLink: "/work/Sample",
+    pageId: "",
+    pageType: "Popup",
+    completionDate: "",
+    lastUpdateDate: "",
+    remarks: "",
+  },
 ];

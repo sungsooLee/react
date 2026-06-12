@@ -44,7 +44,7 @@
   }
 
   .label {
-    font-size: 13px;
+    font-size: var(--font-size-13);
     line-height: 150%;
     color: var(--color-gray-800);
   }
