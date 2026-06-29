@@ -5,6 +5,8 @@ import "./index.scss";
 import { SearchBox } from "@/components/ui/searchbox/SearchBox";
 // import { TabGroup } from "@/components/common/tab/Tab";
 import { ContentsWrapper } from "@/components/layout/contents/ContentsWrapper";
+import LottieAnimation from "../../components/common/lottie/Lottie";
+import loadingLottie from "../../assets/lottie/ai_loading.json";
 
 // tab contents
 // const AllCont = () => <div>전체 고객 콘텐츠 (여기에 복잡한 코드 작성)</div>;
@@ -75,6 +77,7 @@ const Main = () => {
             { item: "신용등급 높은" },
           ]}
         />
+        <LottieAnimation animationData={loadingLottie} width={24} height={24} />
         {/* <TabGroup
           items={[
             { id: "tab1", label: "전체", content: <AllCont /> },
