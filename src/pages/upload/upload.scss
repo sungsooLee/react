@@ -19,7 +19,7 @@
   background-color: #f8fafc;
   cursor: pointer;
   text-align: center;
-  transition: all 0.2s ease-in-out;
+  /* ⚡ transition 제거: 마우스 오버/드래그 시 즉시 반응 */
 
   &:hover {
     border-color: #cbd5e1;
@@ -31,13 +31,13 @@
     background-color: #eef2ff;
 
     .upload_zone_icon {
+      /* ⚡ transform 이동 애니메이션 제거 (즉시 위로 붙도록) */
       transform: translateY(-4px);
     }
   }
 
   &_icon {
     font-size: 32px;
-    transition: transform 0.2s ease;
   }
 
   p {
@@ -58,7 +58,7 @@
     font-weight: 600;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     cursor: pointer;
-    transition: all 0.15s ease;
+    /* ⚡ 버튼 호버 애니메이션 제거 */
 
     &:hover {
       background: #f8fafc;
@@ -95,7 +95,6 @@
     border-radius: 12px;
     background: #ffffff;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.02);
-    transition: border-color 0.15s ease;
 
     &:hover {
       border-color: #e2e8f0;
@@ -138,7 +137,6 @@
     color: #94a3b8;
     font-size: 12px;
     cursor: pointer;
-    transition: all 0.15s ease;
 
     &:hover {
       background: #fef2f2;
