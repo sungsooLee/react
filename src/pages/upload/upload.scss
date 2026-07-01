@@ -1,0 +1,148 @@
+.upload_container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.upload_zone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 40px 24px;
+  border: 1.5px dashed #e2e8f0;
+  border-radius: 16px;
+  background-color: #f8fafc;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    border-color: #cbd5e1;
+    background-color: #f1f5f9;
+  }
+
+  &.active {
+    border-color: #4f46e5;
+    background-color: #eef2ff;
+
+    .upload_zone_icon {
+      transform: translateY(-4px);
+    }
+  }
+
+  &_icon {
+    font-size: 32px;
+    transition: transform 0.2s ease;
+  }
+
+  p {
+    margin: 0;
+    color: #64748b;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  &_select_btn {
+    margin-top: 4px;
+    padding: 8px 16px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #334155;
+    font-size: 13px;
+    font-weight: 600;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    transition: all 0.15s ease;
+
+    &:hover {
+      background: #f8fafc;
+      border-color: #cbd5e1;
+      color: #1e293b;
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+}
+
+.upload_file_list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+
+  &_header {
+    font-size: 12px;
+    font-weight: 600;
+    color: #94a3b8;
+    padding-left: 4px;
+  }
+
+  &_item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 14px;
+    border: 1px solid #f1f5f9;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.02);
+    transition: border-color 0.15s ease;
+
+    &:hover {
+      border-color: #e2e8f0;
+    }
+  }
+
+  &_text_group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+    flex: 1;
+  }
+
+  &_name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 13px;
+    font-weight: 500;
+    color: #334155;
+  }
+
+  &_size {
+    flex-shrink: 0;
+    font-size: 12px;
+    color: #94a3b8;
+  }
+
+  &_remove_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    border: none;
+    border-radius: 6px;
+    background: transparent;
+    color: #94a3b8;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+
+    &:hover {
+      background: #fef2f2;
+      color: #ef4444;
+    }
+  }
+}
