@@ -4,7 +4,7 @@ import { allGuideData } from "./data";
 import { ListItem } from "./data/guideData";
 import "./guide.scss";
 
-/* 상태 계산 */
+/* Status */
 const getStatus = (item: ListItem) => {
   if (item.completionDate) return "완료";
   if (item.remarks?.includes("작업중")) return "진행중";
@@ -27,7 +27,6 @@ const TaskList: React.FC = () => {
   const [keyword, setKeyword] = useState("");
   const [activeTab, setActiveTab] = useState("전체");
 
-  /* 🔥 데이터 1차 가공 (스프레드시트 구조 상속 및 일련번호 자동 생성) */
   const preparedData = useMemo<RenderListItem[]>(() => {
     let currentMenu = "공통";
     return allGuideData.map((item, index) => {
@@ -43,13 +42,11 @@ const TaskList: React.FC = () => {
     });
   }, []);
 
-  /* 📑 탭 메뉴 목록 동적 추출 */
   const tabList = useMemo<string[]>(() => {
     const menus = preparedData.map((item) => item._searchMenuName);
     return ["전체", ...Array.from(new Set(menus))];
   }, [preparedData]);
 
-  /* 🔍 탭 필터링 + 검색어 필터링 통합 적용 */
   const filteredData = useMemo<RenderListItem[]>(() => {
     const lowerKeyword = keyword.toLowerCase();
 
@@ -64,7 +61,6 @@ const TaskList: React.FC = () => {
     });
   }, [keyword, preparedData, activeTab]);
 
-  /* 📊 통계 */
   const stats = useMemo(() => {
     const total = filteredData.length;
     const completed = filteredData.filter((i) => i.completionDate).length;
@@ -77,7 +73,7 @@ const TaskList: React.FC = () => {
 
   return (
     <div className="wrapper">
-      {/* 💻 헤더 */}
+      {/* Header */}
       <div className="header">
         <div>
           <h2 className="title">퍼블리싱 작업 리스트</h2>
@@ -89,7 +85,7 @@ const TaskList: React.FC = () => {
         </Link>
       </div>
 
-      {/* 💻 툴바 */}
+      {/* Toolbar */}
       <div className="toolbar">
         <input
           className="search"
@@ -133,12 +129,12 @@ const TaskList: React.FC = () => {
         ))}
       </div>
 
-      {/* 💻 진행바 */}
+      {/* Graph */}
       <div className="graph">
         <div className="completed" style={{ width: `${progress}%` }} />
       </div>
 
-      {/* 💻 테이블 */}
+      {/* Table */}
       <div className="table-wrap">
         <table className="table">
           <colgroup>
@@ -169,7 +165,7 @@ const TaskList: React.FC = () => {
           <tbody>
             {filteredData.map((item) => {
               const status = getStatus(item);
-              const routerLink = `/pub/${item.pageLink.toLowerCase()}`;
+              const routerLink = `/${item.pageLink.toLowerCase()}`;
               const hasLink = item.pageLink && item.pageLink.trim() !== "";
 
               return (
