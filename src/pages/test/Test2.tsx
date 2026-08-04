@@ -1,4 +1,4 @@
-import { KeyboardEvent, useState } from "react";
+import { useState } from "react";
 import "./Test.scss";
 
 interface RowData {
@@ -76,17 +76,6 @@ export default function Table() {
     });
   };
 
-  const handleRowKeyDown = (
-    e: KeyboardEvent<HTMLTableRowElement>,
-    index: number,
-    id: number,
-  ) => {
-    if (e.key === "Enter" || e.key === " ") {
-      e.preventDefault();
-      handleRowClick(index, id);
-    }
-  };
-
   return (
     <>
       <div className="button-area">
@@ -158,7 +147,6 @@ export default function Table() {
 
                   handleRowClick(index, item.id);
                 }}
-                onKeyDown={(e) => handleRowKeyDown(e, index, item.id)}
               >
                 <td data-clickable="false">
                   <input
