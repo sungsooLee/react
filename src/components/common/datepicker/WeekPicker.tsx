@@ -118,7 +118,6 @@ export const WeekPicker: React.FC<WeekPickerProps> = ({
   const selectedDate = value ?? internalDate;
 
   const [isPopoverOpen, setIsPopoverOpen] = useState(false);
-  const [popoverDate, setPopoverDate] = useState<Date>(selectedDate);
 
   const popoverRef = useRef<HTMLDivElement>(null);
   const today = useMemo(() => new Date(), []);
@@ -140,11 +139,10 @@ export const WeekPicker: React.FC<WeekPickerProps> = ({
     [selectedDate],
   );
 
-  const popoverYear = popoverDate.getFullYear();
-  const popoverMonth = popoverDate.getMonth() + 1;
+  // 현재 선택된 월의 주차 목록 계산
   const popoverWeeks = useMemo(
-    () => getWeeksInMonthList(popoverDate),
-    [popoverDate],
+    () => getWeeksInMonthList(selectedDate),
+    [selectedDate],
   );
 
   useEffect(() => {
@@ -183,7 +181,6 @@ export const WeekPicker: React.FC<WeekPickerProps> = ({
   }, [selectedDate, handleDateChange]);
 
   const handleTogglePopover = () => {
-    setPopoverDate(selectedDate);
     setIsPopoverOpen((prev) => !prev);
   };
 
@@ -194,7 +191,7 @@ export const WeekPicker: React.FC<WeekPickerProps> = ({
 
   return (
     <div className={`week_picker ${className}`.trim()}>
-      <div className="header">
+      <div className="week_header">
         <button
           type="button"
           onClick={handlePrevWeek}
@@ -208,7 +205,9 @@ export const WeekPicker: React.FC<WeekPickerProps> = ({
           <button
             type="button"
             onClick={handleTogglePopover}
-            className="title_btn"
+            className={["title_btn", isPopoverOpen && "pop_open"]
+              .filter(Boolean)
+              .join(" ")}
           >
             <span>{`${year}년 ${month}월 ${week}주차`}</span>
             <span className="arrow_icon">▼</span>
@@ -216,33 +215,9 @@ export const WeekPicker: React.FC<WeekPickerProps> = ({
 
           {isPopoverOpen && (
             <div className="popover">
-              <div className="popover_header">
-                <button
-                  type="button"
-                  className="popover_nav_btn"
-                  onClick={() =>
-                    setPopoverDate(
-                      (prev) =>
-                        new Date(prev.getFullYear(), prev.getMonth() - 1, 1),
-                    )
-                  }
-                >
-                  ◀
-                </button>
-                <span className="month_title">{`${popoverYear}년 ${popoverMonth}월`}</span>
-                <button
-                  type="button"
-                  className="popover_nav_btn"
-                  onClick={() =>
-                    setPopoverDate(
-                      (prev) =>
-                        new Date(prev.getFullYear(), prev.getMonth() + 1, 1),
-                    )
-                  }
-                >
-                  ▶
-                </button>
-              </div>
+              {/* <div className="popover_header">
+                <span className="month_title">{`${year}년 ${month}월`}</span>
+              </div> */}
 
               <div className="week_option_list">
                 {popoverWeeks.map((item) => {

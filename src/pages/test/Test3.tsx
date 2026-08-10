@@ -8,11 +8,13 @@ export const Test3 = () => {
     <div>
       <h1>주간 내역 조회</h1>
 
-      {/* 컴포넌트 호출 */}
       <WeekPicker
         value={currentDate}
         onChange={(date) => {
-          console.log("선택된 날짜:", date);
+          console.log(
+            "선택된 날짜:",
+            date.toLocaleDateString("ko-KR", { dateStyle: "full" }),
+          );
           setCurrentDate(date);
         }}
       />
