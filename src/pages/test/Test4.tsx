@@ -12,6 +12,10 @@ export interface ChartData {
   values: Record<string, number>;
 }
 
+export interface Test4Props {
+  showTooltip?: boolean;
+}
+
 const DEFAULT_ITEMS: ChartItem[] = [
   { key: "itemA", label: "RM/기업여신", color: "#1572ED" },
   { key: "itemB", label: "WM", color: "#6AD5D5" },
@@ -24,25 +28,54 @@ const DEFAULT_ITEMS: ChartItem[] = [
 const DEFAULT_DATA: ChartData[] = [
   {
     date: "26-12-12",
-    values: { itemA: 50, itemB: 40, itemC: 30, itemD: 20, itemE: 10 },
+    values: {
+      itemA: 50,
+      itemB: 40,
+      itemC: 30,
+      itemD: 20,
+      itemE: 10,
+      itemF: 15,
+    },
   },
   {
     date: "26-12-13",
-    values: { itemA: 30, itemB: 50, itemC: 40, itemD: 30, itemE: 20 },
+    values: {
+      itemA: 30,
+      itemB: 50,
+      itemC: 40,
+      itemD: 30,
+      itemE: 20,
+      itemF: 25,
+    },
   },
   {
     date: "26-12-14",
-    values: { itemA: 70, itemB: 40, itemC: 50, itemD: 20, itemE: 30 },
+    values: {
+      itemA: 70,
+      itemB: 40,
+      itemC: 50,
+      itemD: 20,
+      itemE: 30,
+      itemF: 10,
+    },
   },
   {
     date: "26-12-15",
-    values: { itemA: 40, itemB: 30, itemC: 40, itemD: 50, itemE: 20 },
+    values: {
+      itemA: 40,
+      itemB: 30,
+      itemC: 40,
+      itemD: 50,
+      itemE: 20,
+      itemF: 35,
+    },
   },
 ];
 
-export const Test4 = () => {
+export const Test4 = ({ showTooltip = true }: Test4Props) => {
   const [hoveredData, setHoveredData] = useState<{
     date: string;
+    key: string;
     label: string;
     val: number;
   } | null>(null);
@@ -109,6 +142,10 @@ export const Test4 = () => {
                         if (val <= 0 || total <= 0) return null;
 
                         const segmentHeightPercent = (val / total) * 100;
+                        const isHovered =
+                          showTooltip &&
+                          hoveredData?.date === d.date &&
+                          hoveredData?.key === item.key;
 
                         return (
                           <div
@@ -119,23 +156,46 @@ export const Test4 = () => {
                               backgroundColor: item.color,
                             }}
                             onMouseEnter={() =>
+                              showTooltip &&
                               setHoveredData({
                                 date: d.date,
+                                key: item.key,
                                 label: item.label,
                                 val,
                               })
                             }
-                            onMouseLeave={() => setHoveredData(null)}
-                          />
+                            onMouseLeave={() =>
+                              showTooltip && setHoveredData(null)
+                            }
+                          >
+                            {isHovered && (
+                              <div className="tooltip">
+                                <span>
+                                  {hoveredData.label}: {hoveredData.val}
+                                </span>
+                                <svg
+                                  className="tooltip_arrow"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  width="12"
+                                  height="10"
+                                  viewBox="0 0 12 10"
+                                  fill="none"
+                                >
+                                  <path
+                                    d="M6.8 8.93333C6.4 9.46667 5.6 9.46667 5.2 8.93333L0 2L12 2L6.8 8.93333Z"
+                                    fill="#292B2F"
+                                  />
+                                  <path
+                                    d="M6 8.33081L9.53674e-07 0.330811L12 0.330811L6 8.33081Z"
+                                    fill="white"
+                                  />
+                                </svg>
+                              </div>
+                            )}
+                          </div>
                         );
                       })}
                     </div>
-
-                    {hoveredData?.date === d.date && (
-                      <div className="tooltip">
-                        {hoveredData.label}: {hoveredData.val}
-                      </div>
-                    )}
                   </div>
                 );
               })}

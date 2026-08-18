@@ -1,12 +1,6 @@
 .stacked_bar_chart {
   --chart-height: 206px;
-
   width: 100%;
-  box-sizing: border-box;
-  padding: 20px;
-  background-color: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
 
   .chart_header {
     display: flex;
@@ -120,42 +114,88 @@
             flex-direction: column-reverse;
             align-items: center;
             position: relative;
+            z-index: 1;
+
+            &:hover,
+            &:has(.tooltip) {
+              z-index: 10;
+            }
 
             .bar_stack {
               width: 36px;
               display: flex;
               flex-direction: column-reverse;
-              overflow: hidden;
+              overflow: visible;
 
               .bar_segment {
                 width: 100%;
-                transition: opacity 0.2s ease;
                 cursor: pointer;
                 border-radius: 4px;
-
                 margin-bottom: 1px;
+                position: relative;
+                z-index: 1;
 
                 &:first-child {
                   margin-bottom: 0;
                 }
 
+                // 가상 요소를 활용해 막대에만 마우스 호버 어두움 처리 (툴팁 영향 방지)
+                &::before {
+                  content: "";
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  right: 0;
+                  bottom: 0;
+                  border-radius: inherit;
+                  background-color: rgba(0, 0, 0, 0);
+                  transition: background-color 0.15s ease;
+                  pointer-events: none;
+                }
+
                 &:hover {
-                  opacity: 0.8;
+                  z-index: 10;
+
+                  &::before {
+                    background-color: rgba(0, 0, 0, 0.08);
+                  }
+                }
+
+                .tooltip {
+                  position: absolute;
+                  bottom: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+
+                  background-color: #ffffff;
+                  border: 1px solid #292b2f;
+                  border-radius: 8px;
+                  color: #292b2f;
+
+                  font-size: 12px;
+                  font-weight: 500;
+                  padding: 6px 10px;
+                  white-space: nowrap;
+
+                  // 그림자를 살짝 추가하여 명확하고 선명하게 분리
+                  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.06);
+
+                  z-index: 20;
+                  pointer-events: none;
+
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+
+                  .tooltip_arrow {
+                    position: absolute;
+                    top: 100%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    margin-top: -1px;
+                  }
                 }
               }
-            }
-
-            .tooltip {
-              position: absolute;
-              top: -32px;
-              background: #111827;
-              color: #ffffff;
-              font-size: 11px;
-              padding: 4px 8px;
-              border-radius: 4px;
-              white-space: nowrap;
-              z-index: 10;
-              pointer-events: none;
             }
           }
         }
