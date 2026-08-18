@@ -114,3 +114,49 @@ $radius-md: 8px;
 .table tbody td:not(:first-child) {
   cursor: pointer;
 }
+
+.align_btn_wrap {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px;
+  background-color: #eceef1;
+  border-radius: 8px;
+  gap: 2px;
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    background-color: transparent;
+
+    &.active {
+      border-color: #dee2e6;
+      background-color: #fff;
+    }
+  }
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+
+  & > li {
+    flex: 1;
+  }
+
+  &.list {
+    &_vertical {
+      flex-direction: column;
+    }
+    &.horizontal {
+      & > li {
+        width: calc((100% - 48px) / 4);
+      }
+    }
+  }
+}

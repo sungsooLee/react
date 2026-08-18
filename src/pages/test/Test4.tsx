@@ -1,4 +1,7 @@
+import { useState } from "react";
 import { StackedBarChart, ChartItem, ChartData } from "./StackedBarChart";
+import { Icon } from "@/components/icons/Icon";
+import "./Test.scss";
 
 const CHART_ITEMS: ChartItem[] = [
   { key: "itemA", label: "RM/기업여신", color: "#1572ED" },
@@ -56,7 +59,28 @@ const CHART_DATA: ChartData[] = [
   },
 ];
 
+type AlignMode = "vertical" | "horizontal";
+
+interface ListItem {
+  id: number;
+  title: string;
+  description: string;
+}
+
+const MOCK_ITEMS: ListItem[] = [
+  { id: 1, title: "첫 번째 아이템", description: "상세 설명입니다." },
+  { id: 2, title: "두 번째 아이템", description: "상세 설명입니다." },
+  { id: 3, title: "세 번째 아이템", description: "상세 설명입니다." },
+  { id: 4, title: "네 번째 아이템", description: "상세 설명입니다." },
+];
+
 export const Test4 = () => {
+  const [align, setAlign] = useState<AlignMode>("horizontal");
+
+  const handleAlignChange = (mode: AlignMode) => {
+    setAlign(mode);
+  };
+
   return (
     <div className="page_container">
       <section className="chart_section">
@@ -68,6 +92,53 @@ export const Test4 = () => {
           yStep={50}
           showTooltip={true}
         />
+      </section>
+      <section>
+        <div
+          className="align_btn_wrap"
+          role="group"
+          aria-label="리스트 정렬 방식 선택"
+        >
+          <button
+            type="button"
+            className={align === "horizontal" ? "active" : ""}
+            onClick={() => handleAlignChange("horizontal")}
+            aria-label="가로 정렬"
+            aria-pressed={align === "horizontal"}
+          >
+            <Icon
+              name="icon_ui_row"
+              size="xs"
+              fillColor="none"
+              strokeColor="none"
+              aria-hidden="true"
+            />
+          </button>
+          <button
+            type="button"
+            className={align === "vertical" ? "active" : ""}
+            onClick={() => handleAlignChange("vertical")}
+            aria-label="세로 정렬"
+            aria-pressed={align === "vertical"}
+          >
+            <Icon
+              name="icon_ui_column"
+              size="xs"
+              fillColor="none"
+              strokeColor="none"
+              aria-hidden="true"
+            />
+          </button>
+        </div>
+
+        <ul className={`list list_${align}`}>
+          {MOCK_ITEMS.map((item) => (
+            <li key={item.id}>
+              <strong>{item.title}</strong>
+              <p>{item.description}</p>
+            </li>
+          ))}
+        </ul>
       </section>
     </div>
   );
