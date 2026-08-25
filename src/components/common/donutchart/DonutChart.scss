@@ -1,0 +1,76 @@
+.chart_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.chart_container {
+  position: relative;
+}
+
+.donut_canvas {
+  display: block;
+}
+
+.chart_legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.legend_item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 4px;
+  font-size: 14px;
+  opacity: 0;
+  transform: translateY(6px);
+  animation: fade_in_up 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transition: background-color 0.15s ease;
+}
+
+.legend_info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.color_box {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+  border-radius: 4px;
+}
+
+.legend_name {
+  font-size: 14px;
+  font-weight: 400;
+  color: #3f4248;
+}
+
+.legend_value {
+  color: #1c1c1e;
+  font-weight: 600;
+}
+
+@keyframes fade_in_up {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .legend_item {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
