@@ -2,9 +2,8 @@
   "extends": "./tsconfig.app.json",
   "include": ["src", "src/global.d.ts"],
   "compilerOptions": {
-    "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["./src/*"]
     }
   }
 }
