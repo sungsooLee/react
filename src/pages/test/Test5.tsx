@@ -1,6 +1,7 @@
 import DonutChart, {
   type DonutChartDataItem,
 } from "@/components/common/donutchart";
+import { useState } from "react";
 
 const data: DonutChartDataItem[] = [
   {
@@ -31,7 +32,28 @@ const data: DonutChartDataItem[] = [
 ];
 
 const DonutChartExample = () => {
-  return <DonutChart data={data} size={240} lineWidth={48} duration={1000} />;
+  const [inputValue, setInputValue] = useState<number>(0);
+
+  // 버튼 클릭 시 1 증가
+  const handleValueChange = () => {
+    setInputValue((prev) => prev + 1);
+  };
+
+  // input 직접 입력 시 상태 업데이트
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(Number(e.target.value));
+  };
+  return (
+    <>
+      <DonutChart data={data} size={240} lineWidth={48} duration={1000} />
+      <div>
+        <input type="number" value={inputValue} onChange={handleInputChange} />
+        <button type="button" onClick={handleValueChange}>
+          증가
+        </button>
+      </div>
+    </>
+  );
 };
 
 export default DonutChartExample;

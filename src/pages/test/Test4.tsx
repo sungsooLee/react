@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { StackedBarChart, ChartItem, ChartData } from "./StackedBarChart";
 import { Icon } from "@/components/icons/Icon";
+import LottieAnimation from "@/components/common/lottie/Lottie";
 import "./Test.scss";
+import loading from "../../assets/lottie/loading.json";
 
 const CHART_ITEMS: ChartItem[] = [
   { key: "itemA", label: "RM/기업여신", color: "#1572ED" },
@@ -140,6 +142,8 @@ export const Test4 = () => {
           ))}
         </ul>
       </section>
+
+      <LottieAnimation animationData={loading} width={240} height={240} />
     </div>
   );
 };
