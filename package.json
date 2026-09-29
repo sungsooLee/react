@@ -12,6 +12,8 @@
   "dependencies": {
     "@tanstack/react-router": "^1.168.25",
     "classnames": "^2.5.1",
+    "echarts": "^6.1.0",
+    "echarts-for-react": "^3.0.6",
     "lottie-react": "^2.4.1",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
