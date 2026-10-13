@@ -9,91 +9,23 @@ export default function ScrollBox() {
     const el = boxRef.current;
     if (!el) return;
 
-    const checkScroll = () => {
-      setHasScroll(el.scrollHeight > el.clientHeight);
-    };
-
-    checkScroll();
-
-    const observer = new ResizeObserver(checkScroll);
-    observer.observe(el);
-
-    return () => observer.disconnect();
-  }, []);
+    setHasScroll(el.scrollHeight > el.clientHeight);
+  }, [isShowCont]);
 
   return (
     <>
-      <div ref={boxRef} className="scroll_box max-h-[300px] overflow-y-auto">
+      <div
+        ref={boxRef}
+        className={`scroll_box max-h-[300px] overflow-y-auto ${
+          hasScroll ? "pr-0" : "pr-4"
+        }`.trim()}
+      >
         {isShowCont && (
           <>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
-            <div>1111</div>
+            {/* 기존 컨텐츠 */}
+            {Array.from({ length: 70 }, (_, i) => (
+              <div key={i}>1111</div>
+            ))}
           </>
         )}
       </div>
